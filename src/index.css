@@ -1,13 +1,15 @@
+* {
+  font-family: 'Open Sans';
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(17, 19, 20);
   color: white;
   padding: 0;
+  margin-bottom: 50px;
 }
 
 a {
@@ -20,12 +22,17 @@ code {
 }
 
 .main {
-  background-color: #01057e;
+  background-color: #020450;
   margin-left: 25vw;
   margin-right: 25vw;
   bottom: 0;
   padding: 25px;
   padding-top: 0px;
+  min-height: 2000px;
+  box-shadow:
+  inset #555757 0 0 0 3px, 
+  inset #484949 0 0 0 1px, 
+  inset #2c2c2c 0 0 0 6px
 }
 
 .cleanLink {
@@ -40,7 +47,9 @@ code {
 }
 
 .listedGuides {
-  margin: 25px
+  padding: 25px;
+  border: solid 2px grey;
+  margin: 2px;
 }
 
 .guideListDetails {
@@ -85,5 +94,56 @@ code {
 .displayedGuide {
   border-color: rgb(126, 116, 102);
   border-top: solid 1px;
+  padding: 25px;
+}
+
+.itemIcon {
+  width: 60px;
+  height: 44px;
+  padding-right: 5px;
+}
+
+.heroHeader {
+  display: flex;
+}
+
+.heroHeaderImage {
+  margin: 20px;
+}
+
+.guideTitle {
+  padding-bottom: 35px;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 1;
+  text-align: center;
+}
+
+.guideSection {
+  background-color: #2c2c2c;
+  margin-bottom: 20px;
+  padding: 50px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  font-weight: bolder;
+  box-shadow:
+  inset #555757 0 0 0 3px, 
+  inset #484949 0 0 0 1px, 
+  inset #2c2c2c 0 0 0 6px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.guideSectionTitle {
+  padding-bottom: 15px;
+}
+
+.headerTitle {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 1;
+  text-align: center;
 }
 

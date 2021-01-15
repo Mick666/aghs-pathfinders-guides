@@ -8,16 +8,16 @@ const Guides = [
         itemGroups: [
             {
                 groupName: 'Starting Items',
-                items: ['BrownBoots']
+                items: ['bootsOfSpeed']
             },
             {
                 groupName: 'Final Build',
-                items: ['Daedalus', 'Butterfly', 'Heart']
+                items: ['daedalus', 'butterfly', 'heart']
             }
         ]
     },
     {
-        title: 'MaxDamage Build',
+        title: 'Another Valid Build',
         createdAt: '15-01-2021',
         rating: '97%',
         id: 'J2',
@@ -25,11 +25,11 @@ const Guides = [
         itemGroups: [
             {
                 groupName: 'Starting Items',
-                items: ['BrownBoots']
+                items: ['bootsOfSpeed']
             },
             {
                 groupName: 'Final Build',
-                items: ['Daedalus', 'Butterfly', 'Heart']
+                items: ['daedalus', 'butterfly', 'heart']
             }
         ]
     }

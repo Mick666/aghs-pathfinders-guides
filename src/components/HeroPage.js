@@ -13,12 +13,17 @@ const HeroPage = () => {
     const [currentGuide, setGuide] = useState(0)
     return (
         <div className='heroPage'>
-            <div className='heroDesc'>
-                {hero.desc}
+            <div className='heroHeader'>
+                <div>
+                    <img className='heroHeaderImage' src={hero.image}/>
+                </div>
+                <div className='heroDesc'>
+                    {hero.desc}
+                </div>
             </div>
             <div className='guideGrid'>
                 <GuideList hero={id} />
-                <Guide guide={guides[currentGuide]}/>
+                <Guide guide={guides[currentGuide]} />
             </div>
         </div>
     )
