@@ -5,9 +5,85 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(17, 19, 20);
+  color: white;
+  padding: 0;
+}
+
+a {
+  color: white;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.main {
+  background-color: #01057e;
+  margin-left: 25vw;
+  margin-right: 25vw;
+  bottom: 0;
+  padding: 25px;
+  padding-top: 0px;
+}
+
+.cleanLink {
+  color: white;
+  text-decoration: none;
+}
+
+.guideGrid {
+  display: grid;
+  grid-template-columns: 300px auto;
+  grid-template-rows: auto;
+}
+
+.listedGuides {
+  margin: 25px
+}
+
+.guideListDetails {
+  display: flex;
+}
+
+.guideRating {
+  margin-left: 5px;
+}
+
+.guideCreationDate {
+  font-size: smaller;
+  color: grey;
+}
+
+.heroDesc {
+  margin: 25px;
+  border-color: rgb(126, 116, 102);
+}
+
+.header {
+  display: flex;
+  border-color: rgb(126, 116, 102);
+  border-bottom: solid 1px;
+}
+
+.heroPage {
+  border: solid 1px;
+}
+
+.headerLinks {
+  margin-top: 30px;
+  margin-left: 250px;
+}
+
+.guideListParent {
+  border-color: rgb(126, 116, 102);
+  border-top: solid 1px;
+  border-right: solid 1px;
+}
+
+.displayedGuide {
+  border-color: rgb(126, 116, 102);
+  border-top: solid 1px;
+}
+
