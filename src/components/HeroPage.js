@@ -11,6 +11,8 @@ const HeroPage = () => {
     const hero = Heroes.filter(x => x.id === id)[0]
     const guides = Guides.filter(x => x.hero === id)
     const [currentGuide, setGuide] = useState(0)
+
+    console.log(currentGuide)
     return (
         <div className='heroPage'>
             <div className='heroHeader'>
@@ -22,7 +24,7 @@ const HeroPage = () => {
                 </div>
             </div>
             <div className='guideGrid'>
-                <GuideList hero={id} />
+                <GuideList hero={id} currentGuide={currentGuide} setGuide={setGuide}/>
                 <Guide guide={guides[currentGuide]} />
             </div>
         </div>

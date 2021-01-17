@@ -2,8 +2,9 @@ import React from 'react'
 
 import Guides from '../Guides'
 
-const GuideList = ({ hero }) => {
+const GuideList = ({ hero, currentGuide, setGuide }) => {
     const guides = Guides.filter(x => x.hero === hero)
+
     return (
         <div className='guideListParent'>
             {guides.map((guide, key) => {
@@ -11,7 +12,9 @@ const GuideList = ({ hero }) => {
                     <div
                         to={`/heroes/${hero}/${guide.id}`}
                         key={key}
-                        className='listedGuides'
+                        className={`listedGuides ${currentGuide === key ? 'activeGuide' : ''}`}
+                        onClick={() => setGuide(Number(key))}
+                        data-index={key}
                     >
                         <b>{guide.title}</b>
                         <div className='guideListDetails'>

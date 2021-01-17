@@ -3,13 +3,12 @@
 }
 
 body {
-  margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(17, 19, 20);
   color: white;
   padding: 0;
-  margin-bottom: 50px;
+  margin: 0px 0px 25px 0px;
 }
 
 a {
@@ -22,13 +21,12 @@ code {
 }
 
 .main {
-  background-color: #020450;
-  margin-left: 25vw;
-  margin-right: 25vw;
+  background-color: #091020;
+  width: 1272px;
+  margin: 0 auto;
   bottom: 0;
   padding: 25px;
-  padding-top: 0px;
-  min-height: 2000px;
+  min-height: 1000px;
   box-shadow:
   inset #555757 0 0 0 3px, 
   inset #484949 0 0 0 1px, 
@@ -42,14 +40,13 @@ code {
 
 .guideGrid {
   display: grid;
-  grid-template-columns: 300px auto;
+  grid-template-columns: 250px auto;
   grid-template-rows: auto;
 }
 
 .listedGuides {
   padding: 25px;
-  border: solid 2px grey;
-  margin: 2px;
+  border-bottom: solid 2px grey;
 }
 
 .guideListDetails {
@@ -65,6 +62,31 @@ code {
   color: grey;
 }
 
+.guideTabs {
+  display: flex;
+  flex-direction: row;
+}
+
+.levelGridParent {
+  display: grid;
+  grid-template-rows: auto auto auto auto auto;
+  grid-template-columns: auto;
+  grid-row-gap: 2px;
+}
+
+.skillRow {
+  width: 5px;
+  display: grid;
+  grid-template-columns: repeat(30, 1fr);
+  grid-column-gap: 5px;
+}
+
+.levelCell {
+  width: 35px;
+  height: 35px;
+  background-color: #152034;
+}
+
 .heroDesc {
   margin: 25px;
   border-color: rgb(126, 116, 102);
@@ -72,18 +94,41 @@ code {
 
 .header {
   display: flex;
-  border-color: rgb(126, 116, 102);
-  border-bottom: solid 1px;
+  width: 50%;
+  margin: 0 auto;
+  
+}
+
+.headerDiv {
+  width: 100%;
+  overflow: auto;
+  background-color: rgb(22, 34, 55);
+  display: flex;
+}
+
+
+.headerLinkParent {
+  padding-top: 8px;
+  display: flex;
+}
+
+.headerLinks {
+  margin-left: 20px;
+}
+
+.headerTitle {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 1;
+  text-align: center;
+  font-size: 18px;
 }
 
 .heroPage {
   border: solid 1px;
 }
 
-.headerLinks {
-  margin-top: 30px;
-  margin-left: 250px;
-}
 
 .guideListParent {
   border-color: rgb(126, 116, 102);
@@ -94,7 +139,6 @@ code {
 .displayedGuide {
   border-color: rgb(126, 116, 102);
   border-top: solid 1px;
-  padding: 25px;
 }
 
 .itemIcon {
@@ -112,12 +156,17 @@ code {
 }
 
 .guideTitle {
-  padding-bottom: 35px;
-  font-family: 'Helvetica Neue', sans-serif;
-  font-weight: bold;
+  margin-bottom: 35px;
+  font-family: 'Open Sans';
   letter-spacing: -1px;
   line-height: 1;
   text-align: center;
+  text-transform: uppercase;
+  line-height: 39px;
+  position: relative;
+  text-align: left;
+  background-color: #152034;
+  padding-left: 25px;
 }
 
 .guideSection {
@@ -139,11 +188,11 @@ code {
   padding-bottom: 15px;
 }
 
-.headerTitle {
-  font-family: 'Helvetica Neue', sans-serif;
-  font-weight: bold;
-  letter-spacing: -1px;
-  line-height: 1;
-  text-align: center;
+.activeTab {
+  background-color: #1f4377;
+}
+
+.activeGuide {
+  background-color: #093e7e;
 }
 

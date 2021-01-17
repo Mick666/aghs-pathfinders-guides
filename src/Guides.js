@@ -1,6 +1,6 @@
 const Guides = [
     {
-        title: 'MaxDamage Build',
+        title: 'Max Damage Build',
         createdAt: '15-01-2021',
         rating: '97%',
         id: 'J1',
@@ -25,7 +25,7 @@ const Guides = [
         itemGroups: [
             {
                 groupName: 'Starting Items',
-                items: ['bootsOfSpeed']
+                items: ['bracer']
             },
             {
                 groupName: 'Final Build',
