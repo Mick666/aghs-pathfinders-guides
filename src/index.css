@@ -85,18 +85,12 @@ code {
   display: inline-block;
   margin: 15px;
   padding: 13px;
+  padding-bottom: 25px;
 }
 
 .guideSectionTitle {
   padding-bottom: 5px;
 }
-
-
-.guideItems {
-  /* display: flex;
-  flex-wrap: wrap; */
-}
-
 
 .itemIcon {
   width: 80px;
@@ -127,11 +121,6 @@ code {
 .displayedGuide {
   border-color: rgb(126, 116, 102);
   border-top: solid 1px;
-}
-
-.guideItems {
-  /* display: flex;
-  flex-wrap: wrap; */
 }
 
 .guideTabs {
@@ -332,11 +321,15 @@ table, td, th {
   border-color: rgb(126, 116, 102);
 }
 
-.header {
+.header, .patreonImage {
   display: flex;
   width: 50%;
   margin: 0 auto;
   
+}
+
+.patreonImage {
+  margin-top: 50px;
 }
 
 .headerDiv {
@@ -392,8 +385,12 @@ table, td, th {
   flex-wrap: wrap;
 }
 
-.heroListTitle, .heroText, .mainText {
+.heroListTitle, .heroText, .mainText, .allGuides {
   text-align: center;
+}
+
+.mainText {
+  padding-bottom: 15px;
 }
 
 .heroText {
@@ -414,4 +411,14 @@ table, td, th {
   position: relative;
   font-weight: bolder;
   margin: -19px -19px 30px -19px;
+}
+
+.image-gallery {
+  margin: 25px;
+}
+
+.mainPageTitle {
+  font-size: 50px;
+  padding-top: 25px;
+  padding-bottom: 25px;
 }

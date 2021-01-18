@@ -4,6 +4,7 @@ import {
     BrowserRouter as Router,
     Switch, Route
 } from 'react-router-dom'
+import '../node_modules/react-image-gallery/styles/css/image-gallery.css'
 
 import Main from './components/Main'
 import HeroPage from './components/HeroPage'
@@ -11,6 +12,7 @@ import Guide from './components/Guide'
 import Header from './components/Header'
 import HeroList from './components/HeroList'
 import Heroes from './Heroes'
+import AllGuides from './components/AllGuidesPage'
 
 function App() {
     return (
@@ -29,6 +31,9 @@ function App() {
                         </Route>
                         <Route path='/heroes'>
                             <HeroList heroes={Heroes} />
+                        </Route>
+                        <Route path='/guides'>
+                            <AllGuides />
                         </Route>
                         <Route path='/'>
                             <Main />

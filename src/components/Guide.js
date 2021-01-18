@@ -5,6 +5,7 @@ import Heroes from '../Heroes'
 import Shards from '../Shards'
 
 const GuideLevels = ({ levels, selectedTalents, hero }) => {
+    //eslint-disable-next-line
     const levelGrid = new Array(5).fill(null).map(_ => new Array(18).fill('blank'))
     return (
         <div>
@@ -128,12 +129,14 @@ const GuideSegment = ({ section }) => {
 }
 
 const Guide = ({ guide }) => {
+    if (!guide) {
+        return <div className='displayedGuide'></div>
+    }
+
     const [currentTab, setTab] = useState('Items')
     const tabs = ['Items', 'Levelling', 'Legendary Shards', 'Shard combinations']
     const hero = Heroes.filter(x => x.id === guide.hero)[0]
-    if (!guide) {
-        return <div></div>
-    }
+
 
     return (
         <div className='displayedGuide'>
