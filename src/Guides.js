@@ -27,8 +27,8 @@ const Guides = [
         levels: [0, 1, 2, 0, 0, 3, 0, 1, 1, 4, 2, 3, 2, 1, 4, 2, 5, 3,],
         shards: ['letItRip', 'studiedTheBlade', 'maskOfLeeroy', 'helicopter', 'helicopter', 'helicopter'],
         shardCombinations: [
-            { combination: ['letItRip', 'studiedTheBlade'], description: 'Leads to insane damage' },
-            { combination: ['maskOfLeeroy', 'helicopter'], description: 'Makes you yeet and really, really, really fly' }
+            { combination: ['letItRip', 'studiedTheBlade'], description: 'Help! Help! I’m being repressed!' },
+            { combination: ['maskOfLeeroy', 'helicopter'], description: 'Alright, but apart from the sanitation, the medicine, education, wine, public order, irrigation, roads, the fresh-water system, and public health, what have the Romans ever done for us?' }
         ]
     },
     {
@@ -51,8 +51,8 @@ const Guides = [
         levels: [0, 1, 2, 0, 0, 3, 0, 1, 1, 4, 2, 3, 2, 1, 4, 2, 5, 3,],
         shards: ['letItRip', 'studiedTheBlade', 'maskOfLeeroy', 'helicopter', 'helicopter', 'helicopter'],
         shardCombinations: [
-            { combination: ['letItRip', 'studiedTheBlade'], description: 'Leads to insane damage' },
-            { combination: ['maskOfLeeroy', 'helicopter'], description: 'Makes you yeet and really, really, really fly' }
+            { combination: ['letItRip', 'studiedTheBlade'], description: 'Help! Help! I’m being repressed!' },
+            { combination: ['maskOfLeeroy', 'helicopter'], description: 'Alright, but apart from the sanitation, the medicine, education, wine, public order, irrigation, roads, the fresh-water system, and public health, what have the Romans ever done for us?' }
         ]
     },
     {
@@ -75,8 +75,8 @@ const Guides = [
         levels: [0, 1, 2, 0, 0, 3, 0, 1, 1, 4, 2, 3, 2, 1, 4, 2, 5, 3,],
         shards: ['letItRip', 'studiedTheBlade', 'maskOfLeeroy', 'helicopter', 'helicopter', 'helicopter'],
         shardCombinations: [
-            { combination: ['letItRip', 'studiedTheBlade'], description: 'Leads to insane damage' },
-            { combination: ['maskOfLeeroy', 'helicopter'], description: 'Makes you yeet and really, really, really fly' }
+            { combination: ['letItRip', 'studiedTheBlade'], description: 'Help! Help! I’m being repressed!' },
+            { combination: ['maskOfLeeroy', 'helicopter'], description: 'Alright, but apart from the sanitation, the medicine, education, wine, public order, irrigation, roads, the fresh-water system, and public health, what have the Romans ever done for us?' }
         ]
     }
 ]
