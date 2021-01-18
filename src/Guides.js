@@ -11,9 +11,24 @@ const Guides = [
                 items: ['bootsOfSpeed']
             },
             {
+                groupName: 'Rush first',
+                items: ['maelstrom']
+            },
+            {
+                groupName: 'Need for final fight',
+                items: ['euls']
+            },
+            {
                 groupName: 'Final Build',
-                items: ['daedalus', 'butterfly', 'heart']
+                items: ['powerTreads', 'mjollnir', 'euls', 'daedalus', 'butterfly', 'heart']
             }
+        ],
+        selectedTalents: ['+475 health', '+160 Blade Fury DPS', '+20 Attack Speed', '20 Movement Speed'],
+        levels: [0, 1, 2, 0, 0, 3, 0, 1, 1, 4, 2, 3, 2, 1, 4, 2, 5, 3,],
+        shards: ['letItRip', 'studiedTheBlade', 'maskOfLeeroy', 'helicopter', 'helicopter', 'helicopter'],
+        shardCombinations: [
+            { combination: ['letItRip', 'studiedTheBlade'], description: 'Leads to insane damage' },
+            { combination: ['maskOfLeeroy', 'helicopter'], description: 'Makes you yeet and really, really, really fly' }
         ]
     },
     {
@@ -31,6 +46,37 @@ const Guides = [
                 groupName: 'Final Build',
                 items: ['daedalus', 'butterfly', 'heart']
             }
+        ],
+        selectedTalents: ['+475 health', '+160 Blade Fury DPS', '+20 Attack Speed', '20 Movement Speed'],
+        levels: [0, 1, 2, 0, 0, 3, 0, 1, 1, 4, 2, 3, 2, 1, 4, 2, 5, 3,],
+        shards: ['letItRip', 'studiedTheBlade', 'maskOfLeeroy', 'helicopter', 'helicopter', 'helicopter'],
+        shardCombinations: [
+            { combination: ['letItRip', 'studiedTheBlade'], description: 'Leads to insane damage' },
+            { combination: ['maskOfLeeroy', 'helicopter'], description: 'Makes you yeet and really, really, really fly' }
+        ]
+    },
+    {
+        title: 'Another Valid Build',
+        createdAt: '15-01-2021',
+        rating: '97%',
+        id: 'J2',
+        hero: 'Juggernaut',
+        itemGroups: [
+            {
+                groupName: 'Starting Items',
+                items: ['bracer']
+            },
+            {
+                groupName: 'Final Build',
+                items: ['daedalus', 'butterfly', 'heart']
+            }
+        ],
+        selectedTalents: ['+475 health', '+160 Blade Fury DPS', '+20 Attack Speed', '20 Movement Speed'],
+        levels: [0, 1, 2, 0, 0, 3, 0, 1, 1, 4, 2, 3, 2, 1, 4, 2, 5, 3,],
+        shards: ['letItRip', 'studiedTheBlade', 'maskOfLeeroy', 'helicopter', 'helicopter', 'helicopter'],
+        shardCombinations: [
+            { combination: ['letItRip', 'studiedTheBlade'], description: 'Leads to insane damage' },
+            { combination: ['maskOfLeeroy', 'helicopter'], description: 'Makes you yeet and really, really, really fly' }
         ]
     }
 ]

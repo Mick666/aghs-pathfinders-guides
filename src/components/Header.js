@@ -9,9 +9,9 @@ const Header = () => {
             </div>
             <div className='headerLinkParent'>
                 <Link className='headerLinks cleanLink' to='/'>Home</Link>
-                <Link className='headerLinks cleanLink' to='/'>Heroes</Link>
-                <Link className='headerLinks cleanLink' to='/'>Guides</Link>
-                <Link className='headerLinks cleanLink' to='/'>Videos</Link>
+                <Link className='headerLinks cleanLink' to='/heroes'>Heroes</Link>
+                <Link className='headerLinks cleanLink' to='/guides'>Guides</Link>
+                <Link className='headerLinks cleanLink' to='/videos'>Videos</Link>
             </div>
         </div>
     )

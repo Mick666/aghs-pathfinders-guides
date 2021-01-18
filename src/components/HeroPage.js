@@ -17,14 +17,17 @@ const HeroPage = () => {
         <div className='heroPage'>
             <div className='heroHeader'>
                 <div>
-                    <img className='heroHeaderImage' src={hero.image}/>
+                    <img className='heroHeaderImage' src={hero.image} />
                 </div>
                 <div className='heroDesc'>
-                    {hero.desc}
+                    <h2>{hero.id}</h2>
+                    <div>
+                        {hero.desc}
+                    </div>
                 </div>
             </div>
             <div className='guideGrid'>
-                <GuideList hero={id} currentGuide={currentGuide} setGuide={setGuide}/>
+                <GuideList hero={id} currentGuide={currentGuide} setGuide={setGuide} />
                 <Guide guide={guides[currentGuide]} />
             </div>
         </div>

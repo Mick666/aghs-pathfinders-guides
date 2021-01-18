@@ -9,6 +9,8 @@ import Main from './components/Main'
 import HeroPage from './components/HeroPage'
 import Guide from './components/Guide'
 import Header from './components/Header'
+import HeroList from './components/HeroList'
+import Heroes from './Heroes'
 
 function App() {
     return (
@@ -24,6 +26,9 @@ function App() {
                         </Route>
                         <Route path='/heroes/:hero'>
                             <HeroPage />
+                        </Route>
+                        <Route path='/heroes'>
+                            <HeroList heroes={Heroes} />
                         </Route>
                         <Route path='/'>
                             <Main />
