@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/aghs-pathfinders-guides/static/css/main.2edfc2ec.chunk.css",
+    "main.js": "/aghs-pathfinders-guides/static/js/main.7fa65830.chunk.js",
+    "main.js.map": "/aghs-pathfinders-guides/static/js/main.7fa65830.chunk.js.map",
+    "runtime-main.js": "/aghs-pathfinders-guides/static/js/runtime-main.e7194f67.js",
+    "runtime-main.js.map": "/aghs-pathfinders-guides/static/js/runtime-main.e7194f67.js.map",
+    "static/css/2.ea11fe1c.chunk.css": "/aghs-pathfinders-guides/static/css/2.ea11fe1c.chunk.css",
+    "static/js/2.6ded2005.chunk.js": "/aghs-pathfinders-guides/static/js/2.6ded2005.chunk.js",
+    "static/js/2.6ded2005.chunk.js.map": "/aghs-pathfinders-guides/static/js/2.6ded2005.chunk.js.map",
+    "static/js/3.03e5571e.chunk.js": "/aghs-pathfinders-guides/static/js/3.03e5571e.chunk.js",
+    "static/js/3.03e5571e.chunk.js.map": "/aghs-pathfinders-guides/static/js/3.03e5571e.chunk.js.map",
+    "index.html": "/aghs-pathfinders-guides/index.html",
+    "static/css/2.ea11fe1c.chunk.css.map": "/aghs-pathfinders-guides/static/css/2.ea11fe1c.chunk.css.map",
+    "static/css/main.2edfc2ec.chunk.css.map": "/aghs-pathfinders-guides/static/css/main.2edfc2ec.chunk.css.map",
+    "static/js/2.6ded2005.chunk.js.LICENSE.txt": "/aghs-pathfinders-guides/static/js/2.6ded2005.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e7194f67.js",
+    "static/css/2.ea11fe1c.chunk.css",
+    "static/js/2.6ded2005.chunk.js",
+    "static/css/main.2edfc2ec.chunk.css",
+    "static/js/main.7fa65830.chunk.js"
+  ]
+}
