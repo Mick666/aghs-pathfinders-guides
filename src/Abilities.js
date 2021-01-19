@@ -3,6 +3,7 @@ const Abilities = {
     bladeFury: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/4/4c/Blade_Fury_icon.png'), name: 'Blade Fury' },
     healingWard: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/5/58/Healing_Ward_icon.png'), name: 'Healing Ward' },
     bladeDance: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/8/83/Blade_Dance_icon.png'), name: 'Blade Dance' },
+    omnislash: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/3/39/Omnislash_icon.png'), name: 'Omnislash' },
     beserkersCall: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/d/d1/Berserker%27s_Call_icon.png'), name: 'Berserker\'s Call' },
     battleHunger: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/0/00/Battle_Hunger_icon.png'), name: 'Battle Hunger' },
     counterHelix: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/1/14/Counter_Helix_icon.png'), name: 'Counter Helix' },

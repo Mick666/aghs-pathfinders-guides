@@ -80,6 +80,8 @@ const ShardRankings = ({ shards }) => {
 }
 
 const ShardCombos = ({ shardCombos }) => {
+    const backupLink = 'https://static.wikia.nocookie.net/dota2_gamepedia/images/4/4c/Blade_Fury_icon.png'
+    // Just while we're waiting for the full list of shards from the developer
     if (!shardCombos) return (
         <div className='shardCombinationParent'>
             No shard combinations listed so far: Why not suggest one?
@@ -134,7 +136,7 @@ const Guide = ({ guide }) => {
     }
 
     const [currentTab, setTab] = useState('Items')
-    const tabs = ['Items', 'Levelling', 'Legendary Shards', 'Shard combinations']
+    const tabs = ['Items', 'Levelling', 'Legendary Shards Ranking', 'Shard combinations']
     const hero = Heroes.filter(x => x.id === guide.hero)[0]
 
 
@@ -160,7 +162,7 @@ const Guide = ({ guide }) => {
             <div style={{ display: currentTab === 'Levelling' ? '' : 'none' }}>
                 <GuideLevels levels={guide.levels} selectedTalents={guide.selectedTalents} hero={hero} />
             </div>
-            <div style={{ display: currentTab === 'Legendary Shards' ? '' : 'none' }}>
+            <div style={{ display: currentTab === 'Legendary Shards Ranking' ? '' : 'none' }}>
                 <ShardRankings shards={guide.shards} />
             </div>
             <div style={{ display: currentTab === 'Shard combinations' ? '' : 'none' }}>
