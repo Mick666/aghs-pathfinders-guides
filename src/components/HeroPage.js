@@ -28,7 +28,7 @@ const HeroPage = () => {
             </div>
             <div className='guideGrid'>
                 <GuideList hero={id} currentGuide={currentGuide} setGuide={setGuide} />
-                <Guide guide={guides[currentGuide]} />
+                <Guide guide={guides[currentGuide] ? guides[currentGuide] : Guides[0]} />
             </div>
         </div>
     )

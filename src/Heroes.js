@@ -10,7 +10,7 @@ const Heroes = [
             ['+20 Attack Speed', '15', '-20 Healing Ward cooldown'],
             ['20 Movement Speed', '10', '+5 All Stats'],
         ],
-        abilities: ['bladeFury', 'healingWard', 'bladeDance', 'omnislash', 'talentTree']
+        abilities: ['beserkersCall', 'battleHunger', 'counterHelix', 'cullingBlade', 'talentTree']
     },
     {
         id: 'Legion Commander',
@@ -23,7 +23,7 @@ const Heroes = [
             ['+20 Attack Speed', '15', '-20 Healing Ward cooldown'],
             ['20 Movement Speed', '10', '+5 All Stats'],
         ],
-        abilities: ['bladeFury', 'healingWard', 'bladeDance', 'omnislash', 'talentTree']
+        abilities: ['overwhelmingOdds', 'pressTheAttack', 'momentOfCourage', 'duel', 'talentTree']
     },
     {
         id: 'Magnus',
@@ -36,7 +36,7 @@ const Heroes = [
             ['+20 Attack Speed', '15', '-20 Healing Ward cooldown'],
             ['20 Movement Speed', '10', '+5 All Stats'],
         ],
-        abilities: ['bladeFury', 'healingWard', 'bladeDance', 'omnislash', 'talentTree']
+        abilities: ['shockwave', 'empower', 'skewer', 'reversePolarity', 'talentTree']
     },
     {
         id: 'Mars',
@@ -49,7 +49,7 @@ const Heroes = [
             ['+20 Attack Speed', '15', '-20 Healing Ward cooldown'],
             ['20 Movement Speed', '10', '+5 All Stats'],
         ],
-        abilities: ['bladeFury', 'healingWard', 'bladeDance', 'omnislash', 'talentTree']
+        abilities: ['spearOfMars', 'godsRebuke', 'bulwark', 'arenaOfBlood', 'talentTree']
     },
     {
         id: 'Omniknight',
@@ -62,7 +62,7 @@ const Heroes = [
             ['+20 Attack Speed', '15', '-20 Healing Ward cooldown'],
             ['20 Movement Speed', '10', '+5 All Stats'],
         ],
-        abilities: ['bladeFury', 'healingWard', 'bladeDance', 'omnislash', 'talentTree']
+        abilities: ['purification', 'heavenlyGrace', 'degenAura', 'guardianAngel', 'talentTree']
     },
     {
         id: 'Snapfire',
@@ -75,7 +75,7 @@ const Heroes = [
             ['+20 Attack Speed', '15', '-20 Healing Ward cooldown'],
             ['20 Movement Speed', '10', '+5 All Stats'],
         ],
-        abilities: ['bladeFury', 'healingWard', 'bladeDance', 'omnislash', 'talentTree']
+        abilities: ['scatterblast', 'firesnapCookie', 'lilShredder', 'mortimerKisses', 'talentTree']
     },
     {
         id: 'Tidehunter',
@@ -88,7 +88,7 @@ const Heroes = [
             ['+20 Attack Speed', '15', '-20 Healing Ward cooldown'],
             ['20 Movement Speed', '10', '+5 All Stats'],
         ],
-        abilities: ['bladeFury', 'healingWard', 'bladeDance', 'omnislash', 'talentTree']
+        abilities: ['gush', 'krakenShell', 'anchorSmash', 'ravage', 'talentTree']
     },
     {
         id: 'Tusk',
@@ -101,7 +101,7 @@ const Heroes = [
             ['+20 Attack Speed', '15', '-20 Healing Ward cooldown'],
             ['20 Movement Speed', '10', '+5 All Stats'],
         ],
-        abilities: ['bladeFury', 'healingWard', 'bladeDance', 'omnislash', 'talentTree']
+        abilities: ['iceShards', 'snowball', 'tagTeam', 'walrusPunch', 'talentTree']
     },
     {
         id: 'Hoodwink',
@@ -114,7 +114,7 @@ const Heroes = [
             ['+20 Attack Speed', '15', '-20 Healing Ward cooldown'],
             ['20 Movement Speed', '10', '+5 All Stats'],
         ],
-        abilities: ['bladeFury', 'healingWard', 'bladeDance', 'omnislash', 'talentTree']
+        abilities: ['acornShot', 'bushwhack', 'scurry', 'sharpshooter', 'talentTree']
     },
     {
         id: 'Juggernaut',
@@ -140,7 +140,7 @@ const Heroes = [
             ['+20 Attack Speed', '15', '-20 Healing Ward cooldown'],
             ['20 Movement Speed', '10', '+5 All Stats'],
         ],
-        abilities: ['bladeFury', 'healingWard', 'bladeDance', 'omnislash', 'talentTree']
+        abilities: ['stiflingDagger', 'phantomStrike', 'blur', 'coupDeGrace', 'talentTree']
     },
     {
         id: 'Shadow Fiend',
@@ -153,7 +153,7 @@ const Heroes = [
             ['+20 Attack Speed', '15', '-20 Healing Ward cooldown'],
             ['20 Movement Speed', '10', '+5 All Stats'],
         ],
-        abilities: ['bladeFury', 'healingWard', 'bladeDance', 'omnislash', 'talentTree']
+        abilities: ['shadowraze', 'necromastery', 'presenceOfTheDarkLord', 'requiemOfSouls', 'talentTree']
     },
     {
         id: 'Slark',
@@ -166,7 +166,7 @@ const Heroes = [
             ['+20 Attack Speed', '15', '-20 Healing Ward cooldown'],
             ['20 Movement Speed', '10', '+5 All Stats'],
         ],
-        abilities: ['bladeFury', 'healingWard', 'bladeDance', 'omnislash', 'talentTree']
+        abilities: ['darkPact', 'pounce', 'essenceShift', 'shadowDance', 'talentTree']
     },
     {
         id: 'Sniper',
@@ -179,7 +179,7 @@ const Heroes = [
             ['+20 Attack Speed', '15', '-20 Healing Ward cooldown'],
             ['20 Movement Speed', '10', '+5 All Stats'],
         ],
-        abilities: ['bladeFury', 'healingWard', 'bladeDance', 'omnislash', 'talentTree']
+        abilities: ['sharpnel', 'headshot', 'takeAim', 'assassinate', 'talentTree']
     },
     {
         id: 'Templar Assasin',
@@ -192,7 +192,7 @@ const Heroes = [
             ['+20 Attack Speed', '15', '-20 Healing Ward cooldown'],
             ['20 Movement Speed', '10', '+5 All Stats'],
         ],
-        abilities: ['bladeFury', 'healingWard', 'bladeDance', 'omnislash', 'talentTree']
+        abilities: ['refraction', 'meld', 'psiBlades', 'psionicTrap', 'talentTree']
     },
     {
         id: 'Venomancer',
@@ -205,16 +205,23 @@ const Heroes = [
             ['+20 Attack Speed', '15', '-20 Healing Ward cooldown'],
             ['20 Movement Speed', '10', '+5 All Stats'],
         ],
-        abilities: ['bladeFury', 'healingWard', 'bladeDance', 'omnislash', 'talentTree']
+        abilities: ['venomousGale', 'poisonSting', 'plagueWard', 'poisonNova', 'talentTree']
     },
     {
         id: 'Viper',
         image: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/5/5f/Viper_icon.png',
         desc: 'Viper, the Netherdrake, is a ranged agility hero who functions as an excellent nuker, ganker and carry due to his assortment of low-cooldown spells and debilitating attacks. \
         \nHis modus operandi is to whittle away his opponents\' vitality over long stretches of time while they fail to inflict fatal damage.',
+        talents: [
+            ['+1s Omnislash Duration', '25', '+475 health'],
+            ['+160 Blade Fury DPS', '20', '+8 Armor'],
+            ['+20 Attack Speed', '15', '-20 Healing Ward cooldown'],
+            ['20 Movement Speed', '10', '+5 All Stats'],
+        ],
+        abilities: ['poisonAttack', 'nethertoxin', 'corrosiveSkin', 'viperStrike', 'talentTree']
     },
     {
-        id: 'Weever',
+        id: 'Weaver',
         image: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/0/09/Weaver_icon.png',
         desc: 'Yurnero, the Juggernaut, is a melee agility hero whose abilities allow him to sprint into battle and recklessly devastate enemies in an impenetrable flurry of blades. \
         \nHis abilities grant invulnerability and spell immunity, turning him into an unstoppable force on a hairpin.',
@@ -224,7 +231,7 @@ const Heroes = [
             ['+20 Attack Speed', '15', '-20 Healing Ward cooldown'],
             ['20 Movement Speed', '10', '+5 All Stats'],
         ],
-        abilities: ['bladeFury', 'healingWard', 'bladeDance', 'omnislash', 'talentTree']
+        abilities: ['theSwarm', 'shukuchi', 'geminateAttack', 'timeLapse', 'talentTree']
     },
     {
         id: 'Disruptor',
