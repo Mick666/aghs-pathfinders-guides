@@ -244,7 +244,7 @@ const Heroes = [
             ['+20 Attack Speed', '15', '-20 Healing Ward cooldown'],
             ['20 Movement Speed', '10', '+5 All Stats'],
         ],
-        abilities: ['bladeFury', 'healingWard', 'bladeDance', 'omnislash', 'talentTree']
+        abilities: ['thunderStrike', 'glimpse', 'kineticField', 'staticStorm', 'talentTree']
     },
     {
         id: 'Jakiro',
@@ -257,7 +257,7 @@ const Heroes = [
             ['+20 Attack Speed', '15', '-20 Healing Ward cooldown'],
             ['20 Movement Speed', '10', '+5 All Stats'],
         ],
-        abilities: ['bladeFury', 'healingWard', 'bladeDance', 'omnislash', 'talentTree']
+        abilities: ['dualBreath', 'icePath', 'liquidFire', 'macropyre', 'talentTree']
     },
     {
         id: 'Ogre-Magi',
@@ -270,7 +270,7 @@ const Heroes = [
             ['+20 Attack Speed', '15', '-20 Healing Ward cooldown'],
             ['20 Movement Speed', '10', '+5 All Stats'],
         ],
-        abilities: ['bladeFury', 'healingWard', 'bladeDance', 'omnislash', 'talentTree']
+        abilities: ['fireblast', 'ignite', 'bloodlust', 'multicast', 'talentTree']
     },
     {
         id: 'Queen of Pain',
@@ -283,7 +283,7 @@ const Heroes = [
             ['+20 Attack Speed', '15', '-20 Healing Ward cooldown'],
             ['20 Movement Speed', '10', '+5 All Stats'],
         ],
-        abilities: ['bladeFury', 'healingWard', 'bladeDance', 'omnislash', 'talentTree']
+        abilities: ['shadowStrike', 'blink', 'screamOfPain', 'sonicWave', 'talentTree']
     },
     {
         id: 'Windranger',
@@ -296,7 +296,7 @@ const Heroes = [
             ['+20 Attack Speed', '15', '-20 Healing Ward cooldown'],
             ['20 Movement Speed', '10', '+5 All Stats'],
         ],
-        abilities: ['bladeFury', 'healingWard', 'bladeDance', 'omnislash', 'talentTree']
+        abilities: ['shackleshot', 'powershot', 'windrun', 'focusFire', 'talentTree']
     },
     {
         id: 'Winter Wyvern',
@@ -309,7 +309,7 @@ const Heroes = [
             ['+20 Attack Speed', '15', '-20 Healing Ward cooldown'],
             ['20 Movement Speed', '10', '+5 All Stats'],
         ],
-        abilities: ['bladeFury', 'healingWard', 'bladeDance', 'omnislash', 'talentTree']
+        abilities: ['arcticBurn', 'splinterBlast', 'coldEmbrace', 'wintersCurse', 'talentTree']
     },
     {
         id: 'Witch Doctor',
@@ -322,7 +322,7 @@ const Heroes = [
             ['+20 Attack Speed', '15', '-20 Healing Ward cooldown'],
             ['20 Movement Speed', '10', '+5 All Stats'],
         ],
-        abilities: ['bladeFury', 'healingWard', 'bladeDance', 'omnislash', 'talentTree']
+        abilities: ['paralyzingCask', 'voodooRestoration', 'maledict', 'deathWard', 'talentTree']
     }
 
 ]
