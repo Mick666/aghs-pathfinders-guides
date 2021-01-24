@@ -13,8 +13,10 @@ import Header from './components/Header'
 import HeroList from './components/HeroList'
 import Heroes from './Heroes'
 import AllGuides from './components/AllGuidesPage'
+import CreateGuide from './components/CreateGuide'
 
 function App() {
+
     return (
         <Router>
             <div className='headerDiv'>
@@ -31,6 +33,9 @@ function App() {
                         </Route>
                         <Route path='/heroes'>
                             <HeroList heroes={Heroes} />
+                        </Route>
+                        <Route path='/guides/create'>
+                            <CreateGuide />
                         </Route>
                         <Route path='/guides'>
                             <AllGuides />

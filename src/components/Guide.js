@@ -80,8 +80,6 @@ const ShardRankings = ({ shards }) => {
 }
 
 const ShardCombos = ({ shardCombos }) => {
-    const backupLink = 'https://static.wikia.nocookie.net/dota2_gamepedia/images/4/4c/Blade_Fury_icon.png'
-    // Just while we're waiting for the full list of shards from the developer
     if (!shardCombos) return (
         <div className='shardCombinationParent'>
             No shard combinations listed so far: Why not suggest one?
@@ -131,6 +129,7 @@ const GuideSegment = ({ section }) => {
 }
 
 const Guide = ({ guide }) => {
+    console.log(guide)
     if (!guide) {
         return <div className='displayedGuide'></div>
     }
