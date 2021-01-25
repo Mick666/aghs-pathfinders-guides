@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import Items from '../Items'
 import { FormikInput } from './FormikPremades'
@@ -9,7 +9,6 @@ const AddItemsSearch = ({ setItems, items, groupName }) => {
     const itemValues = Object.entries(Items).map(item => {
         return { name: item[1].name, value: item[0], link: item[1].link }
     })
-    const [itemValue, setItemValue] = useState(null)
 
     function renderItemSearch(props, option, snapshot, className) {
         const imgStyle = {
@@ -82,6 +81,7 @@ const CreateItemGroups = ({ items, setItems }) => {
 
     return (
         <div className='guideItems'>
+            <h2 className='levelGridTitle'>Items</h2>
             <FormikInput onSubmit={addSegment} buttonText='Add Section' uniqueValues={items.map(x => x.groupName)}/>
             {items.map((section, key) => <GuideCreationSegment key={key} section={section} items={items} setItems={setItems} />)}
         </div>

@@ -34,10 +34,9 @@ const CreateGuideLevels = ({ hero, selectedTalents, levels, setTalents, setLevel
             return
         }
 
-        let updatedLevels = levels
+        let updatedLevels = [...levels]
         updatedLevels[level] = skill
         setLevels(updatedLevels)
-        setError(level)
     }
 
     const setLevelError = (message) => {
@@ -46,8 +45,7 @@ const CreateGuideLevels = ({ hero, selectedTalents, levels, setTalents, setLevel
     }
 
     function selectTalents(talent, level) {
-        setError(typeof errorMessage === 'number' ? errorMessage+1 : 0)
-        let updatedTalents = selectedTalents
+        let updatedTalents = [...selectedTalents]
         updatedTalents[level] = talent
         setTalents(updatedTalents)
     }
