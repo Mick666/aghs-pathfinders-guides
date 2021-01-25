@@ -30,16 +30,19 @@ export const FormikInput = ({ onSubmit, buttonText, uniqueValues }) => {
                 handleSubmit,
                 isSubmitting,
             }) => (
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} style={{ margin: '25px 25px 25px 0' }}>
                     <input
                         type="inputValue"
                         name="inputValue"
                         onChange={handleChange}
                         onBlur={handleBlur}
                         value={values.inputValue}
+                        style={{ marginRight: '10px' }}
                     />
-                    {errors.inputValue && touched.inputValue && errors.inputValue}
-                    <button type="submit" disabled={isSubmitting}>
+                    <span className='rightMarginSpacing errorMessage'>
+                        {errors.inputValue && touched.inputValue && errors.inputValue}
+                    </span>
+                    <button type="submit" disabled={isSubmitting} className='leftMarginSpacing'>
                         {buttonText}
                     </button>
                 </form>

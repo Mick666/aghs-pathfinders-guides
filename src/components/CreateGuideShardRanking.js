@@ -5,7 +5,7 @@ import { HTML5Backend } from 'react-dnd-html5-backend'
 import Shards from '../Shards'
 import Abilities from '../Abilities'
 
-const IndividualShard = ({ shard, handleDrop, indx }) => {
+const IndividualShard = ({ shard, handleDrop, indx, shardDetails }) => {
     const [_, drag] = useDrag({
         item: { id: shard, type: 'shard', ind: indx }
     })
@@ -17,15 +17,13 @@ const IndividualShard = ({ shard, handleDrop, indx }) => {
             shardSource: monitor.getItem(),
         }),
     })
-    console.log(Shards[shard])
-    console.log(Abilities[Shards[shard].skill])
     return (
         <div ref={drop} className='dropDiv'>
             <div className='createShardRankingParent' ref={drag}>
                 <img src={Abilities[Shards[shard].skill].link} className='shardImage' />
-                <div>
+                <div className='shardRankingDetailsParent'>
                     <h3 className='shardTitle' >{Shards[shard].name}</h3>
-                    <div className='shardDescription' >{Shards[shard].description}</div>
+                    <div className={`shardDescription ${shardDetails ? '' : 'hidden'}`} >{Shards[shard].description}</div>
                 </div>
             </div>
         </div>
@@ -33,7 +31,7 @@ const IndividualShard = ({ shard, handleDrop, indx }) => {
 }
 
 const CreateGuideShardRankings = ({ shardRanking, setShardRanking }) => {
-
+    const [shardDetails, setShardDetails] = useState(false)
     const handleDrop = (shard, position) => {
         const heroShardsCopy = [...shardRanking]
         reorderArray(heroShardsCopy, shard.ind, position)
@@ -44,13 +42,21 @@ const CreateGuideShardRankings = ({ shardRanking, setShardRanking }) => {
         return array.splice(to, 0, array.splice(from, 1)[0])
     }
     return (
-        <div className='shardRankings'>
-            <h2 className='levelGridTitle'>Shard Rankings</h2>
-            <DndProvider backend={HTML5Backend}>
-                <div>
-                    {shardRanking.map((shard, key) => <IndividualShard key={key} shard={shard} handleDrop={handleDrop} indx={key} />)}
-                </div>
-            </DndProvider>
+        <div className='createGuideShardRankings'>
+            <div className='centerText shardRankingHeader'>
+                <h2 className='centerText bottomSpacing'>Shard Rankings</h2>
+                <div className='bottomSpacing'>Drop and drag the hero&apos;s Legendary Shards, sorted from best to worst</div>
+                <button onClick={() => setShardDetails(!shardDetails)}>{shardDetails ? 'Collapse Shards' : 'Expand Shards'}</button>
+            </div>
+            <div>
+                {shardRanking.map((shard, key) =>
+                    <IndividualShard
+                        key={key} shard={shard}
+                        handleDrop={handleDrop}
+                        indx={key}
+                        shardDetails={shardDetails}
+                    />)}
+            </div>
         </div>
     )
 }

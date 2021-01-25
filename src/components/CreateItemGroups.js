@@ -60,15 +60,8 @@ const GuideCreationSegment = ({ section, items, setItems }) => {
                         </div>
                     )
                 })}
-                {/* <div className='itemCell'>
-                    <img
-                        src={PlusSymbol}
-                        className='addItemIcon'
-                    />
-                    <div className='itemText additemText'>Add Item</div>
-                </div> */}
             </div>
-            <AddItemsSearch groupName={section.groupName} items={items} setItems={setItems}/>
+            <AddItemsSearch groupName={section.groupName} items={items} setItems={setItems} />
         </div>
     )
 }
@@ -81,8 +74,15 @@ const CreateItemGroups = ({ items, setItems }) => {
 
     return (
         <div className='guideItems'>
-            <h2 className='levelGridTitle'>Items</h2>
-            <FormikInput onSubmit={addSegment} buttonText='Add Section' uniqueValues={items.map(x => x.groupName)}/>
+            <div className='centerText'>
+                <h2 className='centerText bottomSpacing'>Items</h2>
+                <div className='bottomSpacing'>Type a section name in, then click the button</div>
+                <div className='bottomSpacing'>Then add as many items as needed to a section</div>
+            </div>
+            <div className='guideListDetails'>
+                <div style={{ marginTop: '25px' }} className='rightSpacing'>Section name:</div>
+                <FormikInput onSubmit={addSegment} buttonText='Add Section' uniqueValues={items.map(x => x.groupName)} />
+            </div>
             {items.map((section, key) => <GuideCreationSegment key={key} section={section} items={items} setItems={setItems} />)}
         </div>
     )

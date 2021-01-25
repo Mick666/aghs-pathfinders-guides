@@ -6,7 +6,7 @@ import '../../node_modules/react-select-search/style.css'
 import Shards from '../Shards'
 import Abilities from '../Abilities'
 
-const AddShardsSearch = ({ setShardCombinations, shardCombinations, groupName }) => {
+const AddShardsSearch = ({ setShardCombinations, shardCombinations, groupName, setLevelError }) => {
     const itemValues = Object.entries(Shards).map(item => {
         console.log(item[1])
         return { name: item[1].name, value: item[0], link: Abilities[item[1].skill].link }
@@ -29,8 +29,12 @@ const AddShardsSearch = ({ setShardCombinations, shardCombinations, groupName })
 
     function addShard(value) {
         const updatedSection = shardCombinations.filter(section => section.groupName === groupName.groupName)[0]
+        if (updatedSection.shards.some(shard => shard === value)) {
+            setLevelError('Can\'t add the same shard twice')
+            return
+        }
         updatedSection.shards = updatedSection.shards.concat(value)
-        setShardCombinations(shardCombinations.map(item => item.groupName === groupName ? updatedSection : item))
+        setShardCombinations(shardCombinations.map(shard => shard.groupName === groupName ? updatedSection : shard))
     }
 
     return (
@@ -46,41 +50,66 @@ const AddShardsSearch = ({ setShardCombinations, shardCombinations, groupName })
 
 }
 
-const ShardComboInput = ({ shardCombinations, addCombo, setShardCombinations, groupInd }) => {
+const ShardComboInput = ({ shardCombinations, setShardCombinations, groupInd, setLevelError }) => {
     return (
-        <div className='guideSection'>
-            <FormikTextField onSubmit={addCombo} />
-            <div className='guideItems'>
-                {groupInd.shards.map((x, key) => {
-                    return (
-                        <div key={key} className='itemCell'>
-                            <img
-                                src={Abilities[Shards[x].skill].link}
-                                className='itemIcon'
-                            />
-                            <div className='itemText'>{Shards[x].name}</div>
-                        </div>
-                    )
-                })}
+        <div className='createGuideShardComboInput'>
+            <div>
+                <div>Explanation:</div>
+                <FormikTextField className='rightSpacing' />
             </div>
-            <AddShardsSearch groupName={groupInd} shardCombinations={shardCombinations} setShardCombinations={setShardCombinations} />
+            <div className='createGuideShardCombos rightSpacing'>
+                <div>Shards:</div>
+                <div>
+                    {groupInd.shards.map((x, key) => {
+                        return (
+                            <div key={key} className='itemCell'>
+                                <img
+                                    src={Abilities[Shards[x].skill].link}
+                                    className='itemIcon'
+                                />
+                                <div className='itemText'>{Shards[x].name}</div>
+                            </div>
+                        )
+                    })}
+                </div>
+            </div>
+            <AddShardsSearch
+                groupName={groupInd}
+                shardCombinations={shardCombinations}
+                setShardCombinations={setShardCombinations}
+                setLevelError={setLevelError}
+            />
         </div>
     )
 }
 
 const CreateGuideShardCombos = ({ shardCombinations, setShardCombinations }) => {
-    function addCombo() {
-        // setShardCombinations(shardCombinations.concat({ description: event.inputValue, combination: [] }))
-        console.log(document.getElementsByClassName('formikTextField'))
+    const [error, setError] = useState('')
+    const setLevelError = (message) => {
+        setError(message)
+        setTimeout(() => setError(''), 2000)
     }
 
     function addComboInput() {
-        console.log([...document.getElementsByClassName('formikTextField')].map(x => x.value))
+        const latestNumber = shardCombinations[shardCombinations.length - 1].groupName + 1
+        setShardCombinations(shardCombinations.concat({ groupName: latestNumber, shards: [], description: '' }))
     }
     return (
         <div>
-            {shardCombinations.map((combo, ind) => <ShardComboInput groupInd={combo} shardCombinations={shardCombinations}  setShardCombinations={setShardCombinations} addCombo={addCombo} key={ind} />)}
-            <button onClick={addComboInput}>Add another combo</button>
+            <div className='centerText shardRankingHeader'>
+                <h2 className='centerText bottomSpacing'>Legendary Shard Combos</h2>
+                <div className='bottomSpacing'>If you know any powerful interactions between legendary shards, add an explanation and select the shards from the dropdown</div>
+                <button onClick={addComboInput}>Add another combo</button>
+                <div className='errorMessage'>{error}</div>
+            </div>
+            {shardCombinations.map((combo, ind) =>
+                <ShardComboInput
+                    groupInd={combo}
+                    shardCombinations={shardCombinations}
+                    setShardCombinations={setShardCombinations}
+                    setLevelError={setLevelError}
+                    key={ind}
+                />)}
         </div>
     )
 }

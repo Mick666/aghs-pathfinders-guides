@@ -46,6 +46,7 @@ function App() {
                     </Switch>
                 </div>
             </div>
+            <div className='spacing'></div>
         </Router>
     )
 }

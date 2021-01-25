@@ -51,28 +51,33 @@ const CreateGuideLevels = ({ hero, selectedTalents, levels, setTalents, setLevel
     }
     return (
         <div>
-            <div className='levelGridParent guideCreationLevels'>
-                <h2 className='levelGridTitle'>Levels</h2>
-                <div className={`errorMessage levelGridTitle ${typeof errorMessage === 'number' ? 'hideText' : ''}`}>{errorMessage}</div>
-                {levelGrid.map((skill, skillKey) => {
-                    return (
-                        <div key={skillKey} className='skillRowParent'>
-                            <div>
-                                <img className='abilityImage' src={Abilities[hero.abilities[skillKey]].link} />
-                                <h4 className='abilityTitle'>{Abilities[hero.abilities[skillKey]].name}</h4>
+            <div  className='guideCreationLevels'>
+                <div>
+                    <h2 className='centerText bottomSpacing'>Levels</h2>
+                    <div className='centerText bottomSpacing'>Click each box to show how to level each skill, and select the talents players should pick</div>
+                </div>
+                <div className={`errorMessage createGuideLevelTitle ${typeof errorMessage === 'number' ? 'hideText' : ''}`}>{errorMessage}</div>
+                <div className='createGuideLevelGridParent'>
+                    {levelGrid.map((skill, skillKey) => {
+                        return (
+                            <div key={skillKey} className='skillRowParent'>
+                                <div>
+                                    <img className='abilityImage' src={Abilities[hero.abilities[skillKey]].link} />
+                                    <h4 className='abilityTitle'>{Abilities[hero.abilities[skillKey]].name}</h4>
+                                </div>
+                                <div className='skillRow'>
+                                    {skill.map((level, levelKey) => {
+                                        return (
+                                            <div key={levelKey} className='levelCell' onClick={() => selectLevel(levelKey, skillKey)}>
+                                                <div className={`${levels[levelKey] === skillKey ? 'selectedAbility' : ''}`}>{levels[levelKey] === skillKey ? levelKey + 1 : ''}</div>
+                                            </div>
+                                        )
+                                    })}
+                                </div>
                             </div>
-                            <div className='skillRow'>
-                                {skill.map((level, levelKey) => {
-                                    return (
-                                        <div key={levelKey} className='levelCell' onClick={() => selectLevel(levelKey, skillKey)}>
-                                            <div className={`${levels[levelKey] === skillKey ? 'selectedAbility' : ''}`}>{levels[levelKey] === skillKey ? levelKey + 1 : ''}</div>
-                                        </div>
-                                    )
-                                })}
-                            </div>
-                        </div>
-                    )
-                })}
+                        )
+                    })}
+                </div>
             </div>
             <div className='talentParent'>
                 <table className='talentTree'>
@@ -81,16 +86,16 @@ const CreateGuideLevels = ({ hero, selectedTalents, levels, setTalents, setLevel
                         {hero.talents.map((talentRow, key) => {
                             return (
                                 <tr key={key}>
-                                    <td className={`talentCell ${selectedTalents[key] === talentRow[0] ? 'talentSelected' : ''}`}
-                                        onClick={() => selectTalents(talentRow[0], key)}
+                                    <td className={`talentCell ${talentRow[selectedTalents[key]] === talentRow[0] ? 'talentSelected' : ''}`}
+                                        onClick={() => selectTalents(0, key)}
                                     >
                                         {talentRow[0]}
                                     </td>
                                     <th className={`talentLevel talentLevel${key}`}>
                                         {talentRow[1]}
                                     </th>
-                                    <td className={`talentCell ${selectedTalents[key] === talentRow[2] ? 'talentSelected' : ''}`}
-                                        onClick={() => selectTalents(talentRow[2], key)}
+                                    <td className={`talentCell ${talentRow[selectedTalents[key]] === talentRow[2] ? 'talentSelected' : ''}`}
+                                        onClick={() => selectTalents(2, key)}
                                     >
                                         {talentRow[2]}
                                     </td>
