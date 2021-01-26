@@ -42,13 +42,13 @@ const GuideLevels = ({ levels, selectedTalents, hero }) => {
                         {hero.talents.map((talentRow, key) => {
                             return (
                                 <tr key={key}>
-                                    <td className={`talentCell ${selectedTalents[key] === talentRow[0] ? 'talentSelected' : ''}`}>
+                                    <td className={`talentCell ${talentRow[selectedTalents[key]] === talentRow[0] ? 'talentSelected' : ''}`}>
                                         {talentRow[0]}
                                     </td>
                                     <th className={`talentLevel talentLevel${key}`}>
                                         {talentRow[1]}
                                     </th>
-                                    <td className={`talentCell ${selectedTalents[key] === talentRow[2] ? 'talentSelected' : ''}`}>
+                                    <td className={`talentCell ${talentRow[selectedTalents[key]] === talentRow[2] ? 'talentSelected' : ''}`}>
                                         {talentRow[2]}
                                     </td>
                                 </tr>
@@ -129,7 +129,6 @@ const GuideSegment = ({ section }) => {
 }
 
 const Guide = ({ guide }) => {
-    console.log(guide)
     if (!guide) {
         return <div className='displayedGuide'></div>
     }

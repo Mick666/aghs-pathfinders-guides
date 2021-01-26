@@ -45,23 +45,36 @@ const AddItemsSearch = ({ setItems, items, groupName }) => {
 }
 
 const GuideCreationSegment = ({ section, items, setItems }) => {
+
+    function deleteItem(sectionToModify, key) {
+        const sectionWithoutItem = { ...sectionToModify }
+        sectionWithoutItem.items.splice(key, 1)
+        setItems(items.map(group => group.groupName === sectionWithoutItem.groupName ? sectionWithoutItem : group))
+    }
+
+    function deleteSection(sectionName) {
+        setItems(items.filter(item => item.groupName !== sectionName))
+    }
+
     return (
-        <div className='guideSection'>
+        <div className='createItemsSection'>
             <div className='guideSectionTitle'>{section.groupName}</div>
             <div className='guideItems'>
                 {section.items.map((x, key) => {
                     return (
-                        <div key={key} className='itemCell'>
+                        <div key={key} className='createGuideItemCell'>
                             <img
                                 src={Items[x].link}
                                 className='itemIcon'
                             />
                             <div className='itemText'>{Items[x].name}</div>
+                            <button className='removeItemButton' onClick={() => deleteItem(section, key)}  >X</button>
                         </div>
                     )
                 })}
             </div>
             <AddItemsSearch groupName={section.groupName} items={items} setItems={setItems} />
+            <button className='removeItemButton' onClick={() => deleteSection(section.groupName)}  >X</button>
         </div>
     )
 }

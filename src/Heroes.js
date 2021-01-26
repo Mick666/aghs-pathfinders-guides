@@ -124,7 +124,7 @@ const Heroes = [
             ['20 Movement Speed', '10', '+5 All Stats'],
         ],
         abilities: ['acornShot', 'bushwhack', 'scurry', 'sharpshooter', 'talentTree'],
-        shards: []
+        shards: ['aintNoFortunateOnes', 'wookieDoctrine', 'lookAtItGo', 'canadianHeritage', 'andISpeakForTheTrees', 'getNutted', 'smeltOfElderBerries', 'theresAMouseWithABowOverThere', 'overTheRiverAndThroughTheWoods', 'weveGottaGetOutOfThisPlace', 'sapperOfTomokan']
     },
     {
         id: 'Juggernaut',
@@ -166,7 +166,7 @@ const Heroes = [
             ['20 Movement Speed', '10', '+5 All Stats'],
         ],
         abilities: ['shadowraze', 'necromastery', 'presenceOfTheDarkLord', 'requiemOfSouls', 'talentTree'],
-        shards: ['oathboundRevenant', 'deathOfNight', 'happyHallowfiend', 'gluttonOfTheAbyss', 'requiemForADream', 'injusticeForAll', 'ozkavoshHospitality', 'conductorOfTheHellwardExpress', 'favorsOfRistful', 'soulOfAPoet'] 
+        shards: ['oathboundRevenant', 'deathOfNight', 'happyHallowfiend', 'gluttonOfTheAbyss', 'requiemForADream', 'injusticeForAll', 'ozkavoshHospitality', 'conductorOfTheHellwardExpress', 'favorsOfRistful', 'soulOfAPoet']
     },
     {
         id: 'Slark',
@@ -278,7 +278,7 @@ const Heroes = [
             ['20 Movement Speed', '10', '+5 All Stats'],
         ],
         abilities: ['thunderStrike', 'glimpse', 'kineticField', 'staticStorm', 'talentTree'],
-        shards: ['cloudCover', 'manaStorm', 'criticalStrike', 'loadedWeapon', 'blastInThePast', 'shockingTravel', 'electricFence', 'areaOfBliss', 'stayInTheZone', 'ringCeption', 'perfectStorm', 'fieldOfDreams', 'pacificStorm'] 
+        shards: ['cloudCover', 'manaStorm', 'criticalStrike', 'loadedWeapon', 'blastInThePast', 'shockingTravel', 'electricFence', 'areaOfBliss', 'stayInTheZone', 'ringCeption', 'perfectStorm', 'fieldOfDreams', 'pacificStorm']
     },
     {
         id: 'Jakiro',

@@ -2,7 +2,6 @@ import React from 'react'
 import { Formik, Field, Form } from 'formik'
 
 export const FormikInput = ({ onSubmit, buttonText, uniqueValues }) => {
-    console.log(uniqueValues)
     return (
         <Formik
             initialValues={{ inputValue: '' }}
@@ -51,7 +50,7 @@ export const FormikInput = ({ onSubmit, buttonText, uniqueValues }) => {
     )
 }
 
-export const FormikTextField = ({ onSubmit, buttonText }) => {
+export const FormikTextField = ({ onSubmit }) => {
     return (
         <Formik
             initialValues={{ inputValue: '' }}
@@ -74,10 +73,8 @@ export const FormikTextField = ({ onSubmit, buttonText }) => {
                 touched,
                 handleChange,
                 handleBlur,
-                handleSubmit,
-                isSubmitting,
             }) => (
-                <Form onSubmit={handleSubmit}>
+                <Form>
                     <Field
                         className='formikTextField'
                         type="inputValue"

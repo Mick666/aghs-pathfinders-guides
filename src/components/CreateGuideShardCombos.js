@@ -8,7 +8,6 @@ import Abilities from '../Abilities'
 
 const AddShardsSearch = ({ setShardCombinations, shardCombinations, groupName, setLevelError }) => {
     const itemValues = Object.entries(Shards).map(item => {
-        console.log(item[1])
         return { name: item[1].name, value: item[0], link: Abilities[item[1].skill].link }
     })
 
@@ -50,9 +49,21 @@ const AddShardsSearch = ({ setShardCombinations, shardCombinations, groupName, s
 
 }
 
-const ShardComboInput = ({ shardCombinations, setShardCombinations, groupInd, setLevelError }) => {
+const ShardComboInput = ({ shardCombinations, setShardCombinations, combo, setLevelError }) => {
+
+    function removeCombo(combo) {
+        console.log(combo, shardCombinations)
+        const comboForDeletion = shardCombinations[combo.groupName-1]
+        comboForDeletion.shards = []
+        comboForDeletion.deleted = true
+        console.log(comboForDeletion)
+        setShardCombinations(shardCombinations.map(x => x.groupName === combo.groupName ? comboForDeletion : x))
+    }
     return (
-        <div className='createGuideShardComboInput'>
+        <div
+            className='createGuideShardComboInput'
+            style={{ display: `${combo.deleted ? 'none' : 'grid'}` }}
+        >
             <div>
                 <div>Explanation:</div>
                 <FormikTextField className='rightSpacing' />
@@ -60,7 +71,7 @@ const ShardComboInput = ({ shardCombinations, setShardCombinations, groupInd, se
             <div className='createGuideShardCombos rightSpacing'>
                 <div>Shards:</div>
                 <div>
-                    {groupInd.shards.map((x, key) => {
+                    {combo.shards.map((x, key) => {
                         return (
                             <div key={key} className='itemCell'>
                                 <img
@@ -74,11 +85,12 @@ const ShardComboInput = ({ shardCombinations, setShardCombinations, groupInd, se
                 </div>
             </div>
             <AddShardsSearch
-                groupName={groupInd}
+                groupName={combo}
                 shardCombinations={shardCombinations}
                 setShardCombinations={setShardCombinations}
                 setLevelError={setLevelError}
             />
+            <button className='shardComboRemoveButton' onClick={() => removeCombo(combo)} >Remove</button>
         </div>
     )
 }
@@ -92,7 +104,7 @@ const CreateGuideShardCombos = ({ shardCombinations, setShardCombinations }) => 
 
     function addComboInput() {
         const latestNumber = shardCombinations[shardCombinations.length - 1].groupName + 1
-        setShardCombinations(shardCombinations.concat({ groupName: latestNumber, shards: [], description: '' }))
+        setShardCombinations(shardCombinations.concat({ groupName: latestNumber, shards: [], description: '', deleted: false }))
     }
     return (
         <div>
@@ -104,7 +116,7 @@ const CreateGuideShardCombos = ({ shardCombinations, setShardCombinations }) => 
             </div>
             {shardCombinations.map((combo, ind) =>
                 <ShardComboInput
-                    groupInd={combo}
+                    combo={combo}
                     shardCombinations={shardCombinations}
                     setShardCombinations={setShardCombinations}
                     setLevelError={setLevelError}

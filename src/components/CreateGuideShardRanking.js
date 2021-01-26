@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-import { DndProvider, useDrag, useDrop } from 'react-dnd'
-import { HTML5Backend } from 'react-dnd-html5-backend'
+import { useDrag, useDrop } from 'react-dnd'
 
 import Shards from '../Shards'
 import Abilities from '../Abilities'
 
 const IndividualShard = ({ shard, handleDrop, indx, shardDetails }) => {
+
+    //eslint-disable-next-line
     const [_, drag] = useDrag({
         item: { id: shard, type: 'shard', ind: indx }
     })
