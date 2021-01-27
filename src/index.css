@@ -215,6 +215,7 @@ table, td, th {
   background-color: rgb(44, 49, 55);
   color: rgb(110, 120, 126);
   text-shadow: 2px 2px 5px black;
+  width: 200px;
 }
 
 .talentSelected {
@@ -634,4 +635,8 @@ table, td, th {
 
 .hidden {
   display: none;
+}
+
+.talentMiddle {
+  width: 40px;
 }

@@ -3,7 +3,6 @@ import React from 'react'
 import Items from '../Items'
 import { FormikInput } from './FormikPremades'
 import SelectSearch from 'react-select-search'
-import '../../node_modules/react-select-search/style.css'
 
 const AddItemsSearch = ({ setItems, items, groupName }) => {
     const itemValues = Object.entries(Items).map(item => {

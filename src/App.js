@@ -4,7 +4,6 @@ import {
     BrowserRouter as Router,
     Switch, Route
 } from 'react-router-dom'
-import '../node_modules/react-image-gallery/styles/css/image-gallery.css'
 
 import Main from './components/Main'
 import HeroPage from './components/HeroPage'

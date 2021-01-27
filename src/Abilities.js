@@ -105,6 +105,10 @@ const Abilities = {
     voodooRestoration: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/1/11/Voodoo_Restoration_icon.png'), name: 'Voodoo Restoration' },
     maledict: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/4/42/Maledict_icon.png'), name: 'Maledict' },
     deathWard: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/c/cf/Death_Ward_icon.png'), name: 'Death Ward' },
+    icarusDive: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/0/00/Icarus_Dive_icon.png'), name: 'Icarus Dive' },
+    fireSpirits: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/c/cf/Fire_Spirits_icon.png'), name: 'Fire Spirits' },
+    sunRay: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/d/df/Sun_Ray_icon.png'), name: 'Sun Ray' },
+    supernova: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/a/aa/Supernova_icon.png'), name: 'Supernova' },
 }
 
 export default Abilities

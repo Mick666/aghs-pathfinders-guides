@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { FormikTextField } from './FormikPremades'
 import SelectSearch from 'react-select-search'
-import '../../node_modules/react-select-search/style.css'
 
 import Shards from '../Shards'
 import Abilities from '../Abilities'

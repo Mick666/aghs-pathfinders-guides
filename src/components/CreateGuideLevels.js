@@ -91,7 +91,7 @@ const CreateGuideLevels = ({ hero, selectedTalents, levels, setTalents, setLevel
                                     >
                                         {talentRow[0]}
                                     </td>
-                                    <th className={`talentLevel talentLevel${key}`}>
+                                    <th className={`talentMiddle talentLevel${key}`}>
                                         {talentRow[1]}
                                     </th>
                                     <td className={`talentCell ${talentRow[selectedTalents[key]] === talentRow[2] ? 'talentSelected' : ''}`}
