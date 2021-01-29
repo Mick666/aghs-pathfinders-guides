@@ -32,3 +32,31 @@ export const ALL_GUIDES = gql`
         }
     }
 `
+
+export const HERO_STATS = gql`
+    query {
+        allMatchData {
+            heroAsArray {
+                deaths
+                defeats
+                hero
+                totalGames
+                victories
+            }
+        }
+    }
+`
+
+export const SHARD_STATS = gql `
+    query {
+        allMatchData {
+            shardWinrates {
+                defeats
+                hero
+                shard
+                totalGames
+                victories
+            }
+        }
+    }
+`

@@ -85,16 +85,16 @@ const CreateGuideLevels = ({ hero, selectedTalents, levels, setTalents, setLevel
                         <th colSpan={3} className='talentHeader'>Talent Tree</th>
                         {hero.talents.map((talentRow, key) => {
                             return (
-                                <tr key={key}>
-                                    <td className={`talentCell ${talentRow[selectedTalents[key]] === talentRow[0] ? 'talentSelected' : ''}`}
+                                <tr key={key} className='talentTableEls'>
+                                    <td className={`talentTableEls talentCell ${talentRow[selectedTalents[key]] === talentRow[0] ? 'talentSelected' : ''}`}
                                         onClick={() => selectTalents(0, key)}
                                     >
                                         {talentRow[0]}
                                     </td>
-                                    <th className={`talentMiddle talentLevel${key}`}>
+                                    <td className={`talentTableEls talentMiddle talentLevel${key}`}>
                                         {talentRow[1]}
-                                    </th>
-                                    <td className={`talentCell ${talentRow[selectedTalents[key]] === talentRow[2] ? 'talentSelected' : ''}`}
+                                    </td>
+                                    <td className={`talentTableEls talentCell ${talentRow[selectedTalents[key]] === talentRow[2] ? 'talentSelected' : ''}`}
                                         onClick={() => selectTalents(2, key)}
                                     >
                                         {talentRow[2]}

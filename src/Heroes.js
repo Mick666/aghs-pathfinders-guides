@@ -1,6 +1,7 @@
 const Heroes = [
     {
         id: 'Axe',
+        name: 'Axe',
         image: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/2/23/Axe_icon.png',
         desc: 'Mogul Khan, the Axe, is a melee strength hero, infamous for creating chaos in battle and thriving off of it. Axe is commonly played as an initiator, as his potent disables can disrupt the enemy\'s formation and give his team openings in fights.',
         talents: [
@@ -14,7 +15,8 @@ const Heroes = [
             'hugePainInTheAxe', 'lowAxePectation', 'backInAxeTion', 'omnidirectionalAxeTravaganza', 'unforgettableAxePeriences', 'workplaceAxeCidents']
     },
     {
-        id: 'Legion Commander',
+        id: 'LegionCommander',
+        name: 'Legion Commander',
         image: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/a/a2/Legion_Commander_icon.png',
         desc: 'Tresdin, the Legion Commander, is a melee strength hero fitting the role of carry. A highly mobile and somewhat tanky hero, her skillset and gameplay revolve mainly around killing off targets and especially backliners and supports, with her ultimate, Duel.' +
         'Each successful Duel grants Tresdin permanent bonus damage. Though she is extremely skilled in "fair" one-on-one fights, Tresdin suffers when outnumbered and must choose her engagements carefully.',
@@ -29,6 +31,7 @@ const Heroes = [
     },
     {
         id: 'Magnus',
+        name: 'Magnus',
         image: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/b/ba/Magnus_icon.png',
         desc: 'Magnus, the Magnoceros, is a monstrous melee strength hero who is usually played as a ganker, initiator, or semi-carry. His ability to battle multiple heroes at once gives him an excellent presence in team fights.'+
         'In addition to his teamfight presence, he can buff allies or himself with bonus damage and cleave, capitalizing on his ability to group up multiple enemies.',
@@ -43,6 +46,7 @@ const Heroes = [
     },
     {
         id: 'Mars',
+        name: 'Mars',
         image: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/9/9d/Mars_icon.png',
         desc: 'Mars, the First Son of Heaven, is an aggressive melee strength hero who controls the battlefield with numerous knockbacks and impassable terrain.'+
         'Equipped with a large shield, his Bulwark passively blocks attacks from the front and sides, making him a very durable fighter in most situations.',
@@ -57,6 +61,7 @@ const Heroes = [
     },
     {
         id: 'Omniknight',
+        name: 'Omniknight',
         image: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e2/Omniknight_icon.png',
         desc: 'Purist Thunderwrath, the Omniknight, is a melee strength hero who is renowned for his ability to protect his allies, preventing the enemy from easily killing them.'+
         'A holy and courageous hero, Purist Thunderwrath is an adept support whose powerful spells give his team strong survivability.',
@@ -71,6 +76,7 @@ const Heroes = [
     },
     {
         id: 'Snapfire',
+        name: 'Snapfire',
         image: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/7/7a/Snapfire_icon.png',
         desc: 'Beatrix Snapfire, or simply Snapfire, is a ranged strength hero armed with a wide array of firepower, riding into battle on her dragon toad Mortimer.',
         talents: [
@@ -84,6 +90,7 @@ const Heroes = [
     },
     {
         id: 'Tidehunter',
+        name: 'Tidehunter',
         image: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/d/d5/Tidehunter_icon.png',
         desc: 'Leviathan, the Tidehunter, is a melee strength hero who is formidable due to his uncommonly tough hide and his ocean spells that sweep enemies upward.'+
         'He can be played as a support or as an offlane hero whose greatest strengths lie in being able to take heavy amounts of damage in the early game and the disabling powers of his spells.',
@@ -98,6 +105,7 @@ const Heroes = [
     },
     {
         id: 'Tusk',
+        name: 'Tusk',
         image: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/c/ce/Tusk_icon.png',
         desc: 'Ymir, the Tusk, is a melee strength hero whose array of icy disables makes him a very strong team initiator and ganker.'+
         'He has a damage nuke and a disable in Ice Shards, which lets him precisely place a barrier in an enemy\'s path, inhibiting their movement and blocking off their escape path.',
@@ -112,6 +120,7 @@ const Heroes = [
     },
     {
         id: 'Hoodwink',
+        name: 'Hoodwink',
         image: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/c/c9/Hoodwink_icon.png',
         desc: 'Hoodwink is a tricky ranged agility hero who runs wild through the trees of Mistwoods. Firing acorns from her arbalest, she creates new forests through which to Scurry.'+
         'For her foes, the woods are a dangerous place, full of  Bushwhack traps and vantage points for the  Sharpshooter to aim the ultimate crossbow shot. This crafty critter should never be underestimated.',
@@ -126,6 +135,7 @@ const Heroes = [
     },
     {
         id: 'Juggernaut',
+        name: 'Juggernaut',
         image: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/0/03/Juggernaut_icon.png',
         desc: 'Yurnero, the Juggernaut, is a melee agility hero whose abilities allow him to sprint into battle and recklessly devastate enemies in an impenetrable flurry of blades. \
         \nHis abilities grant invulnerability and spell immunity, turning him into an unstoppable force on a hairpin.',
@@ -139,7 +149,8 @@ const Heroes = [
         shards: ['studiedTheBlade', 'maskOfLeeroy', 'helicopter', 'letItRip', 'meatSpin', 'wrathOfGaia', 'timmothyTheBrave', 'badOmen', 'passTheGrass', 'armyOfTheIsle']
     },
     {
-        id: 'Phantom Assasin',
+        id: 'PhantomAssassin',
+        name: 'Phantom Assassin',
         image: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/8/8e/Phantom_Assassin_icon.png',
         desc: 'Mortred, the Phantom Assassin, is a melee agility hero fitting the role of hard carry. Mortred is best-known, and infamous for, her ability to inflict staggering damage with single strikes.'+
         'Her abilities synergize supremely well with each other, rendering her an extremely formidable foe once she has acquired the items she requires.',
@@ -153,7 +164,8 @@ const Heroes = [
         shards: ['aViewToAKill', 'quantumOfSolace', 'spectre', 'forYourEyesOnly', 'dieAnotherDay', 'ohMyGodSheKilledKenny', 'liveAndLetDie', 'theWorldIsNotEnough', 'licenseToKill', 'theLivingDaylights']
     },
     {
-        id: 'Shadow Fiend',
+        id: 'ShadowFiend',
+        name: 'Shadow Fiend',
         image: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/3/36/Shadow_Fiend_icon.png',
         desc: 'Nevermore, the Shadow Fiend, is a ranged agility hero possessing abilities that inflict superb burst damage from varying distances. Whether near or far, Shadow Fiend is able to release incredible'+
         'offensive power, both physical and magical. Shadow Fiend\'s true power comes from the souls he takes, making him more dangerous every time he kills.',
@@ -168,6 +180,7 @@ const Heroes = [
     },
     {
         id: 'Slark',
+        name: 'Slark',
         image: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/a/aa/Slark_icon.png',
         desc: 'Slark, the Nightcrawler, is a melee agility hero that utilizes his abilities to spring onto enemy heroes and slip out unhindered. He is a very mobile ganker, but remains attribute-wise below most other carries unless he is able to steal away attributes with his abilities.'+
         'Once he does, though, only a few heroes can hope to be as fearsome as the Nightcrawler - extremely mobile to the point of ever-presence, his strikes only hitting harder and faster.',
@@ -182,6 +195,7 @@ const Heroes = [
     },
     {
         id: 'Sniper',
+        name: 'Sniper',
         image: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/5/51/Sniper_icon.png',
         desc: 'Kardel Sharpeye, the Sniper, is a ranged agility hero who excels at dealing moderate to heavy damage from an incredible range. With no escape mechanism, poor mobility, and a low health pool, Sniper is'+
         'exceptionally frail at all stages of the game and vulnerable to enemies who confront him head-on. However, his abilities provide him both the means to keep his distance and systematically destroy his enemies from afar.',
@@ -195,7 +209,8 @@ const Heroes = [
         shards: ['explosiveShrapnel', 'hoHoHaHa', 'suppressiveFire', 'bulletDance', 'sayGoodbyeToYerHead', 'stoppinPower', 'purgeSprint', 'tacticalHop', 'armorPiercing', 'rapidFire', 'buckshot', 'hipfire', 'bigGameHunter']
     },
     {
-        id: 'Templar Assasin',
+        id: 'TemplarAssassin',
+        name: 'Templar Assassin',
         image: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/9/9c/Templar_Assassin_icon.png',
         desc: 'Lanaya, the Templar Assassin, is a very short-ranged agility hero capable of dealing huge bursts of physical damage to swathes of enemies with expert positioning and timing. Unlike most physical damage dealers, Lanaya'+
         'reaches her damage potential quite early and then scales up from that point with carry items, letting her gank with impunity throughout the mid-game, and her short attack range increases from being comparable to that of a melee hero to a'+
@@ -211,6 +226,7 @@ const Heroes = [
     },
     {
         id: 'Ursa',
+        name: 'Ursa',
         image: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/4/40/Ursa_icon.png',
         desc: 'Ulfsaar, the Ursa Warrior (or simply Ursa), is a melee agility hero whose abilities\' main focus is the increase of attack damage, allowing for some of the most impressive sustained damage in the entire game.'|
         'He specializes in increasing damage against one target. His abilities allow him to attack with almost maximum speed and gain bonus damage with each consecutive hit on a single target.',
@@ -225,6 +241,7 @@ const Heroes = [
     },
     {
         id: 'Venomancer',
+        name: 'Venomancer',
         image: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/2/25/Venomancer_icon.png',
         desc: 'Lesale Deathbringer, the Venomancer, is a ranged agility hero who is focused on dealing damage over time and slowing enemies down. While unassuming due to his mediocre stats and low attack range,'+
         'he can inflict surprising amounts of gradual damage with his poisonous abilities if left alone.',
@@ -239,6 +256,7 @@ const Heroes = [
     },
     {
         id: 'Viper',
+        name: 'Viper',
         image: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/5/5f/Viper_icon.png',
         desc: 'Viper, the Netherdrake, is a ranged agility hero who functions as an excellent nuker, ganker and carry due to his assortment of low-cooldown spells and debilitating attacks. His modus operandi is to whittle away his opponents\''+
         'vitality over long stretches of time while they fail to inflict fatal damage. To that end Viper wields magic-based abilities focused on inhibiting speed and defenses.',
@@ -253,8 +271,10 @@ const Heroes = [
     },
     {
         id: 'Weaver',
+        name: 'Weaver',
         image: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/0/09/Weaver_icon.png',
-        desc: 'Skitskurr, the Weaver, is a ranged agility hero, renowned for being one of the hardest heroes in the game to properly lock down and kill, despite his extreme fragility.',
+        desc: 'Yurnero, the Juggernaut, is a melee agility hero whose abilities allow him to sprint into battle and recklessly devastate enemies in an impenetrable flurry of blades. \
+        \nHis abilities grant invulnerability and spell immunity, turning him into an unstoppable force on a hairpin.',
         talents: [
             ['+1 Germinate Attack', '25', '+475 health'],
             ['+4 Swarm Attacks to Kill', '20', '+0.4 Swarm Armor Reduction'],
@@ -266,6 +286,7 @@ const Heroes = [
     },
     {
         id: 'Disruptor',
+        name: 'Disruptor',
         image: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/9/97/Disruptor_icon.png',
         desc: 'Disruptor, the Stormcrafter, is a ranged intelligence hero who requires good positioning to use his abilities effectively. His signature ability is Kinetic Field, a pseudo-disable that traps enemies within a small area for a long duration.'+
         'Combined with his Static Storm, Disruptor can act as the initiator for a teamfight, or supplement his teammates\' initiation very well.',
@@ -280,6 +301,7 @@ const Heroes = [
     },
     {
         id: 'Jakiro',
+        name: 'Jakiro',
         image: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/2/2f/Jakiro_icon.png',
         desc: 'Jakiro, the Twin Head Dragon, is a ranged intelligence hero who utilizes the powers of ice and fire with powerful linear area spells. He can freeze enemies in place with Ice Path, or slow them down with Dual Breath.'+
         'He is capable of dealing heavy damage throughout the game by locking enemies inside his Macropyre, and provides great pushing power with Liquid Fire.',
@@ -294,21 +316,8 @@ const Heroes = [
 
     },
     {
-        id: 'Phoenix',
-        image: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/1/14/Phoenix_icon.png',
-        desc: 'Phoenix is a flexible and unique ranged strength hero with a plethora of powerful abilities that inflict heavy damage over time on its opponents at the cost of its own health. It can be played as either a support, initiator, or semi-carry.',
-        talents: [
-            ['30% Cooldown Reduction', '25', 'Supernova Egg gains Spell Immunity'],
-            ['+40 Fire Spirits DPS', '20', '+1100 Icarus Dive Flight Distance'],
-            ['+500 Health', '15', '+20% Max Health for Supernova Egg'],
-            ['+6% Spell Amplification', '10', '+2s Icarus Dive Debuff Duration'],
-        ],
-        abilities: ['icarusDive', 'fireSpirits', 'sunRay', 'supernova', 'talentTree'],
-        shards: ['aggressiveTraining', 'luxMementoMori', 'eternalSunshineOfTheSpotlessMind', 'loopDeLoop', 'grassGrowsBirdFliesSunShines', 'galileosRevenge', 'fortunateSun', 'blackHoleSun', 'fabulousFowl', 'mileHighClub']
-
-    },
-    {
-        id: 'Ogre-Magi',
+        id: 'OgreMagi',
+        name: 'Ogre-Magi',
         image: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e0/Ogre_Magi_icon.png',
         desc: 'Aggron Stonebreak, the Ogre Magi, is a melee intelligence hero, famous for his random potential for extreme burst damage and his enormous health pool for an intelligence hero. He has good base attributes, and'+
         'some of the best attributes gain in the game, having a very high base strength, as well as the highest strength gain of any intelligence hero by far.',
@@ -323,7 +332,8 @@ const Heroes = [
 
     },
     {
-        id: 'Queen of Pain',
+        id: 'QueenofPain',
+        name: 'Queen of Pain',
         image: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/a/a1/Queen_of_Pain_icon.png',
         desc: 'Akasha, the Queen of Pain, is a ranged intelligence hero who uses her abilities to close in and deal huge area damage to the enemy. She is typically played in the middle lane as a ganker and semi-carry,'+
         'with her ability to appear in battle and deal damage in quick succession, as well as hunt down fleeing heroes with ease. ',
@@ -338,6 +348,7 @@ const Heroes = [
     },
     {
         id: 'Windranger',
+        name: 'Windranger',
         image: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/6/60/Windranger_icon.png',
         desc: 'Lyralei, the Windranger, is a ranged intelligence hero that uses powerful abilities in conjunction with her physical attack to take down enemies. Despite being an intelligence Hero, Windranger\'s'+
         'playstyle resembles that of an agility Hero, due in large part to her skill set. ',
@@ -351,7 +362,8 @@ const Heroes = [
         shards: ['fairWeatherFriends', 'windwardHaze', 'kentuckyWindage', 'autumnChill', 'sweepingGale', 'semiautomaticAssaultArchery', 'picnicInThePark', 'feelTheBreeze', 'arrowRain']
     },
     {
-        id: 'Winter Wyvern',
+        id: 'WinterWyvern',
+        name: 'Winter Wyvern',
         image: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/4/4a/Winter_Wyvern_icon.png',
         desc: 'Auroth, the Winter Wyvern, is a ranged intelligence hero whose arsenal of spells gives her powerful nuking capabilities. Usually played as a lane support, Winter Wyvern\'s spells allow her to fulfill a myriad of roles depending on what her team needs.',
         talents: [
@@ -364,7 +376,8 @@ const Heroes = [
         shards: ['secondDegreeBurn', 'arcticSplash', 'wintersBreath', 'coolAndCollected', 'chilledToTheBone', 'soothingBreeze', 'empoweredEmbrace', 'iceColdKilling', 'diamondize', 'sharingIsScaring', 'wintermancy', 'foulCursing']
     },
     {
-        id: 'Witch Doctor',
+        id: 'WitchDoctor',
+        name: 'Witch Doctor',
         image: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/3/33/Witch_Doctor_icon.png',
         desc: 'Zharvakko, the Witch Doctor, is a ranged intelligence hero who can take on the role of a support or a ganker. A master of voodoo curses and healing arts,'+
         'he possesses several positioning-dependent crowd control/damage spells as well as a heal that scales well into the late game.',

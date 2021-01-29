@@ -41,14 +41,14 @@ const GuideLevels = ({ levels, selectedTalents, hero }) => {
                         <th colSpan={3} className='talentHeader'>Talent Tree</th>
                         {hero.talents.map((talentRow, key) => {
                             return (
-                                <tr key={key}>
-                                    <td className={`talentCell ${talentRow[selectedTalents[key]] === talentRow[0] ? 'talentSelected' : ''}`}>
+                                <tr key={key} className='talentTableEls'>
+                                    <td className={`talentTableEls talentCell ${talentRow[selectedTalents[key]] === talentRow[0] ? 'talentSelected' : ''}`}>
                                         {talentRow[0]}
                                     </td>
-                                    <th className={`talentMiddle talentLevel${key}`}>
+                                    <td className={`talentTableEls talentMiddle talentLevel${key}`}>
                                         {talentRow[1]}
-                                    </th>
-                                    <td className={`talentCell ${talentRow[selectedTalents[key]] === talentRow[2] ? 'talentSelected' : ''}`}>
+                                    </td>
+                                    <td className={`talentTableEls talentCell ${talentRow[selectedTalents[key]] === talentRow[2] ? 'talentSelected' : ''}`}>
                                         {talentRow[2]}
                                     </td>
                                 </tr>

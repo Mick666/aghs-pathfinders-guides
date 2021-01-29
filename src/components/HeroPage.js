@@ -12,7 +12,7 @@ const HeroPage = () => {
     const hero = Heroes.filter(x => x.id === id)[0]
     const [currentGuide, setGuide] = useState(0)
 
-    const guides = useQuery(ALL_HEROGUIDES, { variables: { hero: hero.id } })
+    const guides = useQuery(ALL_HEROGUIDES, { variables: { hero: hero.name } })
 
     return (
         <div className='heroPage'>

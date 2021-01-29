@@ -48,21 +48,48 @@ code {
 }
 
 .listedGuides {
-  padding: 25px;
   border-bottom: solid 2px grey;
+  display: flex;
+  min-height: 66px;
 }
 
 .guideListDetails {
   display: flex;
+  justify-content: space-between;
+  padding-right: 3px;
 }
 
 .guideRating {
-  margin-left: 5px;
+  margin-left: 1px;
 }
 
 .guideCreationDate {
   font-size: smaller;
   color: grey;
+}
+
+.guideListImage {
+  width: 52px;
+  height: 52px;
+  border-radius: 50px;
+  margin: 5px;
+  margin-top: 7px;
+}
+
+.thumbIcon {
+ padding-top: 3px !important;
+ margin-left: 3px !important;
+ margin-right: 0px !important; 
+}
+
+.guideListText {
+  padding-left: 10px;
+  padding-top: 10px;
+  width: 100%;
+}
+
+.guideRatingPercentage {
+  display: flex;
 }
 
 .guideTitle {
@@ -204,7 +231,7 @@ code {
   border-collapse: collapse
 }
 
-table, td, th {
+.talentTableEls {
   border: 1px solid black;
   text-align: center;
 }
@@ -326,7 +353,7 @@ table, td, th {
 .header, .patreonImage {
   display: flex;
   width: 50%;
-  margin: 0 auto;
+  margin: 0 auto 0 614px;
   
 }
 
@@ -343,6 +370,7 @@ table, td, th {
   overflow: hidden;
   top: 0;
   z-index: 999;
+  height: 43px;
 }
 
 
@@ -362,6 +390,7 @@ table, td, th {
   line-height: 1;
   text-align: center;
   font-size: 18px;
+  margin-right: 100px;
 }
 
 .heroPage {
@@ -541,6 +570,9 @@ table, td, th {
 .bottomSpacing {
   padding-bottom: 25px;
 }
+.topSpacing {
+  padding-top: 25px;
+}
 .rightSpacing {
   padding-right: 25px;
 }
@@ -639,4 +671,13 @@ table, td, th {
 
 .talentMiddle {
   width: 40px;
+}
+
+.statsParent {
+  width: 80%;
+  margin: 0 auto;
+}
+.statTable {
+  width: 70%;
+  margin: 0 auto;
 }

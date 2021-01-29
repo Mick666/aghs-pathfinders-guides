@@ -4,6 +4,7 @@ import {
     BrowserRouter as Router,
     Switch, Route
 } from 'react-router-dom'
+import '../node_modules/semantic-ui-css/components/icon.css'
 
 import Main from './components/Main'
 import HeroPage from './components/HeroPage'
@@ -13,6 +14,7 @@ import HeroList from './components/HeroList'
 import Heroes from './Heroes'
 import AllGuides from './components/AllGuidesPage'
 import CreateGuide from './components/CreateGuide'
+import AllStats from './components/AllStats'
 
 function App() {
 
@@ -38,6 +40,9 @@ function App() {
                         </Route>
                         <Route path='/guides'>
                             <AllGuides />
+                        </Route>
+                        <Route path='/stats'>
+                            <AllStats />
                         </Route>
                         <Route path='/'>
                             <Main />
