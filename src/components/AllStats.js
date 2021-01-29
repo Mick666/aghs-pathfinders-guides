@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useQuery } from '@apollo/client'
 import { HERO_STATS, SHARD_STATS } from '../graphql/queries'
+import Heroes from '../Heroes'
 
 const AllStats = () => {
     const [visibleStats, setVisibleStats] = useState('hero')
@@ -8,9 +9,9 @@ const AllStats = () => {
     const heroStats = useQuery(HERO_STATS)
     const shardStats = useQuery(SHARD_STATS)
     const difficultyHeader = { 0: 'Grand Magus', 1: 'Apex Mage', 2: 'Sorcerer' }
+    const heroNames = Heroes.reduce((obj, item) => (obj[item.id] = { ...item }, obj), {})
+    console.log(shardStats)
     console.log(heroStats)
-    // console.log(shardStats)
-    console.log(visibleDifficulty)
 
     if (heroStats.loading || shardStats.loading) {
         return (
@@ -84,12 +85,13 @@ const AllStats = () => {
                                         <th>Hero</th>
                                     </tr>
                                     {[...difficulty.shardWinrates].sort((a, b) => (b.victories / b.defeats) - (a.victories / a.defeats)).map((x, ind) => {
-                                        const shardHero = heroStats.data.allMatchData[key].heroAsArray.filter(hero => hero.id === x.hero)[0]
+                                        // console.log(heroNames[x.hero].name)
+                                        const shardHero = heroStats.data.allMatchData[key].heroAsArray.filter(hero => hero.hero === heroNames[x.hero].name)[0]
                                         return (
                                             <tr key={ind}>
                                                 <td>{x.shard}</td>
                                                 <td>{shardHero ? (x.totalGames / shardHero.totalGames * 100).toString().slice(0, 4) + '%' : x.hero}</td>
-                                                <td>{(x.victories / x.defeats * 100).toString().slice(0, 4) + '%'}</td>
+                                                <td>{(x.victories / x.totalGames * 100).toString().slice(0, 4) + '%'}</td>
                                                 <td>{x.victories}</td>
                                                 <td>{x.totalGames}</td>
                                                 <td>{x.hero}</td>
