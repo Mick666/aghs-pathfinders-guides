@@ -43,7 +43,7 @@ const CreateGuide = () => {
             addGuide({
                 variables: {
                     title: guideName,
-                    createdAt: new Date().toLocaleString().split(',')[0],
+                    createdAt: new Intl.DateTimeFormat('en-GB').format(new Date()).toString().replace(/\/20([0-9]{2})/, '/$1'),
                     rating: [0, 1],
                     hero: heroSelection,
                     itemGroups: items,

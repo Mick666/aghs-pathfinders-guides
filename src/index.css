@@ -586,6 +586,10 @@ code {
   margin-left: 25px;
 }
 
+.leftAlignText {
+  text-align: left;
+}
+
 .createGuideLevelGridParent {
   margin-left: 125px;
 }
@@ -674,10 +678,69 @@ code {
 }
 
 .statsParent {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
 }
 .statTable {
-  width: 70%;
+  width: 100%;
   margin: 0 auto;
+}
+
+.shardStatsShardParent {
+  width: 700px;
+  height: 50px;
+  border: solid 1px grey;
+  border-collapse: collapse;
+  padding: 3px;
+}
+
+.shardStatsEl {
+  border: solid 1px grey;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.shardStatsShard {
+  display: flex;
+  flex-direction: row;
+}
+
+.heroStatsImage {
+  width: 80px;
+  height: 50px;
+  margin-right: 10px;
+  border-radius: 50px;
+}
+
+.shardStatsImage {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  border-radius: 50px;
+}
+
+.statsTitle {
+  text-transform: uppercase;
+  color: rgb(117, 102, 255);
+  font-size: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.statsSelectors {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-bottom: 25px;
+}
+
+.statsHeader {
+  border-top: solid 1px grey;
+  border-left: solid 1px grey;
+  border-right: solid 1px grey;
+  width: 1270px;
+}
+
+.statsSelect {
+  margin-left: 10px;
 }
