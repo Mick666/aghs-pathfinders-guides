@@ -350,11 +350,15 @@ code {
   border-color: rgb(126, 116, 102);
 }
 
-.header, .patreonImage {
+.header {
   display: flex;
   width: 50%;
   margin: 0 auto 0 614px;
-  
+}
+
+.patreonImage {
+  width: 50%;
+  margin: 0 auto 0 314px;
 }
 
 .patreonImage {

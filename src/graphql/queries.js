@@ -43,6 +43,13 @@ export const HERO_STATS = gql`
                 totalGames
                 victories
             }
+            shardWinrates {
+                defeats
+                hero
+                shard
+                totalGames
+                victories
+            }
         }
     }
 `
