@@ -669,4 +669,6 @@ const Heroes = [
 
 ]
 
+export const heroNames = Heroes.reduce((obj, item) => (obj[item.id] = { ...item }, obj), {})
+
 export default Heroes

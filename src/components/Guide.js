@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { Loader } from 'semantic-ui-react'
+
 import Items from '../Items'
 import Abilities from '../Abilities'
 import Heroes from '../Heroes'
@@ -130,7 +132,7 @@ const GuideSegment = ({ section }) => {
 
 const Guide = ({ guide }) => {
     if (!guide) {
-        return <div className='displayedGuide'></div>
+        return <div className='displayedGuide'><Loader active inverted>Loading</Loader></div>
     }
 
     const [currentTab, setTab] = useState('Items')

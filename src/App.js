@@ -5,6 +5,7 @@ import {
     Switch, Route
 } from 'react-router-dom'
 import '../node_modules/semantic-ui-css/components/icon.css'
+import '../node_modules/semantic-ui-css/components/loader.css'
 
 import Main from './components/Main'
 import HeroPage from './components/HeroPage'

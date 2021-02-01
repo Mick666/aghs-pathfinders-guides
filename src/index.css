@@ -25,14 +25,11 @@ code {
   background-image: linear-gradient(to bottom, #091020, #0d1529);
   width: 1272px;
   margin: 0 auto;
-  margin-top: 43px;
+  margin-top: 77px;
   bottom: 0;
   padding: 25px;
   min-height: 1000px;
-  box-shadow:
-  inset #555757 0 0 0 3px, 
-  inset #484949 0 0 0 1px, 
-  inset #2c2c2c 0 0 0 6px;
+  border: solid 1px rgb(136, 127, 111);
 }
 
 .cleanLink {
@@ -353,6 +350,7 @@ code {
 .header {
   display: flex;
   width: 50%;
+  height: 80px;
   margin: 0 auto 0 614px;
 }
 
@@ -374,12 +372,12 @@ code {
   overflow: hidden;
   top: 0;
   z-index: 999;
-  height: 43px;
+  height: 75px;
 }
 
 
 .headerLinkParent {
-  padding-top: 8px;
+  padding-top: 28px;
   display: flex;
 }
 
@@ -388,12 +386,11 @@ code {
 }
 
 .headerTitle {
-  font-family: 'Helvetica Neue', sans-serif;
-  font-weight: bold;
-  letter-spacing: -1px;
-  line-height: 1;
-  text-align: center;
-  font-size: 18px;
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 30px;
+  letter-spacing: -2px;
+  border-bottom: 2px solid black;
+  text-transform: uppercase;
   margin-right: 100px;
 }
 
@@ -742,9 +739,53 @@ code {
   border-top: solid 1px grey;
   border-left: solid 1px grey;
   border-right: solid 1px grey;
-  width: 1270px;
+  width: 1198px;
+}
+
+.headerMargin {
+  margin-right: 600px;
 }
 
 .statsSelect {
   margin-left: 10px;
+}
+
+.statsHeroFilterParent, .statsDifficultyFilterParent {
+  width: 25%;
+}
+
+.statsTabs {
+  display: flex;
+  flex-direction: row;
+  width: 450px;
+}
+
+.statTab {
+  font-weight: bold;
+  padding-top: 13px;
+  text-align: center;
+  background: #343436;
+  color: #fff;
+  border-radius: 30px;
+  height: 100px;
+  width: 50%;
+}
+
+.statTab.active {
+  background: #fff;
+  color: #000;
+}
+
+.tabContent {
+  position: relative;
+  width: 1200px;
+  height: auto;
+  margin-top: -50px;
+  background: #fff;
+  color: #000;
+  border-radius: 30px;
+  z-index: 1000;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.4);
+  padding: 30px;
+  margin-bottom: 50px;
 }
