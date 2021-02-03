@@ -40,7 +40,9 @@ const GuideLevels = ({ levels, selectedTalents, hero }) => {
             <div className='talentParent'>
                 <table className='talentTree'>
                     <tbody>
-                        <th colSpan={3} className='talentHeader'>Talent Tree</th>
+                        <tr>
+                            <th colSpan={3} className='talentHeader'>Talent Tree</th>
+                        </tr>
                         {hero.talents.map((talentRow, key) => {
                             return (
                                 <tr key={key} className='talentTableEls'>

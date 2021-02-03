@@ -21,8 +21,7 @@ code {
 }
 
 .main {
-  /* background-color: #091020; */
-  background-image: linear-gradient(to bottom, #091020, #0d1529);
+  background-color: #091020;
   width: 1272px;
   margin: 0 auto;
   margin-top: 77px;
@@ -349,18 +348,9 @@ code {
 
 .header {
   display: flex;
-  width: 50%;
+  width: 1272px;
   height: 80px;
-  margin: 0 auto 0 614px;
-}
-
-.patreonImage {
-  width: 50%;
-  margin: 0 auto 0 314px;
-}
-
-.patreonImage {
-  margin-top: 50px;
+  margin: 0 auto;
 }
 
 .headerDiv {
@@ -376,13 +366,33 @@ code {
 }
 
 
-.headerLinkParent {
+.headerBar {
   padding-top: 28px;
   display: flex;
 }
 
-.headerLinks {
+.headerLinkParent {
+  display: flex;
+  flex-direction: column;
   margin-left: 20px;
+}
+
+.headerLinks {
+  font-family: "Montserrat";
+  font-weight: bold;
+  font-size: 18px;
+  color: grey;
+}
+
+.headerLinks.active {
+  color: white;
+}
+
+.headerCurrentPage.active {
+  width: 75%;
+  background-color: #428BFF;
+  height: 4px;
+  margin: 0 auto;
 }
 
 .headerTitle {
@@ -421,12 +431,8 @@ code {
   flex-wrap: wrap;
 }
 
-.heroListTitle, .heroText, .mainText, .allGuides {
+.heroListTitle, .heroText, .allGuides {
   text-align: center;
-}
-
-.mainText {
-  padding-bottom: 15px;
 }
 
 .heroText {
@@ -449,15 +455,263 @@ code {
   margin: -19px -19px 30px -19px;
 }
 
-.image-gallery {
-  margin: 25px;
+.mainPage {
+  position: relative;
+  height: 1100px;
+  margin: -25px;
 }
 
-.mainPageTitle {
-  font-size: 50px;
-  padding-top: 25px;
-  padding-bottom: 25px;
+.mainPageTopBar {
+  background-color: black;
+  position: absolute;
+  width: 987px;
+  height: 198px;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  padding-left: 2px;
 }
+
+.recentContentContainer {
+  width: 491px;
+  height: 99%;
+  background: url(https://www.dotafire.com/css/img/bg-box-p.png) repeat scroll center top #0f0f0f;
+  border: solid 1px darkgrey;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.recentGuidesContainer {
+  background-color: black;
+  margin-top: 0px;
+  z-index: 10;
+}
+
+.recentGuideIndiv {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid rgb(131, 122, 107);
+}
+
+.recentGuideIndiv div {
+  padding-left: 10px;
+}
+
+.recentGuideImage {
+  border: solid 1px rgb(132, 123, 108);
+  width: 60px;
+  height: 45px;
+}
+
+.recentGuideTitle {
+  color: rgb(196, 183, 161);
+  font-weight: bold;
+}
+
+.recentGuidesTabs {
+  display: flex;
+  flex-direction: row;
+  margin-top: 7px;
+}
+
+#recentGuidesNewest {
+  margin-left: 150px;
+}
+
+#recentGuidesTop {
+  margin-left: 5px;
+  margin-right: 10px;
+}
+
+#recentGuidesNewest, #recentGuidesTop {
+  background-color: rgb(11, 14, 14);
+  opacity: 0.7;
+  padding: 15px 15px 5px;
+  z-index: 0;
+}
+
+#recentGuidesTop.active, #recentGuidesNewest.active {
+  opacity: 1;
+  border-bottom: 3px solid rgb(132, 123, 108);
+}
+
+#recentGuidesTitle {
+  line-height: 23px;
+  color: rgb(177, 170, 158);
+  padding: 11px 0 10px 10px;
+  font-weight: 900;
+}
+
+#placeholderGames {
+  height: 100%;
+  background-color: black;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.mainPageSidebar {
+  background-color: #14254b;
+  width: 25%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-left: solid black 2px;
+}
+
+.mainPageNewsContainer {
+  background-color: #091020;
+  position: absolute;
+  top: 200px;
+  height: 900px;
+  width: 959px;
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.mainPageNewsContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.changeLogItem {
+  background-color: #111e3b;
+  border-width: 3px;
+  border-style: solid;
+  border-image: 
+    linear-gradient(
+      to bottom, 
+      red, 
+      rgba(0, 0, 0, 0)
+    ) 1 100%;
+  margin-bottom: 25px;
+}
+
+.changeLogTitle {
+  padding-left: 25px;
+  padding-top: 15px;
+  font-size: 21px;
+  margin-bottom: 10px;
+}
+
+.changeLogList {
+  color: grey;
+}
+
+#changelogTitle {
+  font-size: 25px;
+  width: 100%;
+  background-color: rgb(78, 78, 78);
+  padding: 5px;
+  padding-right: 25px;
+  padding-left: 15px;
+  color:rgb(181, 186, 189);
+  margin-left: -15px;
+  margin-top: 0px;
+  font-family: "Trebuchet MS", sans-serif;
+  border-bottom: solid 3px rgb(36, 36, 36);
+  border-top: solid 3px rgb(36, 36, 36);
+}
+
+.steamworkshopIcon {
+  width: 300px;
+  height: 375px;
+  background-color: white;
+  border-radius: 10px;
+  margin: 50px auto 0px;
+}
+
+.steamWorkshopImg {
+  width: 300px;
+  height: 375px;
+}
+
+.discordIcon {
+  width: 300px;
+  height: 150px;
+  background-color: #333;
+  border-radius: 10px;
+  margin: 50px auto 10px;
+  position: relative;
+}
+
+.discordImage {
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+}
+
+.discordButton {
+  background-color: #7289DA;
+  text-align: center;
+  padding: 15px 0;
+  position: absolute;
+  bottom: 12px;
+  left: 38px;
+  border-radius: 5px;
+  width: 75%;
+  font-weight: bold;
+}
+
+.discordButton:hover {
+  background-color: #4e66bb;
+}
+
+.discordDetailsParent {
+  margin: 30px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  font-weight: bold;
+}
+
+.discordText {
+  margin-left: 20px;
+}
+
+.patreonSidebar {
+  width: 300px;
+  height: 100px;
+  background-color: rgb(5, 45, 73);
+  border-radius: 10px;
+  margin: 50px auto 10px;
+  position: relative;
+}
+
+.patreonImage {
+  width: 75px;
+  height: 75px;
+  position:absolute;
+  top: 15px;
+  left: 11px;
+  z-index: 1000;
+}
+
+#patreonSupportText {
+  font-family: 'Permanent Marker', cursive;
+  position: absolute;
+  top: 20px;
+  left: 76px;
+  font-size: 25px;
+  background-color: rgb(56, 178, 252);
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 25px;
+  border-radius: 5px;
+}
+
+#patreonEndText {
+  font-family: 'Permanent Marker', cursive;
+  position: absolute;
+  top: 50px;
+  left: 85px;
+}
+
 
 .addItemIcon {
   width: 50px;
@@ -706,6 +960,10 @@ code {
   flex-direction: row;
 }
 
+.shardStatsText {
+  display: inline-grid;
+}
+
 .heroStatsImage {
   width: 80px;
   height: 50px;
@@ -772,7 +1030,7 @@ code {
 }
 
 .statTab.active {
-  background: #fff;
+  background:#fff;
   color: #000;
 }
 
@@ -784,7 +1042,7 @@ code {
   background: #fff;
   color: #000;
   border-radius: 30px;
-  z-index: 1000;
+  z-index: 980;
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.4);
   padding: 30px;
   margin-bottom: 50px;

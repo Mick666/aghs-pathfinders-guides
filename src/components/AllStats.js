@@ -203,7 +203,7 @@ const AllStats = () => {
                                                         <td className='shardStatsShardParent'>{Shards[shard.shard] ?
                                                             <div className='shardStatsShard'>
                                                                 <img className='shardStatsImage' src={Abilities[Shards[shard.shard].skill].link} />
-                                                                <div>
+                                                                <div className='shardStatsText'>
                                                                     <b className='shardTitle leftAlignText'>{Shards[shard.shard].name}</b>
                                                                     <div className={`${hoveredElement === shard.shard ? '' : 'hidden'} leftAlignText`}>{Shards[shard.shard].description}</div>
                                                                 </div>
