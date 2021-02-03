@@ -17,21 +17,21 @@ const Main = () => {
                         src='https://steamuserimages-a.akamaihd.net/ugc/1747928426845848464/3329687EEE16D6D68348465EFEAF392347899FA5/'
                     />
                 </a>
-                <a className='discordIcon cleanLink' href='https://steamcommunity.com/linkfilter/?url=https://discord.gg/SwjCcH4'>
+                <a className='discordIcon cleanLink' href='https://discord.gg/SwjCcH4'>
                     <div className='discordDetailsParent'>
                         <img className='discordImage' src='https://discordapp.com/assets/dd4dbc0016779df1378e7812eabaa04d.png' />
                         <div className='discordText'>Join the Aghanim&apos;s Pathfinders discord</div>
                     </div>
                     <span className='discordButton'>Join Server</span>
                 </a>
-                <a className='patreonSidebar' href='https://steamcommunity.com/linkfilter/?url=https://www.patreon.com/bePatron?u=24240916'>
+                <a className='patreonSidebar' href='https://www.patreon.com/bePatron?u=24240916'>
                     <img src='https://cdn.iconscout.com/icon/free/png-256/patreon-1693553-1442594.png' className='patreonImage' />
                     <div id='patreonSupportText'>support the mod</div>
                     <div id='patreonEndText'>and get cosmetic rewards</div>
                 </a>
             </div>
+            <h2 id='changelogTitle'>RECENT CHANGES</h2>
             <div className='mainPageNewsContainer'>
-                <h2 id='changelogTitle'>RECENT CHANGES</h2>
                 {changeLog.map((log, key) => <ChangeLog changeLog={log} key={key} />)}
             </div>
         </div>
