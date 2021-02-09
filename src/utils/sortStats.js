@@ -1,7 +1,7 @@
 import Shards from '../Shards'
 import { heroNames } from '../Heroes'
 
-function sortStats(stats, results, setStats, setSorting, heroSorting, shardSorting, category, heroes, filterSort) {
+function sortStats(stats, rawData, setStats, setSorting, heroSorting, shardSorting, category, heroes, filterSort) {
     switch (category) {
     case 'VICS':
         if (heroes && heroSorting[0] !== 'VICS'|| filterSort && shardSorting[1] === 'DESC' || !heroes && shardSorting[0] !== 'VICS' ) {
@@ -36,10 +36,10 @@ function sortStats(stats, results, setStats, setSorting, heroSorting, shardSorti
                 return heroes ?
                     {
                         ...difficulty,
-                        heroAsArray: results.data.allMatchData[index].heroAsArray
+                        heroAsArray: rawData[index].heroAsArray
                     } : {
                         ...difficulty,
-                        shardWinrates: results.data.allMatchData[index].shardWinrates
+                        shardWinrates: rawData[index].shardWinrates
                     }
             })
             setStats(sortedStats)
@@ -78,10 +78,10 @@ function sortStats(stats, results, setStats, setSorting, heroSorting, shardSorti
                 return heroes ?
                     {
                         ...difficulty,
-                        heroAsArray: results.data.allMatchData[index].heroAsArray
+                        heroAsArray: rawData[index].heroAsArray
                     } : {
                         ...difficulty,
-                        shardWinrates: results.data.allMatchData[index].shardWinrates
+                        shardWinrates: rawData[index].shardWinrates
                     }
             })
             setStats(sortedStats)
@@ -111,7 +111,7 @@ function sortStats(stats, results, setStats, setSorting, heroSorting, shardSorti
             const sortedStats = [...stats].map((difficulty, index) => {
                 return {
                     ...difficulty,
-                    heroAsArray: results.data.allMatchData[index].heroAsArray
+                    heroAsArray: rawData[index].heroAsArray
                 }
             })
             setStats(sortedStats)
@@ -150,10 +150,10 @@ function sortStats(stats, results, setStats, setSorting, heroSorting, shardSorti
                 return heroes ?
                     {
                         ...difficulty,
-                        heroAsArray: results.data.allMatchData[index].heroAsArray
+                        heroAsArray: rawData[index].heroAsArray
                     } : {
                         ...difficulty,
-                        shardWinrates: results.data.allMatchData[index].shardWinrates
+                        shardWinrates: rawData[index].shardWinrates
                     }
             })
             setStats(sortedStats)
@@ -183,7 +183,7 @@ function sortStats(stats, results, setStats, setSorting, heroSorting, shardSorti
             const sortedStats = [...stats].map((difficulty, index) => {
                 return {
                     ...difficulty,
-                    shardWinrates: results.data.allMatchData[index].shardWinrates
+                    shardWinrates: rawData[index].shardWinrates
                 }
             })
             setStats(sortedStats)
@@ -213,7 +213,7 @@ function sortStats(stats, results, setStats, setSorting, heroSorting, shardSorti
             const sortedStats = [...stats].map((difficulty, index) => {
                 return {
                     ...difficulty,
-                    shardWinrates: results.data.allMatchData[index].shardWinrates
+                    shardWinrates: rawData[index].shardWinrates
                 }
             })
             setStats(sortedStats)

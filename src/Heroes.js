@@ -1,8 +1,11 @@
+import AxeBanner from './data/heroImages/AxeBanner.png'
+
 const Heroes = [
     {
         id: 'Axe',
         name: 'Axe',
         image: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/2/23/Axe_icon.png',
+        banner: 'https://7wallpapers.net/wp-content/uploads/18_Dota2-Axe.jpg',
         desc: 'Mogul Khan, the Axe, is a melee strength hero, infamous for creating chaos in battle and thriving off of it. Axe is commonly played as an initiator, as his potent disables can disrupt the enemy\'s formation and give his team openings in fights.',
         talents: [
             ['+100 Battle Hunger DPS', '25', '+800 Berserker\'s Call'],
@@ -384,6 +387,7 @@ const Heroes = [
     {
         id: 'Ursa',
         name: 'Ursa',
+        banner: 'https://7wallpapers.net/wp-content/uploads/1_Dota2-Ursa.jpg',
         image: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/4/40/Ursa_icon.png',
         desc: 'Ulfsaar, the Ursa Warrior (or simply Ursa), is a melee agility hero whose abilities\' main focus is the increase of attack damage, allowing for some of the most impressive sustained damage in the entire game.' |
             'He specializes in increasing damage against one target. His abilities allow him to attack with almost maximum speed and gain bonus damage with each consecutive hit on a single target.',

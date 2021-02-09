@@ -3,7 +3,7 @@ import { Icon } from 'semantic-ui-react'
 
 import Heroes from '../Heroes'
 
-const GuideList = ({ currentGuide, setGuide, guides }) => {
+const GuideList = ({ currentGuide, setGuide, guides, forHeroPage }) => {
     if (!guides || guides.length === 0) {
         return (
             <div className='guideListParent'>
@@ -14,7 +14,6 @@ const GuideList = ({ currentGuide, setGuide, guides }) => {
         <div className='guideListParent'>
             {guides.map((guide, key) => {
                 const Hero = Heroes.filter(hero => hero.id === guide.hero)[0]
-                console.log(guide.rating)
                 const percentage = guide.rating[0] === 0 ? '100%' : (guide.rating[1] / guide.rating[0] * 100).toString().slice(0, 4) + '%'
                 return (
                     <div
@@ -23,7 +22,7 @@ const GuideList = ({ currentGuide, setGuide, guides }) => {
                         onClick={() => setGuide(Number(key))}
                         data-index={key}
                     >
-                        <img className='guideListImage' src={Hero.image} ></img>
+                        {forHeroPage ? null : <img className='guideListImage' src={Hero.image} ></img>}
                         <div className='guideListText'>
                             <b>{guide.title}</b>
                             <div className='guideListDetails'>

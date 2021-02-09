@@ -31,6 +31,53 @@ code {
   border: solid 1px rgb(136, 127, 111);
 }
 
+.bottomSpacing {
+  padding-bottom: 25px;
+}
+
+.topSpacing {
+  padding-top: 25px;
+}
+
+.rightSpacing {
+  padding-right: 25px;
+}
+
+.rightMarginSpacing {
+  margin-right: 25px;
+}
+
+.leftSpacing {
+  padding-left: 25px;
+}
+
+.leftMarginSpacing {
+  margin-left: 25px;
+}
+
+.leftAlignText {
+  text-align: left;
+}
+
+.spacing {
+  height: 200px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
+}
+
+
 .cleanLink {
   color: white;
   text-decoration: none;
@@ -38,15 +85,25 @@ code {
 
 .guideGrid {
   display: grid;
-  grid-template-columns: 250px auto;
+  grid-template-columns: 300px auto;
   grid-template-rows: auto;
   min-height: 1000px;
+  background-color: rgb(23, 23, 23);
 }
 
 .listedGuides {
-  border-bottom: solid 2px grey;
   display: flex;
   min-height: 66px;
+  background: url(https://www.dotafire.com/css/img/bg-box-p.png) repeat scroll center top #0f0f0f;
+  color: white;
+  border: solid 0.5px rgb(221, 220, 220);
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+
+
+.guideListParent {
+  border-color: rgb(126, 116, 102);
 }
 
 .guideListDetails {
@@ -86,6 +143,7 @@ code {
 
 .guideRatingPercentage {
   display: flex;
+  margin-right: 50px;
 }
 
 .guideTitle {
@@ -105,15 +163,44 @@ code {
 }
 
 .guideSection {
-  background-color: rgb(12, 24, 41);
   display: inline-block;
   margin: 15px;
   padding: 13px;
   padding-bottom: 25px;
+  position: relative;
+  margin-right: 72px;
 }
 
 .guideSectionTitle {
   padding-bottom: 5px;
+  color: #adadad;
+  font-size: 17px;
+  text-transform: uppercase;
+}
+
+.guideItems {
+  z-index: 50;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.guideSectionBackground {
+  background-image: linear-gradient(to bottom, rgb(23, 23, 23), rgba(38, 38, 38));;
+  position: absolute;
+  bottom: 25px;
+  height: 50px;
+  width: 100%;
+  z-index: 0;
+}
+
+.itemGroupContainer {
+  display: flex;
+  flex-direction: column;
+  padding-left: 25px;
+  padding-right: 50px;
 }
 
 .itemIcon {
@@ -136,32 +223,8 @@ code {
   word-break: break-word;
 }
 
-.guideListParent {
-  border-color: rgb(126, 116, 102);
-  border-top: solid 1px;
-  border-right: solid 1px;
-}
-
 .displayedGuide {
   border-color: rgb(126, 116, 102);
-  border-top: solid 1px;
-}
-
-.guideTabs {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  margin: 0 auto;
-  margin-bottom: 35px;
-  background-color: rgb(22, 34, 55);
-  justify-content: space-evenly;
-}
-
-.guideTabLink {
-  width: 100%;
-  border: solid 1px;
-  border-top: solid 0px;
-  text-align: center;
 }
 
 .levelGridParent {
@@ -292,12 +355,12 @@ code {
   background-image: linear-gradient(to right, rgb(60, 59, 65), rgba(27, 26, 32, 0));
   border-bottom: solid 1px white;
   border-top: solid 1px white;
+  border-left: solid 1px white;
   border-collapse: collapse;
 }
 
-.shardRankings, .shardComboParent {
-  margin: 0px;
-  margin-top: -35px;
+.shardRankings {
+  margin-left: 20px;
 }
 
 .shardComboDescription {
@@ -377,6 +440,14 @@ code {
   margin-left: 20px;
 }
 
+.heroImages {
+  font-family: "Montserrat";
+  font-weight: bold;
+  font-size: 18px;
+  color: grey;
+  padding: 10px;
+}
+
 .headerLinks {
   font-family: "Montserrat";
   font-weight: bold;
@@ -409,13 +480,43 @@ code {
 }
 
 
-.heroHeader {
-  display: flex;
+.heroCurrentTab.active {
+  width: 50%;
+  /* background-color: #428BFF; */
+  height: 4px;
 }
 
-.heroHeaderImage {
-  margin: 20px;
-  margin-top: 50px;
+.guideTabLinkParent {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+
+.heroHeader {
+  position: relative;
+  height: 600px;
+  background-size: 100% 600px;
+  background-repeat: no-repeat;
+}
+
+.heroTitle {
+  font-size: 45px;
+  font-family: "Trebuchet MS", sans-serif;
+  text-shadow: 5px 5px 5px #000;
+}
+
+.heroCurrentViewTabs {
+  padding-top: 10px;
+}
+
+.heroHeaderTabs {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 50px;
+  left: 25px;
 }
 
 .activeTab {
@@ -423,7 +524,10 @@ code {
 }
 
 .activeGuide {
-  background-color: #093e7e;
+  background: white;
+  color: black;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
 }
 
 .heroListDiv {
@@ -444,6 +548,23 @@ code {
   margin: 0 auto;
 }
 
+.guideTabs {
+  text-align: left;
+  display: inline-block;
+}
+
+.guideTabLink {
+  font-family: "Montserrat";
+  font-weight: bold;
+  font-size: 18px;
+  color: grey;
+}
+
+.guideTabLink.active {
+  color: white;
+  border-bottom: solid 4px #428BFF;
+}
+
 .heroListTitle {
   background-color: #152034;
   border-bottom: solid 1px;
@@ -455,9 +576,39 @@ code {
   margin: -19px -19px 30px -19px;
 }
 
+.heroStatsContainer {
+  height: 100%;
+  background-color: rgb(23, 23, 23);
+  color: white;
+}
+
+.heroStats {
+  margin: 0 auto;
+}
+
+.heroStatTitle {
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 20px;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+  color: rgb(207, 207, 207);
+}
+
+.heroStatNumbers {
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 20px;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+  color: rgb(207, 207, 207);
+}
+
+.heroStatsOverall {
+  margin-bottom: 25px;
+}
+
 .mainPage {
   position: relative;
-  height: 1100px;
+  height: 1538px;
   margin: -25px;
 }
 
@@ -567,7 +718,7 @@ code {
   background-color: #091020;
   position: absolute;
   top: 200px;
-  height: 835px;
+  height: 1268px;
   width: 959px;
   overflow: scroll;
   -ms-overflow-style: none;
@@ -595,7 +746,6 @@ code {
 
 .changeLogTitle {
   padding-left: 25px;
-  padding-top: 15px;
   font-size: 21px;
   margin-bottom: 10px;
 }
@@ -827,28 +977,7 @@ code {
 .shardRankingHeader {
   padding-bottom: 50px;
 }
-.bottomSpacing {
-  padding-bottom: 25px;
-}
-.topSpacing {
-  padding-top: 25px;
-}
-.rightSpacing {
-  padding-right: 25px;
-}
-.rightMarginSpacing {
-  margin-right: 25px;
-}
-.leftSpacing {
-  padding-left: 25px;
-}
-.leftMarginSpacing {
-  margin-left: 25px;
-}
 
-.leftAlignText {
-  text-align: left;
-}
 
 .createGuideLevelGridParent {
   margin-left: 125px;
@@ -923,14 +1052,6 @@ code {
 .createGuideShardCombos {
   display: grid;
   grid-template-rows: auto auto;
-}
-
-.spacing {
-  height: 200px;
-}
-
-.hidden {
-  display: none;
 }
 
 .talentMiddle {

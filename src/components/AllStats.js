@@ -39,12 +39,12 @@ const AllStats = () => {
                 shardWinrates: [...results.data.allMatchData][index].shardWinrates.filter(shard => heroes.includes(shard.hero))
             }
         })
-        console.log(filteredStats)
-        sortStats(filteredStats, results, setStats, setShardSorting, heroSorting, shardSorting, shardSorting[0], false, true)
+        console.log(filteredStats, results)
+        sortStats(filteredStats, results.data.allMatchData, setStats, setShardSorting, heroSorting, shardSorting, shardSorting[0], false, true)
     }
 
     function sortFunc(setSortedData, category, heroes) {
-        sortStats(stats, results, setStats, setSortedData, heroSorting, shardSorting, category, heroes)
+        sortStats(stats, results.data.allMatchData, setStats, setSortedData, heroSorting, shardSorting, category, heroes)
     }
 
     useEffect(() => {

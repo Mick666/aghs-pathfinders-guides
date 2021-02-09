@@ -10,6 +10,27 @@ export const ALL_HEROGUIDES = gql`
     ${COMPLETE_GUIDE}
 `
 
+export const SINGLE_HEROSTATS = gql`
+query heroStats($hero: String!){
+    heroStats(hero: $hero) {
+      shardWinrates {
+        defeats
+        hero
+        shard
+        totalGames
+        victories
+      }
+      singleHeroStats {
+        deaths
+        defeats
+        hero
+        totalGames
+        victories
+      }
+    }
+  }
+`
+
 export const ALL_GUIDES = gql`
     query {
         allGuides {
@@ -54,7 +75,7 @@ export const HERO_STATS = gql`
     }
 `
 
-export const SHARD_STATS = gql `
+export const SHARD_STATS = gql`
     query {
         allMatchData {
             shardWinrates {

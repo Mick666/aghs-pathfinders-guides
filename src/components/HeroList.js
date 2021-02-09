@@ -10,7 +10,7 @@ const HeroList = ({ heroes }) => {
                 <div className='heroListDiv'>
                     {heroes.map((hero, key) => {
                         return (
-                            <Link key={key} to={`/heroes/${hero.id}`} className='headerLinks cleanLink'>
+                            <Link key={key} to={`/heroes/${hero.id}`} className='heroImages cleanLink'>
                                 <img className='heroImage' src={hero.image} />
                                 <div className='heroText'>{hero.id}</div>
                             </Link>

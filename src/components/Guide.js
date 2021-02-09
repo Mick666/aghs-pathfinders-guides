@@ -90,7 +90,7 @@ const ShardCombos = ({ shardCombos }) => {
         </div>
     )
     return (
-        <div className='shardComboParent'>
+        <div>
             {shardCombos.map((combos, key) => {
                 return (
                     <div key={key} className='shardCombo'>
@@ -128,40 +128,26 @@ const GuideSegment = ({ section }) => {
                     )
                 })}
             </div>
+            <span className='guideSectionBackground' />
         </div>
     )
 }
 
-const Guide = ({ guide }) => {
+const Guide = ({ guide, currentTab }) => {
     if (!guide) {
         return <div className='displayedGuide'><Loader active inverted>Loading</Loader></div>
     }
 
-    const [currentTab, setTab] = useState('Items')
-    const tabs = ['Items', 'Levelling', 'Legendary Shards Ranking', 'Shard combinations']
     const hero = Heroes.filter(x => x.id === guide.hero)[0]
 
 
     return (
         <div className='displayedGuide'>
-            <div className='guideTitle'>{guide.title}</div>
-            <div className='guideTabs'>
-                {tabs.map((tab, key) => {
-                    return (
-                        <div
-                            key={key}
-                            className={`guideTabLink ${currentTab === tab ? 'activeTab' : ''}`}
-                            onClick={() => setTab(tab)}
-                        >
-                            {tab}
-                        </div>
-                    )
-                })}
-            </div>
-            <div className='guideItems' style={{ display: currentTab === 'Items' ? '' : 'none' }}>
-                {guide.itemGroups.map((group, key) => <GuideSegment key={key} section={group} />)}
-            </div>
-            <div style={{ display: currentTab === 'Levelling' ? '' : 'none' }}>
+            <div style={{ display: currentTab === 'Items & Levelling' ? '' : 'none' }}>
+                <h2 className='levelGridTitle'>Items</h2>
+                <div className='itemGroupContainer'>
+                    {guide.itemGroups.map((group, key) => <GuideSegment key={key} section={group} />)}
+                </div>
                 <GuideLevels levels={guide.levels} selectedTalents={guide.selectedTalents} hero={hero} />
             </div>
             <div style={{ display: currentTab === 'Legendary Shards Ranking' ? '' : 'none' }}>
