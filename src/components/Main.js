@@ -1,7 +1,9 @@
 import React from 'react'
+
 import changeLog from '../data/changeLog'
 import ChangeLog from './ChangeLog'
 import { MainGuides, MainGames } from './RecentContent'
+import AghsLabImage from '../images/AghsLabImage.jpg'
 
 const Main = () => {
     return (
@@ -12,10 +14,12 @@ const Main = () => {
             </div>
             <div className='mainPageSidebar'>
                 <a className='steamworkshopIcon' href='https://steamcommunity.com/sharedfiles/filedetails/?id=2208582400'>
-                    <img
+                    {/* <img
                         className='steamWorkshopImg'
-                        src='https://steamuserimages-a.akamaihd.net/ugc/1747928426845848464/3329687EEE16D6D68348465EFEAF392347899FA5/'
+                        src={AghsLabImage}
                     />
+                    <h1 id='steamText1' className='steamText'>Check out the mod on the Steam Workshop</h1> */}
+                    <img src='https://www.gamerevolution.com/assets/uploads/2012/06/file_3080_SteamWorkshoplogo_1328763363.jpg' id='steamWorkshopBanner'/>
                 </a>
                 <a className='discordIcon cleanLink' href='https://discord.gg/SwjCcH4'>
                     <div className='discordDetailsParent'>

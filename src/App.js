@@ -9,7 +9,7 @@ import '../node_modules/semantic-ui-css/components/loader.css'
 
 import Main from './components/Main'
 import HeroPage from './components/HeroPage'
-import Guide from './components/Guide'
+import Footer from './components/Footer'
 import Header from './components/Header'
 import HeroList from './components/HeroList'
 import Heroes from './Heroes'
@@ -28,7 +28,7 @@ function App() {
                 <div>
                     <Switch>
                         <Route path='/heroes/:hero/:guide'>
-                            <Guide />
+                            <HeroPage />
                         </Route>
                         <Route path='/heroes/:hero'>
                             <HeroPage />
@@ -52,6 +52,7 @@ function App() {
                 </div>
             </div>
             <div className='spacing'></div>
+            <Footer />
         </Router>
     )
 }

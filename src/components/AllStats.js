@@ -68,6 +68,7 @@ const AllStats = () => {
         )
     } else {
         for (let key in heroNames) {
+            if (key === 'Phoenix') continue
             heroNames[key].totalGames = [
                 [...results.data.allMatchData][0].heroAsArray.filter(hero => hero.hero === heroNames[key].name)[0].totalGames,
                 [...results.data.allMatchData][1].heroAsArray.filter(hero => hero.hero === heroNames[key].name)[0].totalGames,

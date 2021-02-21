@@ -181,9 +181,6 @@ code {
 .guideItems {
   z-index: 50;
   position: relative;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   justify-content: center;
 }
 
@@ -757,7 +754,7 @@ code {
 #changelogTitle {
   font-size: 25px;
   width: 949px;
-  background-color: rgb(78, 78, 78);
+  background-color: black;
   padding: 5px;
   padding-right: 25px;
   padding-left: 15px;
@@ -766,7 +763,6 @@ code {
   margin-top: 0px;
   font-family: "Trebuchet MS", sans-serif;
   border-bottom: solid 3px rgb(36, 36, 36);
-  border-top: solid 3px rgb(36, 36, 36);
   position: absolute;
   top: 199px;
   z-index: 100;
@@ -776,14 +772,37 @@ code {
 .steamworkshopIcon {
   width: 300px;
   height: 375px;
-  background-color: white;
+  /* background-color: white; */
   border-radius: 10px;
   margin: 50px auto 0px;
+  position: relative;
 }
 
 .steamWorkshopImg {
   width: 300px;
   height: 375px;
+}
+
+#steamWorkshopBanner {
+  width: 300px;
+}
+
+.steamText {
+  font-family: "Trebuchet MS", sans-serif;
+  position: absolute;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  font-size: 20px;
+}
+
+#steamText1 {
+  top: 20px;
+  left: 76px;
+}
+
+#steamText2 {
+  top: 50px;
+  left: 85px;
 }
 
 .discordIcon {
@@ -880,10 +899,6 @@ code {
   margin-left: -11px;
 }
 
-.newGuideParent {
-  margin-top: 50px;
-}
-
 .select-parent {
   margin-top: 25px;
 }
@@ -960,9 +975,10 @@ code {
 }
 
 .newGuideHeaders {
-  margin-top: -30px;
   justify-content: space-around;
   padding-bottom: 20px;
+  padding-top: 20px;
+  border-top: solid 1px rgb(117, 102, 255);
 }
 
 .guideHeaderText {

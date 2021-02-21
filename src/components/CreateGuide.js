@@ -77,9 +77,7 @@ const CreateGuide = () => {
     return (
         <DndProvider backend={HTML5Backend}>
             <div className='createGuidePage'>
-                <h2 className='createGuideHeader'>Create A Guide</h2>
                 <div className='newGuideParent'>
-                    <div>
                         <div className='newGuideHeaders'>
                             <div className='guideName'>
                                 <div className='guideHeaderText'>Guide name: </div>
@@ -139,7 +137,6 @@ const CreateGuide = () => {
                     <div className='createGuideSection'>
                         <CreateGuideShardCombos shardCombinations={shardCombinations} setShardCombinations={setShardCombos} />
                     </div>
-                </div>
             </div>
         </DndProvider>
     )

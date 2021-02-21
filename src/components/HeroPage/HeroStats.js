@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Icon, Loader } from 'semantic-ui-react'
-import { heroNames } from '../../Heroes'
 import Shards from '../../Shards'
 import Abilities from '../../Abilities'
 import sortStats from '../../utils/sortStats'
@@ -8,8 +7,6 @@ import sortStats from '../../utils/sortStats'
 const HeroStats = ({ currentView, stats, currentTab, setStats, statsQuery }) => {
     const difficultyToIndex = { 0: 'Grand Magus', 1: 'Apex Mage', 2: 'Sorcerer' }
     const [shardSorting, setShardSorting] = useState(['WR', 'DESC'])
-
-    console.log(stats)
 
     if (!stats) {
         return <div className='displayedGuide'><Loader active inverted>Loading</Loader></div>
@@ -19,7 +16,6 @@ const HeroStats = ({ currentView, stats, currentTab, setStats, statsQuery }) => 
         sortStats(stats, statsQuery.data.heroStats, setStats, setSortedData, false, shardSorting, category, heroes)
     }
 
-    console.log(stats)
     return (
         <div className={`${currentView === 'Stats' ? '' : 'hidden'} heroStatsContainer`}>
             {stats.map((difficulty, key) => {
@@ -70,7 +66,6 @@ const HeroStats = ({ currentView, stats, currentTab, setStats, statsQuery }) => 
                                     </tr>
                                     {[...difficulty.shardWinrates]
                                         .map((shard, ind) => {
-                                            console.log(shard)
                                             return (
                                                 <tr key={ind}
                                                     id={shard.shard}

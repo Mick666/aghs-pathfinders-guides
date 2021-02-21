@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import { useQuery } from '@apollo/client'
 import { ALL_GUIDES } from '../graphql/queries'
 import { Loader } from 'semantic-ui-react'
-import Heroes from '../Heroes'
+import { heroNames } from '../Heroes'
+import { Link } from 'react-router-dom'
 
 export const MainGuides = () => {
     const guides = useQuery(ALL_GUIDES)
@@ -28,15 +29,17 @@ export const MainGuides = () => {
                 </div>
             </div>
             <div className='recentGuidesContainer'>
-                {guides.loading ? <Loader active inverted>Loading</Loader> : guides.data.allGuides.slice(0, 3).map((guide, key) => {
+                {guides.loading ? <Loader active inverted>Loading</Loader> : [...guides.data.allGuides]
+                .sort((a, b) => new Date(b.createdAt.replace(/^([0-9]{2})\/([0-9]{2})\//, '$2/$1/')) - new Date(a.createdAt.replace(/^([0-9]{2})\/([0-9]{2})\//, '$2/$1/')))
+                .slice(0, 3).map((guide, key) => {
                     return (
-                        <div key={key} className='recentGuideIndiv'>
-                            <img src={Heroes.filter(hero => hero.id === guide.hero)[0].image} className='recentGuideImage' />
+                        <Link key={key} className='recentGuideIndiv cleanLink' to={`/heroes/${guide.hero}/${guide.id}`}>
+                            <img src={heroNames[guide.hero].image} className='recentGuideImage' />
                             <div className='recentGuideDetails'>
                                 <div className='recentGuideTitle'>{guide.title}</div>
                                 <div>Created on: {guide.createdAt}</div>
                             </div>
-                        </div>
+                        </Link>
                     )
                 })}
             </div>

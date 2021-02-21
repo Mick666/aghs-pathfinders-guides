@@ -13,8 +13,8 @@ const Header = () => {
                     <span className={`headerCurrentPage ${pathname === '/' ? 'active' : ''}`}/>
                 </div>
                 <div className='headerLinkParent'>
-                    <Link className={`headerLinks cleanLink ${pathname === '/heroes' ? 'active' : ''}`} to='/heroes'>Heroes</Link>
-                    <span className={`headerCurrentPage ${pathname === '/heroes' ? 'active' : ''}`}/>
+                    <Link className={`headerLinks cleanLink ${pathname.startsWith('/heroes') ? 'active' : ''}`} to='/heroes'>Heroes</Link>
+                    <span className={`headerCurrentPage ${pathname.startsWith('/heroes') ? 'active' : ''}`}/>
                 </div>
                 <div className='headerLinkParent'>
                     <Link className={`headerLinks cleanLink ${pathname === '/guides' ? 'active' : ''}`} to='/guides'>Guides</Link>

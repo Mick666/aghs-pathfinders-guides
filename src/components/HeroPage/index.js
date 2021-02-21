@@ -11,6 +11,7 @@ import HeroStats from './HeroStats'
 
 const HeroPage = () => {
     const id = useParams().hero
+    const guide = useParams().guide
     const hero = heroNames[id]
     const [currentGuide, setGuide] = useState(0)
     const [currentTab, setCurrentTab] = useState('Items & Levelling')
@@ -28,12 +29,14 @@ const HeroPage = () => {
                     shardWinrates: [...difficulty.shardWinrates].sort((a, b) => (b.victories / b.defeats) - (a.victories / a.defeats))
                 }
             })
-            console.log(rawStats)
             setStats(rawStats)
         }
-    }, [statsQuery])
+        if (guide && guides.data) {
+            const selectedGuide = guides.data.allHeroGuides.filter(x => x.id === guide)[0]
+            if (selectedGuide) setGuide(guides.data.allHeroGuides.indexOf(selectedGuide))
+        }
+    }, [statsQuery, guides])
 
-    console.log(stats)
 
     return (
         <div className='heroPage'>
