@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { useQuery } from '@apollo/client'
+import { Loader } from 'semantic-ui-react'
 
 import { heroNames } from '../../Heroes'
 import GuideList from '../GuideList'
@@ -37,7 +38,7 @@ const HeroPage = () => {
         }
     }, [statsQuery, guides])
 
-
+    console.log(guides)
     return (
         <div className='heroPage'>
             <HeroHeader
@@ -49,7 +50,9 @@ const HeroPage = () => {
             />
             <div className={`guideGrid ${currentView === 'Guides' ? '' : 'hidden'}`}>
                 <GuideList guides={guides.data?.allHeroGuides} currentGuide={currentGuide} setGuide={setGuide} forHeroPage />
-                <Guide guide={guides.data?.allHeroGuides[currentGuide]} currentTab={currentTab} />
+                {guides.loading ? <Loader active inverted style={{ marginTop: '400px', marginLeft: '100px' }}>Loading</Loader> :
+                    <Guide guide={guides.data?.allHeroGuides[currentGuide]} currentTab={currentTab} />
+                }
             </div>
             <HeroStats currentView={currentView} stats={stats} hero={hero} currentTab={currentTab} setStats={setStats} statsQuery={statsQuery} />
         </div>

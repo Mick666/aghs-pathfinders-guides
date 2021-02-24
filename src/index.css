@@ -450,6 +450,7 @@ code {
   font-weight: bold;
   font-size: 18px;
   color: grey;
+  cursor: pointer;
 }
 
 .headerLinks.active {
@@ -490,6 +491,18 @@ code {
   margin-top: 10px;
 }
 
+.guideTabLink {
+  font-family: "Montserrat";
+  font-weight: bold;
+  font-size: 18px;
+  color: grey;
+  cursor: pointer;
+}
+
+.guideTabLink.active {
+  color: white;
+  border-bottom: solid 4px #428BFF;
+}
 
 .heroHeader {
   position: relative;
@@ -550,17 +563,6 @@ code {
   display: inline-block;
 }
 
-.guideTabLink {
-  font-family: "Montserrat";
-  font-weight: bold;
-  font-size: 18px;
-  color: grey;
-}
-
-.guideTabLink.active {
-  color: white;
-  border-bottom: solid 4px #428BFF;
-}
 
 .heroListTitle {
   background-color: #152034;
@@ -605,14 +607,14 @@ code {
 
 .mainPage {
   position: relative;
-  height: 1538px;
+  height: 1238px;
   margin: -25px;
 }
 
 .mainPageTopBar {
   background-color: black;
   position: absolute;
-  width: 987px;
+  width: 1320px;
   height: 198px;
   top: 0;
   left: 0;
@@ -622,7 +624,7 @@ code {
 }
 
 .recentContentContainer {
-  width: 491px;
+  width: 658px;
   height: 99%;
   background: url(https://www.dotafire.com/css/img/bg-box-p.png) repeat scroll center top #0f0f0f;
   border: solid 1px darkgrey;
@@ -665,7 +667,7 @@ code {
 }
 
 #recentGuidesNewest {
-  margin-left: 150px;
+  margin-left: 314px;
 }
 
 #recentGuidesTop {
@@ -715,8 +717,8 @@ code {
   background-color: #091020;
   position: absolute;
   top: 200px;
-  height: 1268px;
-  width: 959px;
+  height: 972px;
+  width: 1292px;
   overflow: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -741,19 +743,19 @@ code {
   margin-bottom: 25px;
 }
 
+.changeLogList {
+  color: grey;
+}
+
 .changeLogTitle {
   padding-left: 25px;
   font-size: 21px;
   margin-bottom: 10px;
 }
 
-.changeLogList {
-  color: grey;
-}
-
 #changelogTitle {
   font-size: 25px;
-  width: 949px;
+  width: 1282px;
   background-color: black;
   padding: 5px;
   padding-right: 25px;
@@ -764,45 +766,59 @@ code {
   font-family: "Trebuchet MS", sans-serif;
   border-bottom: solid 3px rgb(36, 36, 36);
   position: absolute;
-  top: 199px;
+  top: 198px;
   z-index: 100;
   left: 15px;
 }
 
-.steamworkshopIcon {
-  width: 300px;
-  height: 375px;
-  /* background-color: white; */
-  border-radius: 10px;
-  margin: 50px auto 0px;
-  position: relative;
+
+.footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: rgb(22, 34, 55);
+  height: 20px;
+  justify-content: center;
+  padding-bottom: 20px;
+  transition: height 0.5s;
 }
 
-.steamWorkshopImg {
+.footer.active {
+  height: 150px;
+  transition: height 0.5s;
+}
+
+
+.steamBannerLink {
   width: 300px;
   height: 375px;
+  border-radius: 10px;
+  margin: 30px 30px 0px;
+  position: relative;
+  display: none;
+}
+
+.steamBannerLink.active, .discordIcon.active, .patreonSidebar.active {
+  display: inline-block;
 }
 
 #steamWorkshopBanner {
   width: 300px;
 }
 
-.steamText {
-  font-family: "Trebuchet MS", sans-serif;
-  position: absolute;
-  text-transform: uppercase;
-  letter-spacing: -2px;
-  font-size: 20px;
+.footerIcon {
+  width: 20px;
+  height: 20px;
+  margin-top: 5px;
 }
 
-#steamText1 {
-  top: 20px;
-  left: 76px;
+.footerIcons {
+  justify-content: space-evenly;
+  width: 24%;
 }
 
-#steamText2 {
-  top: 50px;
-  left: 85px;
+.footerIcons.active {
+  display: none;
 }
 
 .discordIcon {
@@ -810,8 +826,9 @@ code {
   height: 150px;
   background-color: #333;
   border-radius: 10px;
-  margin: 50px auto 10px;
+  margin: 10px 30px 10px;
   position: relative;
+  display: none;
 }
 
 .discordImage {
@@ -853,8 +870,9 @@ code {
   height: 100px;
   background-color: rgb(5, 45, 73);
   border-radius: 10px;
-  margin: 50px auto 10px;
+  margin: 30px 30px 10px;
   position: relative;
+  display: none;
 }
 
 .patreonImage {

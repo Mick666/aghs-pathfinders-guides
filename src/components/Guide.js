@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { Loader } from 'semantic-ui-react'
 
 import Items from '../Items'
 import Abilities from '../Abilities'
@@ -135,7 +134,7 @@ const GuideSegment = ({ section }) => {
 
 const Guide = ({ guide, currentTab }) => {
     if (!guide) {
-        return <div className='displayedGuide'><Loader active inverted>Loading</Loader></div>
+        return <div className='displayedGuide'>No guides available</div>
     }
 
     const hero = Heroes.filter(x => x.id === guide.hero)[0]

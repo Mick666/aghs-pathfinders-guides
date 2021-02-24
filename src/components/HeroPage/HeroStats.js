@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Icon, Loader } from 'semantic-ui-react'
+import { Icon } from 'semantic-ui-react'
 import Shards from '../../Shards'
 import Abilities from '../../Abilities'
 import sortStats from '../../utils/sortStats'
@@ -9,7 +9,7 @@ const HeroStats = ({ currentView, stats, currentTab, setStats, statsQuery }) => 
     const [shardSorting, setShardSorting] = useState(['WR', 'DESC'])
 
     if (!stats) {
-        return <div className='displayedGuide'><Loader active inverted>Loading</Loader></div>
+        return <div></div>
     }
 
     function sortFunc(setSortedData, category, heroes) {
