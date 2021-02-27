@@ -212,6 +212,7 @@ code {
   padding: 13px;
   display: inline-block;
   vertical-align: top;
+  position: relative;
 }
 
 .itemText {
@@ -924,6 +925,16 @@ code {
 
 .select-search__options {
   padding-left: 0px;
+  overflow: visible;
+  z-index:10000;
+}
+
+.select-search__select {
+  z-index: 10000;
+}
+
+.select-search {
+  margin-top: 100px;
 }
 
 .hideText {
@@ -935,10 +946,6 @@ code {
   text-align: center;
 }
 
-.createGuideLevelTitle {
-  text-align: center;
-  margin-left: -169px;
-}
 
 .centerText {
   width: 50%;
@@ -966,24 +973,10 @@ code {
 }
 
 .createGuidePage {
-  border: solid 1px rgb(117, 102, 255);
+  border: solid 1px white;
   border-top: none;
   margin: 0 0 0 0;
-  background-color: #101520;
-}
-
-.createGuideHeader {
-  border-bottom: solid 1px;
-  border-top: solid 1px;
-  font-family: 'Open Sans';
-  letter-spacing: -1px;
-  line-height: 39px;
-  position: relative;
-  font-weight: bolder;
-  margin: -1px 0 0 0;
-  text-align: center;
-  text-transform: uppercase;
-  color: rgb(117, 102, 255);
+  background-color: rgb(23, 23, 23);
 }
 
 .guideName, .newGuideHeaders, .guideHero {
@@ -996,7 +989,7 @@ code {
   justify-content: space-around;
   padding-bottom: 20px;
   padding-top: 20px;
-  border-top: solid 1px rgb(117, 102, 255);
+  border-top: solid 1px white;
 }
 
 .guideHeaderText {
@@ -1017,14 +1010,9 @@ code {
   margin-left: 125px;
 }
 
-
-.createGuideItemCell {
-  width: 80px;
-  height: 64px;
-  padding: 13px;
-  display: inline-block;
-  vertical-align: top;
-  position: relative;
+.createGuideItemSection {
+  width: 100%;
+  min-height: 100px;
 }
 
 .removeItemButton {

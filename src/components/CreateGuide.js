@@ -78,65 +78,65 @@ const CreateGuide = () => {
         <DndProvider backend={HTML5Backend}>
             <div className='createGuidePage'>
                 <div className='newGuideParent'>
-                        <div className='newGuideHeaders'>
-                            <div className='guideName'>
-                                <div className='guideHeaderText'>Guide name: </div>
-                                <div>
-                                    <input
-                                        onChange={(e) => setGuideName(e.target.value)}
-                                        value={guideName}
-                                    />
-                                </div>
-                            </div>
-                            <div className='guideHero'>
-                                <div className='guideHeaderText'>Select hero:</div>
-                                <div>
-                                    <select
-                                        onChange={(e) => setHeroSelection(e.target.value)}
-                                        value={heroSelection}
-                                    >
-                                        {Heroes.map((hero, key) => {
-                                            return (
-                                                <option key={key} value={hero.id}>{hero.id}</option>
-                                            )
-                                        })}
-                                    </select>
-                                </div>
-                            </div>
+                    <div className='newGuideHeaders'>
+                        <div className='guideName'>
+                            <div className='guideHeaderText'>Guide name: </div>
                             <div>
-                                <button onClick={guideSubmission}>Create guide</button>
+                                <input
+                                    onChange={(e) => setGuideName(e.target.value)}
+                                    value={guideName}
+                                />
                             </div>
                         </div>
-                        <div className='errorMessage centerText'>
-                            {errorMessages.length > 0 ?
-                                <ul>
-                                    {errorMessages.map((error, key) => <li key={key} >{error}</li>)}
-                                </ul>
-                                : null
-                            }
+                        <div className='guideHero'>
+                            <div className='guideHeaderText'>Select hero:</div>
+                            <div>
+                                <select
+                                    onChange={(e) => setHeroSelection(e.target.value)}
+                                    value={heroSelection}
+                                >
+                                    {Heroes.map((hero, key) => {
+                                        return (
+                                            <option key={key} value={hero.id}>{hero.id}</option>
+                                        )
+                                    })}
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <button onClick={guideSubmission}>Create guide</button>
                         </div>
                     </div>
-                    <div className='createGuideSection'>
-                        <CreateItemGroups items={items} setItems={setItems} />
+                    <div className='errorMessage centerText'>
+                        {errorMessages.length > 0 ?
+                            <ul>
+                                {errorMessages.map((error, key) => <li key={key} >{error}</li>)}
+                            </ul>
+                            : null
+                        }
                     </div>
-                    <div className='createGuideSection'>
-                        <CreateGuideLevels
-                            hero={hero}
-                            selectedTalents={selectedTalents}
-                            levels={levels}
-                            setLevels={setLevels}
-                            setTalents={setTalents}
-                        />
-                    </div>
-                    <div className='createGuideSection'>
-                        <CreateGuideShardRankings
-                            shardRanking={shardRanking}
-                            setShardRanking={setShardRanking}
-                        />
-                    </div>
-                    <div className='createGuideSection'>
-                        <CreateGuideShardCombos shardCombinations={shardCombinations} setShardCombinations={setShardCombos} />
-                    </div>
+                </div>
+                <div className='createGuideSection'>
+                    <CreateItemGroups items={items} setItems={setItems} />
+                </div>
+                <div className='createGuideSection'>
+                    <CreateGuideLevels
+                        hero={hero}
+                        selectedTalents={selectedTalents}
+                        levels={levels}
+                        setLevels={setLevels}
+                        setTalents={setTalents}
+                    />
+                </div>
+                <div className='createGuideSection'>
+                    <CreateGuideShardRankings
+                        shardRanking={shardRanking}
+                        setShardRanking={setShardRanking}
+                    />
+                </div>
+                <div className='createGuideSection'>
+                    <CreateGuideShardCombos shardCombinations={shardCombinations} setShardCombinations={setShardCombos} />
+                </div>
             </div>
         </DndProvider>
     )

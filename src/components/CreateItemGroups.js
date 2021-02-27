@@ -56,24 +56,30 @@ const GuideCreationSegment = ({ section, items, setItems }) => {
     }
 
     return (
-        <div className='createItemsSection'>
-            <div className='guideSectionTitle'>{section.groupName}</div>
-            <div className='guideItems'>
-                {section.items.map((x, key) => {
-                    return (
-                        <div key={key} className='createGuideItemCell'>
-                            <img
-                                src={Items[x].link}
-                                className='itemIcon'
-                            />
-                            <div className='itemText'>{Items[x].name}</div>
-                            <button className='removeItemButton' onClick={() => deleteItem(section, key)}  >X</button>
-                        </div>
-                    )
-                })}
+        <div style={{ maxHeight: '180px', position: 'relative'}} className='flexRow'>
+            <div className='guideSection createGuideItemSection'>
+                <div className='guideSectionTitle'>{section.groupName}</div>
+                <div className='guideItems'>
+                    {section.items.map((x, key) => {
+                        return (
+                            <div key={key} className='itemCell'>
+                                <img
+                                    src={Items[x].link}
+                                    className='itemIcon'
+                                />
+                                <div className='itemText'>{Items[x].name}</div>
+                                <button className='removeItemButton' onClick={() => deleteItem(section, key)}  >X</button>
+                            </div>
+                        )
+                    })}
+                </div>
+
+                <button className='removeItemButton' onClick={() => deleteSection(section.groupName)}  >X</button>
+                <span className='guideSectionBackground' />
             </div>
-            <AddItemsSearch groupName={section.groupName} items={items} setItems={setItems} />
-            <button className='removeItemButton' onClick={() => deleteSection(section.groupName)}  >X</button>
+            <div style={{ overflow: 'visible'}}>
+                <AddItemsSearch groupName={section.groupName} items={items} setItems={setItems} />
+            </div>
         </div>
     )
 }
@@ -91,9 +97,9 @@ const CreateItemGroups = ({ items, setItems }) => {
                 <div className='bottomSpacing'>Type a section name in, then click the button</div>
                 <div className='bottomSpacing'>Then add as many items as needed to a section</div>
                 <div className='guideListDetails'>
-                <div style={{ marginTop: '25px' }} className='rightSpacing'>Section name:</div>
-                <FormikInput onSubmit={addSegment} buttonText='Add Section' uniqueValues={items.map(x => x.groupName)} />
-            </div>
+                    <div style={{ marginTop: '25px' }} className='rightSpacing'>Section name:</div>
+                    <FormikInput onSubmit={addSegment} buttonText='Add Section' uniqueValues={items.map(x => x.groupName)} />
+                </div>
             </div>
             <div className='flexColumn'>
                 {items.map((section, key) => <GuideCreationSegment key={key} section={section} items={items} setItems={setItems} />)}

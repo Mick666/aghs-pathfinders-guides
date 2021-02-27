@@ -89,7 +89,7 @@ const AllStats = () => {
                             <h4>Difficulty</h4>
                             <Select
                                 name='heroFilter'
-                                options={[{ value: 0, label: 'Grand Magus' }, { value: 1, label: 'Apex Mage' }, { value: 2, label: 'Grand Magus' }]}
+                                options={[{ value: 0, label: 'Grand Magus' }, { value: 1, label: 'Apex Mage' }, { value: 2, label: 'Sorcerer' }]}
                                 defaultValue={ { value: 0, label: 'Grand Magus' }}
                                 onChange={(e) => setVisibleDifficulty(e.value)}
                                 classNamePrefix='statsDifficultyFilter'
