@@ -2,8 +2,9 @@ import React from 'react'
 import { Icon } from 'semantic-ui-react'
 
 import Heroes from '../Heroes'
+import { PaginationSmall } from './Pagination'
 
-const GuideList = ({ currentGuide, setGuide, guides, forHeroPage }) => {
+const GuideList = ({ currentGuide, setGuide, guides, forHeroPage, onPageChange, currentPage, totalGuides }) => {
     if (!guides || guides.length === 0) {
         return (
             <div className='guideListParent'>
@@ -12,6 +13,7 @@ const GuideList = ({ currentGuide, setGuide, guides, forHeroPage }) => {
     }
     return (
         <div className='guideListParent'>
+            {totalGuides && totalGuides > 20 ? <PaginationSmall onPageChange={onPageChange} currentPage={Math.floor(currentPage / 5 + 1)} totalPages={Math.floor(totalGuides / 5 + 1)}/> : null}
             {guides.map((guide, key) => {
                 const Hero = Heroes.filter(hero => hero.id === guide.hero)[0]
                 const percentage = guide.rating[0] === 0 ? '100%' : (guide.rating[1] / guide.rating[0] * 100).toString().slice(0, 4) + '%'

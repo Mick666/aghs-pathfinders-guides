@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Items from '../Items'
-import { FormikInput } from './FormikPremades'
+import Items from '../../Items'
+import { FormikInput } from '../FormikPremades'
 import SelectSearch from 'react-select-search'
 
 const AddItemsSearch = ({ setItems, items, groupName }) => {
@@ -56,7 +56,7 @@ const GuideCreationSegment = ({ section, items, setItems }) => {
     }
 
     return (
-        <div style={{ maxHeight: '180px', position: 'relative'}} className='flexRow'>
+        <div style={{ maxHeight: '180px', position: 'relative' }} className='flexRow'>
             <div className='guideSection createGuideItemSection'>
                 <div className='guideSectionTitle'>{section.groupName}</div>
                 <div className='guideItems'>
@@ -77,7 +77,7 @@ const GuideCreationSegment = ({ section, items, setItems }) => {
                 <button className='removeItemButton' onClick={() => deleteSection(section.groupName)}  >X</button>
                 <span className='guideSectionBackground' />
             </div>
-            <div style={{ overflow: 'visible'}}>
+            <div style={{ overflow: 'visible' }}>
                 <AddItemsSearch groupName={section.groupName} items={items} setItems={setItems} />
             </div>
         </div>

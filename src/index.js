@@ -7,10 +7,27 @@ import App from './App'
 
 import { ApolloClient, ApolloProvider, HttpLink, InMemoryCache } from '@apollo/client'
 
+const cache = new InMemoryCache({
+    typePolicies: {
+        Query: {
+            fields: {
+                allGuides: {
+                    keyArgs: false,
+                    // eslint-disable-next-line no-unused-vars
+                    merge(existing = [], incoming) {
+                        return [ ...incoming]
+                    },
+                }
+            }
+        }
+    }
+})
+
+
 const client = new ApolloClient({
-    cache: new InMemoryCache(),
+    cache: cache,
     link: new HttpLink({
-        uri: '/graphql',
+        uri: 'http://localhost:4000/graphql',
     })
 })
 
@@ -20,3 +37,4 @@ ReactDOM.render(
     </ApolloProvider>,
     document.getElementById('root')
 )
+

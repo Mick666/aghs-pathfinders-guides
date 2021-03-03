@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Abilities from '../Abilities'
+import Abilities from '../../Abilities'
 
 const CreateGuideLevels = ({ hero, selectedTalents, levels, setTalents, setLevels }) => {
     //eslint-disable-next-line

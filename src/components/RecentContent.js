@@ -6,7 +6,7 @@ import { heroNames } from '../Heroes'
 import { Link } from 'react-router-dom'
 
 export const MainGuides = () => {
-    const guides = useQuery(ALL_GUIDES)
+    const guides = useQuery(ALL_GUIDES, { variables: { first: 3 } })
     const [currentTab, setCurrentTab] = useState('new')
 
     return (
@@ -29,9 +29,7 @@ export const MainGuides = () => {
                 </div>
             </div>
             <div className='recentGuidesContainer'>
-                {guides.loading ? <Loader active inverted>Loading</Loader> : [...guides.data.allGuides]
-                .sort((a, b) => new Date(b.createdAt.replace(/^([0-9]{2})\/([0-9]{2})\//, '$2/$1/')) - new Date(a.createdAt.replace(/^([0-9]{2})\/([0-9]{2})\//, '$2/$1/')))
-                .slice(0, 3).map((guide, key) => {
+                {guides.loading ? <Loader active inverted>Loading</Loader> : guides.data.allGuides.map((guide, key) => {
                     return (
                         <Link key={key} className='recentGuideIndiv cleanLink' to={`/heroes/${guide.hero}/${guide.id}`}>
                             <img src={heroNames[guide.hero].image} className='recentGuideImage' />

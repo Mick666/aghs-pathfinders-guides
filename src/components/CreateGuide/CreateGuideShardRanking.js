@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { useDrag, useDrop } from 'react-dnd'
 
-import Shards from '../Shards'
-import Abilities from '../Abilities'
+import Shards from '../../Shards'
+import Abilities from '../../Abilities'
 
 const IndividualShard = ({ shard, handleDrop, indx, shardDetails }) => {
 

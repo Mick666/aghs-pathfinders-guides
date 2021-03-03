@@ -14,7 +14,7 @@ import Header from './components/Header'
 import HeroList from './components/HeroList'
 import Heroes from './Heroes'
 import AllGuides from './components/AllGuidesPage'
-import CreateGuide from './components/CreateGuide'
+import CreateGuide from './components/CreateGuide/'
 import AllStats from './components/AllStats'
 
 function App() {

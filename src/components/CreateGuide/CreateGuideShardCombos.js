@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import { FormikTextField } from './FormikPremades'
+import { FormikTextField } from '../FormikPremades'
 import SelectSearch from 'react-select-search'
 
-import Shards from '../Shards'
-import Abilities from '../Abilities'
+import Shards from '../../Shards'
+import Abilities from '../../Abilities'
 
 const AddShardsSearch = ({ setShardCombinations, shardCombinations, groupName, setLevelError }) => {
     const itemValues = Object.entries(Shards).map(item => {

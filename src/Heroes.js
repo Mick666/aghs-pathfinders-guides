@@ -27,6 +27,33 @@ const Heroes = [
             'pathfinder_axe_special_culling_blade_leap']
     },
     {
+        id: 'DragonKnight',
+        name: 'Dragon Knight',
+        image: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/5/59/Dragon_Knight_icon.png',
+        banner: 'https://i.pinimg.com/originals/d5/56/6d/d5566dc3f4b93a6d318cd19874127d6f.jpg',
+        desc: '',
+        talents: [
+            ['+1.6s Dragon Tail', '25', '1.8x Dragon Blood HP Regen/Armor'],
+            ['+20 Strength', '20', '15% Cooldown Reduction'],
+            ['+400 Health', '15', '+25 Damage'],
+            ['-24% Breathe Fire Damage Reduction', '10', '+2 Mana Regen'],
+        ],
+        abilities: ['breatheFire', 'dragonTail', 'dragonBlood', 'elderDragonForm', 'talentTree'],
+        shards: ['pathfinder_dk_breathe_fire_stun',
+            'pathfinder_dk_breathe_fire_macropyre',
+            'pathfinder_dk_dragon_blood_damage',
+            'pathfinder_dk_breathe_fire_crit_lifesteal',
+            'pathfinder_dk_breathe_fire_crit_lifesteal',
+            'pathfinder_dk_dragon_blood_gold',
+            'pathfinder_dk_dragon_tail_passive',
+            'pathfinder_dk_elder_dragon_form_cdr',
+            'pathfinder_dk_elder_dragon_form_fear',
+            'pathfinder_dk_dragon_blood_active',
+            'pathfinder_dk_elder_dragon_form_attack',
+            'pathfinder_dk_dragon_tail_chain']
+
+    },
+    {
         id: 'LegionCommander',
         name: 'Legion Commander',
         banner: 'https://cdna.artstation.com/p/assets/images/images/002/563/896/large/laura-bermudez-esplugues-aelini-aelini-legion-af.jpg',

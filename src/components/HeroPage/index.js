@@ -38,7 +38,6 @@ const HeroPage = () => {
         }
     }, [statsQuery, guides])
 
-    console.log(guides)
     return (
         <div className='heroPage'>
             <HeroHeader
@@ -47,6 +46,7 @@ const HeroPage = () => {
                 hero={hero}
                 currentView={currentView}
                 setCurrentView={setCurrentView}
+                hasCombos={guides.data?.allHeroGuides[currentGuide] && guides.data?.allHeroGuides[currentGuide].shardCombinations.length > 0}
             />
             <div className={`guideGrid ${currentView === 'Guides' ? '' : 'hidden'}`}>
                 <GuideList guides={guides.data?.allHeroGuides} currentGuide={currentGuide} setGuide={setGuide} forHeroPage />

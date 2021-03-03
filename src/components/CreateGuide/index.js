@@ -4,12 +4,12 @@ import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 import { useHistory } from 'react-router-dom'
 
-import Heroes from '../Heroes'
+import Heroes from '../../Heroes'
 import CreateItemGroups from './CreateItemGroups'
 import CreateGuideLevels from './CreateGuideLevels'
 import CreateGuideShardRankings from './CreateGuideShardRanking'
 import CreateGuideShardCombos from './CreateGuideShardCombos'
-import { ADD_GUIDE } from '../graphql/mutations'
+import { ADD_GUIDE } from '../../graphql/mutations'
 
 const CreateGuide = () => {
     const [guideName, setGuideName] = useState('')

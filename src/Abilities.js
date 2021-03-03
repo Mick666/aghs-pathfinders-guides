@@ -109,6 +109,10 @@ const Abilities = {
     fireSpirits: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/c/cf/Fire_Spirits_icon.png'), name: 'Fire Spirits' },
     sunRay: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/d/df/Sun_Ray_icon.png'), name: 'Sun Ray' },
     supernova: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/a/aa/Supernova_icon.png'), name: 'Supernova' },
+    breatheFire: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/f/f8/Breathe_Fire_icon.png'), name: 'Breathe Fire' },
+    dragonTail: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/6/6f/Dragon_Tail_icon.png'), name: 'Dragon Tail' },
+    dragonBlood: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e6/Dragon_Blood_icon.png'), name: 'Dragon Blood' },
+    elderDragonForm: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/3/33/Elder_Dragon_Form_icon.png'), name: 'Elder Dragon Form' },
 }
 
 export default Abilities

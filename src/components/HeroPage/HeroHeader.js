@@ -1,6 +1,6 @@
 import React from 'react'
 
-const HeroHeader = ({ hero, currentTab, setCurrentTab, setCurrentView, currentView }) => {
+const HeroHeader = ({ hero, currentTab, setCurrentTab, setCurrentView, currentView, hasCombos }) => {
     const tabs = [
         ['Guides', ['Items & Levelling', 'Legendary Shards Ranking', 'Shard combinations']],
         ['Stats', ['Grand Magus', 'Apex Mage', 'Sorcerer']]
@@ -34,9 +34,11 @@ const HeroHeader = ({ hero, currentTab, setCurrentTab, setCurrentView, currentVi
                             {tab[1].map((viewTab, index) => {
                                 return (
                                     <div className='guideTabLinkParent' key={index}>
-                                        <div onClick={() => setCurrentTab(viewTab)}>
-                                            <div className={`guideTabs guideTabLink ${currentTab === viewTab ? 'active' : ''}`}>{viewTab}</div>
-                                        </div>
+                                        {viewTab === 'Shard combinations' && !hasCombos ? null :
+                                            <div onClick={() => setCurrentTab(viewTab)}>
+                                                <div className={`guideTabs guideTabLink ${currentTab === viewTab ? 'active' : ''}`}>{viewTab}</div>
+                                            </div>
+                                        }
                                     </div>
                                 )
                             })}

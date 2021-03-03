@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import Items from '../Items'
 import Abilities from '../Abilities'
@@ -70,6 +70,7 @@ const ShardRankings = ({ shards }) => {
             {shards.map((shard, key) => {
                 return (
                     <div key={key} className='shardRankingParent'>
+                        <span className='shardRankingNumber'>{key+1}</span>
                         <img src={Abilities[Shards[shard].skill].link} className='shardImage' />
                         <div>
                             <h3 className='shardTitle' >{Shards[shard].name}</h3>

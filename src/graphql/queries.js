@@ -32,8 +32,8 @@ query heroStats($hero: String!){
 `
 
 export const ALL_GUIDES = gql`
-    query {
-        allGuides {
+    query allGuides($first: Int, $after: Int) {
+        allGuides(first: $first, after: $after) {
             title
             createdAt
             rating
@@ -51,6 +51,7 @@ export const ALL_GUIDES = gql`
                 description
             }
         }
+        guideCount
     }
 `
 

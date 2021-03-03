@@ -68,7 +68,7 @@ const AllStats = () => {
         )
     } else {
         for (let key in heroNames) {
-            if (key === 'Phoenix') continue
+            if (key === 'Phoenix' || key === 'DragonKnight') continue
             heroNames[key].totalGames = [
                 [...results.data.allMatchData][0].heroAsArray.filter(hero => hero.hero === heroNames[key].name)[0].totalGames,
                 [...results.data.allMatchData][1].heroAsArray.filter(hero => hero.hero === heroNames[key].name)[0].totalGames,
@@ -149,7 +149,7 @@ const AllStats = () => {
                                                     <td className='shardStatsEl'>
                                                         <div className='shardStatsShard'>
                                                             <img className='heroStatsImage' src={heroIDs[x.hero].image} />
-                                                            <b className='shardTitle leftAlignText'>{x.hero}</b>
+                                                            <b className='shardStatsTitle leftAlignText'>{x.hero}</b>
                                                         </div>
                                                     </td>
                                                     <td className='shardStatsEl'>{x.victories}</td>
@@ -205,7 +205,7 @@ const AllStats = () => {
                                                             <div className='shardStatsShard'>
                                                                 <img className='shardStatsImage' src={Abilities[Shards[shard.shard].skill].link} />
                                                                 <div className='shardStatsText'>
-                                                                    <b className='shardTitle leftAlignText'>{Shards[shard.shard].name}</b>
+                                                                    <b className='shardStatsTitle leftAlignText'>{Shards[shard.shard].name}</b>
                                                                     <div className={`${hoveredElement === shard.shard ? '' : 'hidden'} leftAlignText`}>{Shards[shard.shard].description}</div>
                                                                 </div>
                                                             </div> :
