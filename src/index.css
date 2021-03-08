@@ -1270,7 +1270,7 @@ code {
   width: 480px;
   padding-left: 15px;
   align-items: end;
-  margin-left: 10px;
+  margin-left: 60px;
   margin-bottom: 10px;
 }
 .game-player-parent:last-of-type {
@@ -1281,7 +1281,8 @@ code {
 }
 
 .game-players {
-  width: 90%;
+  width: 100%;
+  margin-top: 25px;
 }
 
 
@@ -1418,12 +1419,16 @@ code {
 .game-player-expand-parent {
   position: absolute;
   left: 45%;
-  top: 93%;
+  top: 95%;
   background-color: rgb(66, 139, 202);
   padding: 5px;
   border-radius: 10px;
   font-weight: 900;
   border: 2px solid white;
+}
+
+.game-player-expand-parent.active {
+  top: 99%;
 }
 
 .game-expansion-icon {
@@ -1432,12 +1437,26 @@ code {
 
 .game-rooms-root {
   display: none;
-  width: 50%;
+  width: 75%;
   margin: 0 auto;
 }
 
 .game-rooms-parent {
-  width: 50%;
+  width: 100%;
   margin: 0 auto;
+}
+
+.game-room-image {
+  width: 40px;
+  height: 40px;
+}
+
+.game-room-table {
+  text-align: left;
+  min-width: 100px;
+}
+
+.game-room-table-row {
+  width: 100%;
 }
 

@@ -112,8 +112,8 @@ export const VIC_GAMES = gql`
                         picked_name
                         unpicked_name
                         picked_elite
+                        unpicked_elite
                     }
-                    victory
                 }
                 players {
                     damage_dealt
