@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { useQuery } from '@apollo/client'
 import { Loader } from 'semantic-ui-react'
 
-import { heroNames } from '../../Heroes'
+import { heroNames } from '../../data/Heroes'
 import GuideList from '../GuideList'
 import Guide from '../Guide'
 import { ALL_HEROGUIDES, SINGLE_HEROSTATS } from '../../graphql/queries'

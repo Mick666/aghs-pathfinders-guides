@@ -4,9 +4,9 @@ import { HERO_STATS } from '../graphql/queries'
 import { Icon, Loader } from 'semantic-ui-react'
 import Select from 'react-select'
 
-import Heroes, { heroNames } from '../Heroes'
-import Shards from '../Shards'
-import Abilities from '../Abilities'
+import Heroes, { heroNames } from '../data/Heroes'
+import Shards from '../data/Shards'
+import Abilities from '../data/Abilities'
 import sortStats from '../utils/sortStats'
 
 const AllStats = () => {

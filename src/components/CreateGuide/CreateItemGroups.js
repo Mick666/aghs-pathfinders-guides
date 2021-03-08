@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Items from '../../Items'
+import Items from '../../data/Items'
 import { FormikInput } from '../FormikPremades'
 import SelectSearch from 'react-select-search'
 

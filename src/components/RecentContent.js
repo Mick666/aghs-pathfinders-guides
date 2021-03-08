@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import { useQuery } from '@apollo/client'
-import { ALL_GUIDES } from '../graphql/queries'
+import { RECENT_GUIDES } from '../graphql/queries'
 import { Loader } from 'semantic-ui-react'
-import { heroNames } from '../Heroes'
 import { Link } from 'react-router-dom'
 
-export const MainGuides = () => {
-    const guides = useQuery(ALL_GUIDES, { variables: { first: 3 } })
-    const [currentTab, setCurrentTab] = useState('new')
+import { heroNames } from '../data/Heroes'
 
+export const MainGuides = () => {
+    const guides = useQuery(RECENT_GUIDES)
+    const [currentTab, setCurrentTab] = useState('new')
     return (
         <div className='recentContentContainer recentGuides'>
             <div className='recentGuidesTabs'>
@@ -29,7 +29,7 @@ export const MainGuides = () => {
                 </div>
             </div>
             <div className='recentGuidesContainer'>
-                {guides.loading ? <Loader active inverted>Loading</Loader> : guides.data.allGuides.map((guide, key) => {
+                {guides.loading || !guides.data ? <Loader active inverted>Loading</Loader> : guides.data.allGuides.slice(0, 3).map((guide, key) => {
                     return (
                         <Link key={key} className='recentGuideIndiv cleanLink' to={`/heroes/${guide.hero}/${guide.id}`}>
                             <img src={heroNames[guide.hero].image} className='recentGuideImage' />

@@ -55,6 +55,18 @@ export const ALL_GUIDES = gql`
     }
 `
 
+export const RECENT_GUIDES = gql`
+    query recentGuides {
+        allGuides(first: 3) {
+            title
+            createdAt
+            rating
+            id
+            hero
+        }
+    }
+`
+
 export const HERO_STATS = gql`
     query {
         allMatchData {
@@ -85,6 +97,33 @@ export const SHARD_STATS = gql`
                 shard
                 totalGames
                 victories
+            }
+        }
+    }
+`
+
+export const VIC_GAMES = gql`
+    query {
+        allMatchData {
+            victoriousGames {
+                levelData {
+                    rooms {
+                        lives_lost
+                        picked_name
+                        unpicked_name
+                        picked_elite
+                    }
+                    victory
+                }
+                players {
+                    damage_dealt
+                    damage_taken
+                    deaths
+                    depth
+                    hero
+                    items
+                    upgrades
+                }
             }
         }
     }

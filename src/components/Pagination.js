@@ -2,7 +2,7 @@ import React from 'react'
 import { Icon } from 'semantic-ui-react'
 
 export const PaginationSmall = ({ onPageChange, totalPages, currentPage }) => {
-    // console.log(totalPages, currentPage)
+    console.log(totalPages, currentPage)
     return (
         <div className='flexRow paginationParent'>
             <div onClick={currentPage === 1 ? null : () => onPageChange('prev') }>

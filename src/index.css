@@ -75,6 +75,7 @@ code {
 .flexRow {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 
 
@@ -339,6 +340,19 @@ code {
   top: 20%;
   left: 27px;
 }
+
+.createGuideShardImage {
+  width: 63px;
+  height: 63px;
+  position: absolute;
+  top: 15px;
+  left: 27px;
+}
+
+.createShardRankingParent {
+  min-height: 46px;
+}
+
 
 .shardRankingNumber {
   position:absolute;
@@ -801,13 +815,14 @@ code {
   background-color: rgb(22, 34, 55);
   height: 20px;
   justify-content: center;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
   transition: height 0.5s;
   z-index: 3000;
 }
 
 .footer.active {
   height: 150px;
+  padding-bottom: 20px;
   transition: height 0.5s;
 }
 
@@ -1005,6 +1020,16 @@ code {
   display: flex;
   flex-direction: row;
   padding-right: 20px;
+}
+
+.guideHero {
+  width: 25%;
+}
+
+.createGuideHeroSelect{
+ width: 65%;
+ color: black;
+ z-index: 200;
 }
 
 .newGuideHeaders {
@@ -1224,3 +1249,195 @@ code {
   width: 90%;
   margin-bottom: 15px;
 }
+
+.games-root {
+  border: solid 1px white;
+  background-color: rgb(23, 23, 23);
+  padding: 50px;
+}
+
+.game-parent {
+  border: solid 1px white;
+  margin-bottom: 35px;
+  /* background-image: -webkit-linear-gradient(310deg, #25292b, #000000); */
+  background-color: #222425;
+  position: relative;
+  padding-bottom: 25px;
+}
+
+.game-player-parent {
+  align-items: center;
+  width: 480px;
+  padding-left: 15px;
+  align-items: end;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+.game-player-parent:last-of-type {
+  padding-bottom: 0px;
+}
+.game-player-parent:first-of-type, .game-player-parent:nth-of-type(3) {
+  padding-left: 0px;
+}
+
+.game-players {
+  width: 90%;
+}
+
+
+.game-player-detailed {
+  position: relative;
+}
+
+.game-player-hero {
+  font-size: 20px;
+  text-align: center;
+  font-family: "Trebuchet MS", sans-serif;
+  letter-spacing: -2px;
+  /* border-bottom: 2px solid black; */
+  text-transform: uppercase;
+  font-weight: 900;
+  position: relative;
+  height: 169px;
+}
+
+.game-hero-image {
+  width: 210px;
+  height: 123px;
+  border: 2px solid black;
+  border-bottom: none;
+  /* border-radius: 5%; */
+  /* position:absolute;
+  top: 0; */
+}
+
+.game-item-image, .game-item-emptyslot {
+  width: 60px;
+  height: 44px;
+  padding: 5px;
+}
+
+.game-player-items, .game-player-backpack {
+  margin-left: 0px;
+  width: 212px;
+  padding-bottom: 0px;
+  background: url(https://www.dotafire.com/css/img/bg-box-p.png) repeat scroll center top #0f0f0f;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.game-player-items {
+  border: 3px solid transparent;
+  border-image: -webkit-radial-gradient(center, ellipse cover, white, black);
+  border-image-slice: 1;
+  border-bottom: none;
+  margin-top: 5px;
+}
+
+.game-item-emptyslot {
+  background: -webkit-radial-gradient(10% 30%, #25292b, #000000);
+  padding: 0;
+  margin: 5px;
+}
+
+.game-player-backpack {
+  background-color: rgb(31, 31, 31);
+  border: 3px solid transparent;
+  border-image: -webkit-radial-gradient(center, ellipse cover, white, black);
+  border-image-slice: 1;
+  /* border-top: none; */
+  z-index: 20;
+}
+
+.game-player-neutral-parent {
+  position: absolute;
+  left: 214px;
+  top: 1px;
+  border: 3px solid transparent;
+  border-image: -webkit-radial-gradient(center, ellipse cover, white, black);
+  border-image-slice: 1;
+  border-left: none;
+  height: 143px;
+  margin-top: 25px;
+  width: 65px;
+  background: url(https://www.dotafire.com/css/img/bg-box-p.png) repeat scroll center top #0f0f0f;
+  padding-left: 5px;
+}
+
+.game-player-neutral {
+  margin-top: 25px;
+  border-radius: 100%;
+  border: 3px solid lightgray;
+  width: 45px;
+  height: 40px;
+}
+
+.games-difficulty-header {
+  justify-content: space-around;
+  width: 75%;
+  margin: 0 auto;
+  margin-bottom: 25px;
+  margin-top: 0px;
+}
+
+.game-player-shards {
+  width: 65px;
+  height: 49px;
+  margin-left: 5px;
+  border: 2px solid black;
+}
+
+.game-player-shards:first-of-type {
+  margin-left: 0px;
+}
+
+.game-player-shards-parent {
+  justify-content: space-between;
+}
+
+.game-player-stats {
+  margin-left: 5px;
+}
+
+.game-player-stats-parent {
+  width: 100%;
+  margin-top: 15px;
+  margin-left: 15px;
+  display: none;
+}
+
+.game-player-stats-parent.active, .game-rooms-root.active {
+  display: flex;
+}
+
+.game-player-stats-number {
+  width: 75%;
+}
+
+.game-player-expand-parent {
+  position: absolute;
+  left: 45%;
+  top: 93%;
+  background-color: rgb(66, 139, 202);
+  padding: 5px;
+  border-radius: 10px;
+  font-weight: 900;
+  border: 2px solid white;
+}
+
+.game-expansion-icon {
+  margin-top: 3px !important;
+}
+
+.game-rooms-root {
+  display: none;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.game-rooms-parent {
+  width: 50%;
+  margin: 0 auto;
+}
+

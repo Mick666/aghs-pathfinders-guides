@@ -1,5 +1,5 @@
-import Shards from '../Shards'
-import { heroNames } from '../Heroes'
+import Shards from '../data/Shards'
+import { heroNames } from '../data/Heroes'
 
 function sortStats(stats, rawData, setStats, setSorting, heroSorting, shardSorting, category, heroes, filterSort) {
     if (!stats || !rawData) return

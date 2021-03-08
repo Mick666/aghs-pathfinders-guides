@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { useDrag, useDrop } from 'react-dnd'
 
-import Shards from '../../Shards'
-import Abilities from '../../Abilities'
+import Shards from '../../data/Shards'
+import Abilities from '../../data/Abilities'
 
 const IndividualShard = ({ shard, handleDrop, indx, shardDetails }) => {
 
@@ -21,7 +21,7 @@ const IndividualShard = ({ shard, handleDrop, indx, shardDetails }) => {
     return (
         <div ref={drop} className='dropDiv'>
             <div className='createShardRankingParent' ref={drag}>
-                <img src={Abilities[Shards[shard].skill].link} className='shardImage' />
+                <img src={Abilities[Shards[shard].skill].link} className='createGuideShardImage' />
                 <div className='shardRankingDetailsParent'>
                     <h3 className='shardTitle' >{Shards[shard].name}</h3>
                     <div className={`shardDescription ${shardDetails ? '' : 'hidden'}`} >{Shards[shard].description}</div>

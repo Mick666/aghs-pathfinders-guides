@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Icon } from 'semantic-ui-react'
-import Shards from '../../Shards'
-import Abilities from '../../Abilities'
+import Shards from '../../data/Shards'
+import Abilities from '../../data/Abilities'
 import sortStats from '../../utils/sortStats'
 
 const HeroStats = ({ currentView, stats, currentTab, setStats, statsQuery, hero }) => {

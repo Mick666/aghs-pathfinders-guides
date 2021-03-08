@@ -1,9 +1,9 @@
 import React from 'react'
 
-import Items from '../Items'
-import Abilities from '../Abilities'
-import Heroes from '../Heroes'
-import Shards from '../Shards'
+import Items from '../data/Items'
+import Abilities from '../data/Abilities'
+import Heroes from '../data/Heroes'
+import Shards from '../data/Shards'
 
 const GuideLevels = ({ levels, selectedTalents, hero }) => {
     //eslint-disable-next-line

@@ -18,10 +18,11 @@ const AllGuides = () => {
     // console.log(guides)
 
     const fetchMore = (prevPage) => {
-        if (currentPage < 0 || currentPage >= guides.data?.guideCount - 20) return
+        console.log(currentPage, guides.data?.guideCount, prevPage === 'prev' ? currentPage - 20 : currentPage + 20)
+        // if (currentPage < 0 || currentPage >= guides.data?.guideCount - 20) return
         guides.fetchMore({
             variables: {
-                first: 5,
+                first: 20,
                 after: prevPage === 'prev' ? currentPage - 20 : currentPage + 20
             }
         })

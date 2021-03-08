@@ -3,8 +3,9 @@ import { useMutation } from '@apollo/client'
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 import { useHistory } from 'react-router-dom'
+import Select from 'react-select'
 
-import Heroes from '../../Heroes'
+import Heroes from '../../data/Heroes'
 import CreateItemGroups from './CreateItemGroups'
 import CreateGuideLevels from './CreateGuideLevels'
 import CreateGuideShardRankings from './CreateGuideShardRanking'
@@ -90,18 +91,13 @@ const CreateGuide = () => {
                         </div>
                         <div className='guideHero'>
                             <div className='guideHeaderText'>Select hero:</div>
-                            <div>
-                                <select
-                                    onChange={(e) => setHeroSelection(e.target.value)}
-                                    value={heroSelection}
-                                >
-                                    {Heroes.map((hero, key) => {
-                                        return (
-                                            <option key={key} value={hero.id}>{hero.id}</option>
-                                        )
-                                    })}
-                                </select>
-                            </div>
+                            <Select
+                                name='heroSelect'
+                                options={Heroes.map(hero => { return { value: hero.id, label: hero.name } })}
+                                onChange={(e) => setHeroSelection(e.target.value)}
+                                classNamePrefix='createGuideHeroSelect'
+                                className='createGuideHeroSelect'
+                            />
                         </div>
                         <div>
                             <button onClick={guideSubmission}>Create guide</button>

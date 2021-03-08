@@ -29,6 +29,10 @@ const Header = () => {
                     <span className={`headerCurrentPage ${pathname === '/stats' ? 'active' : ''}`}/>
                 </div>
                 <div className='headerLinkParent'>
+                    <Link className={`headerLinks cleanLink ${pathname === '/games' ? 'active' : ''}`} to='/games'>Victorious Games</Link>
+                    <span className={`headerCurrentPage ${pathname === '/games' ? 'active' : ''}`}/>
+                </div>
+                <div className='headerLinkParent'>
                     <Link className={`headerLinks cleanLink ${pathname === '/videos' ? 'active' : ''}`} to='/'>Videos</Link>
                     <span className={`headerCurrentPage ${pathname === '/videos' ? 'active' : ''}`}/>
                 </div>

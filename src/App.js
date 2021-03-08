@@ -12,10 +12,11 @@ import HeroPage from './components/HeroPage'
 import Footer from './components/Footer'
 import Header from './components/Header'
 import HeroList from './components/HeroList'
-import Heroes from './Heroes'
+import Heroes from './data/Heroes'
 import AllGuides from './components/AllGuidesPage'
 import CreateGuide from './components/CreateGuide/'
 import AllStats from './components/AllStats'
+import VictoriousGames from './components/VictoriousGames'
 
 function App() {
 
@@ -44,6 +45,9 @@ function App() {
                         </Route>
                         <Route path='/stats'>
                             <AllStats />
+                        </Route>
+                        <Route path='/games'>
+                            <VictoriousGames />
                         </Route>
                         <Route path='/'>
                             <Main />
