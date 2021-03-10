@@ -160,6 +160,7 @@ const Items = {
     item_arcanist_potion: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/3/38/Arcanist_Potion_icon.png'), name: 'Arcanist Potion', consumable: true },
     item_purification_potion: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/a/a2/Purification_Potion_icon.png'), name: 'Purification Potion', consumable: true },
     item_dragon_potion: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/5/5f/Dragon_Potion_icon.png'), name: 'Dragon Potion', consumable: true },
+    item_ravage_potion: { link: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/4/47/Ravage_Potion_icon.png', name: 'Ravage Potion', consumable: true },
     item_woodland_striders: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/6/6d/Woodland_Striders_icon.png'), name: 'Woodland Striders', neutral: true },
     item_wand_of_the_brine: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/4/44/Wand_of_the_Brine_icon.png'), name: 'Wand of the Brine', neutral: true },
     item_carapace_of_qaldin: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/a/ae/Carapace_of_Qaldin_icon.png'), name: 'Carapace of Qaldin', neutral: true },
@@ -205,9 +206,24 @@ const Items = {
     item_vampire_fangs: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/3/32/Vampire_Fangs_icon.png'), name: 'Vampire Fangs', neutral: true },
     item_guardian_shell: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/5/50/Guardian_Shell_icon.png'), name: 'Guardian Shell', neutral: true },
     item_giants_ring: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/7/7b/Giant%27s_Ring_icon.png'), name: 'Giant\'s Ring', neutral: true },
-    item_trickster_cloak: { link: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/5/53/Trickster_Cloak_icon.png', name: 'Trickster Cloak', neutral: true }
+    item_trickster_cloak: { link: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/5/53/Trickster_Cloak_icon.png', name: 'Trickster Cloak', neutral: true },
+    item_sign_of_the_arachnid: { link: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/b/bc/Sign_of_the_Arachnid_icon.png', name: 'Sign of the Arachnid', neutral: true },
+    item_slippers_of_the_abyss: { link: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/b/b1/Slippers_of_the_Abyss_icon.png', name: 'Slippers of the Abyss', neutral: true },
+    item_penta_edged_sword: { link: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/d/db/Penta-Edged_Sword_icon.png', name: 'Penta-Edged Sword', neutral: true },
+    item_longclaws_amulet: { link: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/1/1f/Longclaw%27s_Amulet_icon.png', name: 'Longclaw\'s Amulet', neutral: true },
+    item_treads_of_ermacor: { link: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/b/b5/Treads_of_Ermacor_icon.png', name: 'Treads of Ermacor', neutral: true },
+    item_branches: { link: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/a/a3/Iron_Branch_icon.png', name: 'Iron Branch' },
+    item_cloak_of_flames: { link: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/8/8d/Cloak_of_Flames_icon.png', name: 'Cloak of Flames', neutral: true },
+    item_nether_shawl: { link: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e7/Nether_Shawl_icon.png', name: 'Nether Shawl', neutral: true },
+    item_winter_embrace: { link: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/e/ee/Winter%27s_Embrace_icon.png', name: 'Winter\'s Embrace', neutral: true },
+    item_stony_coat: { link: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/f/ff/Stony_Coat_icon.png', name: 'Stony Coat', neutral: true },
+    item_paw_of_lucius: { link: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/6/69/Paw_of_Lucius_icon.png', name: 'Paw of Lucius', neutral: true },
+    item_bogduggs_cudgel: { link: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/9/94/Bogdugg%27s_Cudgel_icon.png', name: 'Bogdugg\'s Cudgel', neutral: true },
+    item_bogduggs_lucky_femur: { link: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/7/77/Bogdugg%27s_Lucky_Femur_icon.png', name: 'Bogdugg\'s Lucky Femur', neutral: true },
+    item_book_of_shadows: { link: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/5/54/Book_of_Shadows_icon.png', name: 'Book of Shadows', neutral: true },
+    item_the_caustic_finale: { link: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/e/ec/The_Caustic_Finale_icon.png', name: 'The Caustic Finale', neutral: true },
 }
 
 // 60x44
-
+// : { link: '', name: '', neutral: true },
 export default Items

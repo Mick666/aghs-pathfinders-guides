@@ -103,28 +103,27 @@ export const SHARD_STATS = gql`
 `
 
 export const VIC_GAMES = gql`
-    query {
-        allMatchData {
-            victoriousGames {
-                levelData {
-                    rooms {
-                        lives_lost
-                        picked_name
-                        unpicked_name
-                        picked_elite
-                        unpicked_elite
-                    }
-                }
-                players {
-                    damage_dealt
-                    damage_taken
-                    deaths
-                    depth
-                    hero
-                    items
-                    upgrades
-                }
-            }
+query victoriousMatches($difficulty: Int!, $first: Int, $after: Int)  {
+    victoriousMatches(difficulty: $difficulty, first: $first, after: $after) {
+        levelData {
+          rooms {
+            lives_lost
+            picked_name
+            unpicked_name
+            picked_elite
+            unpicked_elite
+          }
+        }
+        players {
+          damage_dealt
+          damage_taken
+          deaths
+          depth
+          hero
+          items
+          upgrades
         }
     }
+    victoriousMatchesCount(difficulty: $difficulty)
+  }
 `

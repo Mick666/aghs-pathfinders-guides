@@ -15,7 +15,14 @@ const cache = new InMemoryCache({
                     keyArgs: false,
                     // eslint-disable-next-line no-unused-vars
                     merge(existing = [], incoming) {
-                        return [ ...incoming]
+                        return [...incoming]
+                    },
+                },
+                victoriousMatches: {
+                    keyArgs: false,
+                    // eslint-disable-next-line no-unused-vars
+                    merge(existing = [], incoming) {
+                        return [...incoming]
                     },
                 }
             }
@@ -27,7 +34,7 @@ const cache = new InMemoryCache({
 const client = new ApolloClient({
     cache: cache,
     link: new HttpLink({
-        uri: 'http://localhost:4000/graphql',
+        uri: '/graphql',
     })
 })
 

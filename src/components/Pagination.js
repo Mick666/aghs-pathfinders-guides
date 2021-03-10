@@ -20,3 +20,22 @@ export const PaginationSmall = ({ onPageChange, totalPages, currentPage }) => {
         </div>
     )
 }
+
+export const PaginationLarge = ({ onPageChange, totalPages, currentPage, difficulty }) => {
+    return (
+        <div className='flexRow paginationParent'>
+            <div onClick={currentPage === 1 ? null : () => onPageChange('start', difficulty) }>
+                <Icon name='angle double left' className={`${currentPage === 1 ? 'disabled' : ' blue'} large`}/>
+            </div>
+            <div onClick={currentPage === 1 ? null : () => onPageChange('previous', difficulty) }>
+                <Icon name='angle left' className={`${currentPage === 1 ? 'disabled' : ' blue'} large`}/>
+            </div>
+            <div onClick={currentPage === totalPages ? null : () => onPageChange('next', difficulty) }>
+                <Icon name='angle right' className={`${currentPage === totalPages ? 'disabled' : ' blue'} large`}/>
+            </div>
+            <div onClick={currentPage === totalPages ? null : () => onPageChange('end', difficulty) }>
+                <Icon name='angle double right' className={`${currentPage === totalPages ? 'disabled' : ' blue'} large`}/>
+            </div>
+        </div>
+    )
+}

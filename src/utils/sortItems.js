@@ -5,22 +5,20 @@ const sortItems = (items) => {
 }
 
 const getInventoryItems = (items) => {
-    if (items.length < 6) {
-        let invItems = items.filter(item => !item.neutral)
-        while (invItems.length < 6) {
-            invItems.push(null)
-        }
+    if (!items) return new Array(6).fill(null)
+    let invItems = items.filter(item => !Items[item]?.neutral)
+    while (invItems.length < 6) {
+        invItems.push(null)
     }
-
-    return items.slice(0, 6)
+    return invItems.slice(0, 6)
 }
 
 const getBackpackItems = (items) => {
-    if (items.length < 6) return [null, null, null]
+    if (!items || items.length < 6) return [null, null, null]
 
     let backpackItems
-    if (Items[items[items.length-1]]?.neutral) {
-        backpackItems = items.slice(6, items.length-1)
+    if (Items[items[items.length - 1]]?.neutral) {
+        backpackItems = items.slice(6, items.length - 1)
     } else {
         backpackItems = items.slice(6)
     }
@@ -32,7 +30,8 @@ const getBackpackItems = (items) => {
 }
 
 const getNeutralItem = (items) => {
-    if (Items[items[items.length-1]]?.neutral) return items[items.length-1]
+    if (!items) return null
+    else if (Items[items[items?.length - 1]]?.neutral) return items[items.length - 1]
     else return null
 }
 
