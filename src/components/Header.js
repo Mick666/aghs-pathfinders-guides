@@ -32,10 +32,10 @@ const Header = () => {
                     <Link className={`headerLinks cleanLink ${pathname === '/games' ? 'active' : ''}`} to='/games'>Victorious Games</Link>
                     <span className={`headerCurrentPage ${pathname === '/games' ? 'active' : ''}`}/>
                 </div>
-                <div className='headerLinkParent'>
+                {/* <div className='headerLinkParent'>
                     <Link className={`headerLinks cleanLink ${pathname === '/videos' ? 'active' : ''}`} to='/'>Videos</Link>
                     <span className={`headerCurrentPage ${pathname === '/videos' ? 'active' : ''}`}/>
-                </div>
+                </div> */}
 
             </div>
         </div>

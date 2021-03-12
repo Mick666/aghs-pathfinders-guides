@@ -77,12 +77,15 @@
     z-index: 1;
 }
 
-.game-player-items {
+.game-player-items, .game-player-backpack, .game-player-neutral-parent {
     border: 3px solid transparent;
     border-image: -webkit-radial-gradient(center, ellipse cover, white, black);
     border-image-slice: 1;
+}
+
+.game-player-items {
     border-bottom: none;
-    margin-top: 5px;
+    /* margin-top: 5px; */
 }
 
 .game-item-emptyslot {
@@ -93,9 +96,6 @@
 
 .game-player-backpack {
     background-color: rgb(31, 31, 31);
-    border: 3px solid transparent;
-    border-image: -webkit-radial-gradient(center, ellipse cover, white, black);
-    border-image-slice: 1;
     /* border-top: none; */
     z-index: 20;
 }
@@ -104,12 +104,9 @@
     position: absolute;
     left: 214px;
     top: 1px;
-    border: 3px solid transparent;
-    border-image: -webkit-radial-gradient(center, ellipse cover, white, black);
-    border-image-slice: 1;
     border-left: none;
     height: 143px;
-    margin-top: 25px;
+    margin-top: 20px;
     width: 65px;
     background: url(https://www.dotafire.com/css/img/bg-box-p.png) repeat scroll center top #0f0f0f;
     padding-left: 5px;

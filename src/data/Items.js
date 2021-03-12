@@ -202,7 +202,7 @@ const Items = {
     item_stonework_pendant: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/5/57/Stonework_Pendant_icon.png'), name: 'Stonework Pendant', neutral: true },
     item_preserved_skull: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/6/6e/Preserved_Skull_icon.png'), name: 'Preserved Skull', neutral: true },
     item_ice_dragon_maw: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/9/9c/Ice_Dragon_Maw_icon.png'), name: 'Ice Dragon Maw', neutral: true },
-    item_mysterious_hat: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/7/70/Rhyzik%27s_Eye_icon.png'), name: 'Unknown', neutral: true },
+    item_mysterious_hat: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/f/f3/Fairy%27s_Trinket_icon.png'), name: 'Fairy\'s Trinket', neutral: true },
     item_vampire_fangs: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/3/32/Vampire_Fangs_icon.png'), name: 'Vampire Fangs', neutral: true },
     item_guardian_shell: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/5/50/Guardian_Shell_icon.png'), name: 'Guardian Shell', neutral: true },
     item_giants_ring: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/7/7b/Giant%27s_Ring_icon.png'), name: 'Giant\'s Ring', neutral: true },
