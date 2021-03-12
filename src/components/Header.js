@@ -3,7 +3,6 @@ import { Link, useLocation } from 'react-router-dom'
 
 const Header = () => {
     const { pathname } = useLocation()
-    console.log(pathname)
     return (
         <div className='header'>
             <h1 className='headerTitle'>Aghanim&apos;s Pathfinders</h1>

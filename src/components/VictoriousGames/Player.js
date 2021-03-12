@@ -15,7 +15,7 @@ const Player = ({ player, expanded, setShard }) => {
     return (
         <div className='flexRow game-player-parent'>
             <div className='flexColumn game-player-hero' >
-                <img src={heroNames[player.hero].image} className='game-hero-image' />
+                <img src={heroNames[player.hero] ? heroNames[player.hero].image : ''} className='game-hero-image' />
                 <div className='flexRow game-player-shards-parent' onMouseLeave={() => setShard(null)}>
                     {player.upgrades.map((shard, key) => {
                         return <img key={key} className='game-player-shards' src={Shards[shard] ? Abilities[Shards[shard].skill].link : ''} onMouseEnter={() => setShard(shard)}/>

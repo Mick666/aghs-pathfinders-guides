@@ -74,6 +74,7 @@ export const HERO_STATS = gql`
                 deaths
                 defeats
                 hero
+                heroId
                 totalGames
                 victories
             }

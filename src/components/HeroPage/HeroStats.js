@@ -8,8 +8,19 @@ const HeroStats = ({ currentView, stats, currentTab, setStats, statsQuery, hero 
     const difficulties = ['Grand Magus', 'Apex Mage', 'Sorcerer']
     const [shardSorting, setShardSorting] = useState(['WR', 'DESC'])
 
-    function sortFunc(setSortedData, category, heroes) {
-        sortStats(stats, statsQuery.data.heroStats, setStats, setSortedData, false, shardSorting, category, heroes)
+    function sortFunc(setSortedData, category, heroes, totalGames, heroId) {
+        const heroTotalGames = {}
+        if (totalGames) heroTotalGames[heroId] = totalGames
+        sortStats({
+            stats: stats,
+            rawData: statsQuery.data.heroStats,
+            setStats: setStats,
+            setSorting: setSortedData,
+            shardSorting: shardSorting,
+            category: category,
+            heroes: heroes,
+            heroTotalGames: heroTotalGames
+        })
     }
 
     return (
@@ -44,7 +55,7 @@ const HeroStats = ({ currentView, stats, currentTab, setStats, statsQuery, hero 
                                             Shard
                                             <Icon name={shardSorting[0] !== 'SHARDS' ? 'sort' : shardSorting[1] === 'DESC' ? 'sort down' : 'sort up'} />
                                         </th>
-                                        <th className='shardStatsEl' onClick={() => sortFunc(setShardSorting, 'PICKS')}>
+                                        <th className='shardStatsEl' onClick={() => sortFunc(setShardSorting, 'PICKS', false, stats[key].singleHeroStats.totalGames, hero.id)}>
                                             Pick rate
                                             <Icon name={shardSorting[0] !== 'PICKS' ? 'sort' : shardSorting[1] === 'DESC' ? 'sort down' : 'sort up'} />
                                         </th>

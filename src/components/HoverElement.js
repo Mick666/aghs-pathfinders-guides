@@ -18,6 +18,6 @@ export const HoverShard = ({ shard, position }) => {
     )
 }
 
-export const HoverItem = ({ item, position }) => {
+// export const HoverItem = ({ item, position }) => {
 
-}
+// }

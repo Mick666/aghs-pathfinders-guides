@@ -1,11 +1,11 @@
 import Shards from '../data/Shards'
-import { heroNames } from '../data/Heroes'
 
-function sortStats(stats, rawData, setStats, setSorting, heroSorting, shardSorting, category, heroes, filterSort) {
+function sortStats({ stats, rawData, setStats, setSorting, heroSorting, shardSorting, category, heroes, filterSort, heroTotalGames }) {
+    console.log(arguments)
     if (!stats || !rawData) return
     switch (category) {
     case 'VICS':
-        if (heroes && heroSorting[0] !== 'VICS'|| filterSort && shardSorting[1] === 'DESC' || !heroes && shardSorting[0] !== 'VICS' ) {
+        if (heroes && heroSorting[0] !== 'VICS' || filterSort && shardSorting[1] === 'DESC' || !heroes && shardSorting[0] !== 'VICS') {
             const sortedStats = [...stats].map(difficulty => {
                 return heroes ?
                     {
@@ -48,7 +48,7 @@ function sortStats(stats, rawData, setStats, setSorting, heroSorting, shardSorti
         }
         break
     case 'WR':
-        if (heroes && heroSorting[0] !== 'WR' || filterSort && shardSorting[1] === 'DESC'  || !heroes && shardSorting[0] !== 'WR') {
+        if (heroes && heroSorting[0] !== 'WR' || filterSort && shardSorting[1] === 'DESC' || !heroes && shardSorting[0] !== 'WR') {
             const sortedStats = [...stats].map(difficulty => {
                 return heroes ?
                     {
@@ -61,7 +61,7 @@ function sortStats(stats, rawData, setStats, setSorting, heroSorting, shardSorti
             })
             setStats(sortedStats)
             setSorting(['WR', 'DESC'])
-        } else if (heroes && heroSorting[1] === 'DESC' || filterSort && shardSorting[1] === 'ASC'  || !heroes && shardSorting[1] === 'DESC') {
+        } else if (heroes && heroSorting[1] === 'DESC' || filterSort && shardSorting[1] === 'ASC' || !heroes && shardSorting[1] === 'DESC') {
             const sortedStats = [...stats].map(difficulty => {
                 return heroes ?
                     {
@@ -120,7 +120,7 @@ function sortStats(stats, rawData, setStats, setSorting, heroSorting, shardSorti
         }
         break
     case 'GAMES':
-        if (heroes && heroSorting[0] !== 'GAMES'|| filterSort && shardSorting[1] === 'DESC'  || !heroes && shardSorting[0] !== 'GAMES') {
+        if (heroes && heroSorting[0] !== 'GAMES' || filterSort && shardSorting[1] === 'DESC' || !heroes && shardSorting[0] !== 'GAMES') {
             const sortedStats = [...stats].map(difficulty => {
                 return heroes ?
                     {
@@ -133,7 +133,7 @@ function sortStats(stats, rawData, setStats, setSorting, heroSorting, shardSorti
             })
             setStats(sortedStats)
             setSorting(['GAMES', 'DESC'])
-        } else if (heroes && heroSorting[1] === 'DESC'|| filterSort && shardSorting[1] === 'ASC'  || !heroes && shardSorting[1] === 'DESC') {
+        } else if (heroes && heroSorting[1] === 'DESC' || filterSort && shardSorting[1] === 'ASC' || !heroes && shardSorting[1] === 'DESC') {
             const sortedStats = [...stats].map(difficulty => {
                 return heroes ?
                     {
@@ -163,22 +163,20 @@ function sortStats(stats, rawData, setStats, setSorting, heroSorting, shardSorti
         break
     case 'PICKS':
         if (filterSort && shardSorting[1] === 'DESC' || shardSorting[0] !== 'PICKS') {
-            console.log(heroNames.Axe)
             const sortedStats = [...stats].map((difficulty, index) => {
-                if (!heroNames.Axe.totalGames) return difficulty
                 return {
                     ...difficulty,
-                    shardWinrates: [...difficulty.shardWinrates].sort((a, b) => (b.totalGames / heroNames[b.hero].totalGames[index]) - (a.totalGames / heroNames[a.hero].totalGames[index]))
+                    shardWinrates: [...difficulty.shardWinrates].sort((a, b) => (b.totalGames / heroTotalGames[b.hero][index]) - (a.totalGames / heroTotalGames[a.hero][index]))
                 }
             })
+            console.log(sortedStats)
             setStats(sortedStats)
             setSorting(['PICKS', 'DESC'])
         } else if (filterSort && shardSorting[1] === 'ASC' || shardSorting[1] === 'DESC') {
             const sortedStats = [...stats].map((difficulty, index) => {
-                if (!heroNames.Axe.totalGames) return difficulty
                 return {
                     ...difficulty,
-                    shardWinrates: [...difficulty.shardWinrates].sort((a, b) => (a.totalGames / heroNames[a.hero].totalGames[index]) - (b.totalGames / heroNames[b.hero].totalGames[index]))
+                    shardWinrates: [...difficulty.shardWinrates].sort((a, b) => (a.totalGames / heroTotalGames[a.hero][index]) - (b.totalGames / heroTotalGames[b.hero][index]))
                 }
             })
             setStats(sortedStats)

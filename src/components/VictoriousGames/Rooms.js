@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Rooms, Modifiers } from '../../data/Rooms'
+import { Rooms } from '../../data/Rooms'
 
 const getRoomImage = (room, elite) => {
     if (room === 'nil') return ''
