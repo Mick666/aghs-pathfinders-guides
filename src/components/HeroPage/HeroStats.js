@@ -10,7 +10,7 @@ const HeroStats = ({ currentView, stats, currentTab, setStats, statsQuery, hero 
 
     function sortFunc(setSortedData, category, heroes, totalGames, heroId) {
         const heroTotalGames = {}
-        if (totalGames) heroTotalGames[heroId] = totalGames
+        if (totalGames) heroTotalGames[heroId] = [totalGames]
         sortStats({
             stats: stats,
             rawData: statsQuery.data.heroStats,
