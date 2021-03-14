@@ -37,7 +37,7 @@ const HeroPage = () => {
             if (selectedGuide) setGuide(guides.data.allHeroGuides.indexOf(selectedGuide))
         }
     }, [statsQuery, guides])
-
+    console.log('test')
     return (
         <div className='heroPage'>
             <HeroHeader

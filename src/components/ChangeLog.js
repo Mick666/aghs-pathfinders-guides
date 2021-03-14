@@ -5,7 +5,7 @@ const ChangeLog = ({ changeLog }) => {
         <div className='changeLogItem'>
             <h4 className='changeLogTitle'>{changeLog.title}</h4>
             <ul className='changeLogList'>
-                {changeLog.details.map((change, key) => <li key={key}>{change}</li>)}
+                {changeLog.changes.map((change, key) => <li key={key}>{change}</li>)}
             </ul>
         </div>
     )

@@ -35,7 +35,7 @@ const CreateGuideLevels = ({ hero, selectedTalents, levels, setTalents, setLevel
         }
 
         let updatedLevels = [...levels]
-        updatedLevels[level] = skill
+        updatedLevels[level] = updatedLevels[level] === skill ? 5 : skill
         setLevels(updatedLevels)
     }
 

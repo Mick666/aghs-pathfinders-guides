@@ -11,6 +11,7 @@ import CreateGuideLevels from './CreateGuideLevels'
 import CreateGuideShardRankings from './CreateGuideShardRanking'
 import CreateGuideShardCombos from './CreateGuideShardCombos'
 import { ADD_GUIDE } from '../../graphql/mutations'
+import { ALL_GUIDES, ALL_HEROGUIDES } from '../../graphql/queries'
 
 const CreateGuide = () => {
     const [guideName, setGuideName] = useState('')
@@ -23,7 +24,7 @@ const CreateGuide = () => {
     const [shardCombinations, setShardCombos] = useState([{ groupName: 1, shards: [], description: '', deleted: false }])
     const [errorMessages, setErrorMessages] = useState([])
     const history = useHistory()
-    const [addGuide] = useMutation(ADD_GUIDE)
+    const [addGuide] = useMutation(ADD_GUIDE, { refetchQueries: [ { query: ALL_GUIDES }, { query: ALL_HEROGUIDES, variables: { hero: heroSelection } } ] })
 
     const guideSubmission = () => {
         let errors = []
@@ -56,6 +57,7 @@ const CreateGuide = () => {
             })
         } catch (error) {
             console.log(error)
+            return
         }
 
         setGuideName('')
@@ -94,7 +96,7 @@ const CreateGuide = () => {
                             <Select
                                 name='heroSelect'
                                 options={Heroes.map(hero => { return { value: hero.id, label: hero.name } })}
-                                onChange={(e) => setHeroSelection(e.target.value)}
+                                onChange={(e) => setHeroSelection(e.value)}
                                 classNamePrefix='createGuideHeroSelect'
                                 className='createGuideHeroSelect'
                             />

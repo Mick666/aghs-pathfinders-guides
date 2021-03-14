@@ -19,3 +19,15 @@ export const ADD_GUIDE = gql`
     }
     ${COMPLETE_GUIDE}
 `
+
+export const ADD_CHANGELOG = gql`
+    mutation addChangelog($title: String!, $changes: [String!]!) {
+        addChangelog(
+            title: $title
+            changes: $changes
+        ) {
+            title
+            changes
+        }
+    }
+`

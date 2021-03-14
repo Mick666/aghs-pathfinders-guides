@@ -971,7 +971,7 @@ code {
 }
 
 .select-search {
-  margin-top: 100px;
+  margin-top: 90px;
 }
 
 .hideText {
@@ -1058,8 +1058,8 @@ code {
 }
 
 .createGuideItemSection {
-  width: 100%;
-  min-height: 100px;
+  width: 61%;
+  height: 114px;
 }
 
 .removeItemButton {

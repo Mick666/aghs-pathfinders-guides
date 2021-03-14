@@ -3,20 +3,21 @@ import Shards from '../../data/Shards'
 import Abilities from '../../data/Abilities'
 import { heroNames } from '../../data/Heroes'
 
-const ShardsStatsTable = ({ shard, handleHover, hoveredElement, heroTotalGames, ind }) => {
+const ShardsStatsTable = ({ shard, heroTotalGames, ind }) => {
     if (!shard) return null
     const shardExists = Shards[shard.shard]
     return (
         <tr
             id={shard.shard}
-            onMouseOver={(e) => handleHover(e)}
+            onMouseOver={(e) => e.currentTarget.firstElementChild.firstElementChild.children[1].children[1].className = e.currentTarget.firstElementChild.firstElementChild.children[1].children[1].className.replace(/hidden/g, '')}
+            onMouseLeave={(e) => e.currentTarget.firstElementChild.firstElementChild.children[1].children[1].className += ' hidden'}
         >
             <td className='shardStatsShardParent'>{shardExists ?
                 <div className='shardStatsShard'>
                     <img className='shardStatsImage' src={shardExists ? Abilities[Shards[shard.shard].skill].link : ''} />
                     <div className='shardStatsText'>
                         <b className='shardStatsTitle leftAlignText'>{Shards[shard.shard]?.name}</b>
-                        <div className={`${hoveredElement === shard.shard ? '' : 'hidden'} leftAlignText`}>{Shards[shard.shard]?.description}</div>
+                        <div className={'hidden leftAlignText'}>{Shards[shard.shard]?.description}</div>
                     </div>
                 </div> :
                 shard.shard

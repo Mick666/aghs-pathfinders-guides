@@ -18,9 +18,7 @@ const AllStats = () => {
     const [heroSorting, setHeroSorting] = useState(['WR', 'DESC'])
     const [stats, setStats] = useState(null)
     const results = useQuery(HERO_STATS)
-    const [hoveredElement, setHoveredElement] = useState(null)
     const heroTotalGames = {}
-    const handleHover = (event) => setHoveredElement(event.currentTarget.id)
     const heroIDs = Heroes.reduce((obj, item) => (obj[item.name] = { ...item }, obj), {})
 
     function filterShards(heroes) {
@@ -63,6 +61,7 @@ const AllStats = () => {
 
     useEffect(() => {
         if (results.data) {
+            console.log('test')
             const rawStats = [...results.data.allMatchData].map(difficulty => {
                 return {
                     heroAsArray: [...difficulty.heroAsArray].sort((a, b) => (b.victories / b.defeats) - (a.victories / a.defeats)),
@@ -86,7 +85,7 @@ const AllStats = () => {
             else heroTotalGames[hero.heroId] = [hero.totalGames]
         }))
     }
-
+    console.log(results)
     return (
         <div className='statsParent'>
             <div className='statsTabs'>
@@ -113,15 +112,13 @@ const AllStats = () => {
                     {stats.map((difficulty, key) => {
                         return (
                             <div className={Number(visibleDifficulty) === key ? '' : 'hidden'} key={key}>
-                                <table className='statTable shardStatsEl' onMouseLeave={() => setHoveredElement(null)}>
+                                <table className='statTable shardStatsEl'>
                                     <tbody>
                                         <ShardsStatsHeader sortFunc={sortFunc} setShardSorting={setShardSorting} shardSorting={shardSorting} />
                                         {difficulty.shardWinrates
                                             .map((shard, ind) => <ShardsStatsTable
                                                 key={ind} ind={key}
                                                 shard={shard}
-                                                handleHover={handleHover}
-                                                hoveredElement={hoveredElement}
                                                 heroTotalGames={heroTotalGames}
                                             />)
                                         }

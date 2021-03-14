@@ -56,7 +56,7 @@ export const ALL_GUIDES = gql`
 `
 
 export const RECENT_GUIDES = gql`
-    query recentGuides {
+    query homePage {
         allGuides(first: 3) {
             title
             createdAt
@@ -127,4 +127,13 @@ query victoriousMatches($difficulty: Int!, $first: Int, $after: Int)  {
     }
     victoriousMatchesCount(difficulty: $difficulty)
   }
+`
+
+export const ALL_CHANGELOGS = gql`
+  query {
+        allChangelogs {
+            title
+            changes
+        }
+    }
 `

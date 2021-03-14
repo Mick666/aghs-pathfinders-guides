@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { Icon } from 'semantic-ui-react'
+import { Loader } from 'semantic-ui-react'
+
 import Shards from '../../data/Shards'
 import Abilities from '../../data/Abilities'
 import sortStats from '../../utils/sortStats'
@@ -7,6 +9,8 @@ import sortStats from '../../utils/sortStats'
 const HeroStats = ({ currentView, stats, currentTab, setStats, statsQuery, hero }) => {
     const difficulties = ['Grand Magus', 'Apex Mage', 'Sorcerer']
     const [shardSorting, setShardSorting] = useState(['WR', 'DESC'])
+
+    if (statsQuery.loading) return <Loader active inverted style={{ marginTop: '400px', marginLeft: '100px' }}>Loading</Loader>
 
     function sortFunc(setSortedData, category, heroes, totalGames, heroId) {
         const heroTotalGames = {}

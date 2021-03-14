@@ -17,6 +17,7 @@ import AllGuides from './components/AllGuidesPage'
 import CreateGuide from './components/CreateGuide/'
 import AllStats from './components/AllStats'
 import VictoriousGames from './components/VictoriousGames'
+import ChangeLogInput from './components/ChangelogInput'
 
 function App() {
 
@@ -48,6 +49,9 @@ function App() {
                         </Route>
                         <Route path='/games'>
                             <VictoriousGames />
+                        </Route>
+                        <Route path='/changelog'>
+                            <ChangeLogInput />
                         </Route>
                         <Route path='/'>
                             <Main />

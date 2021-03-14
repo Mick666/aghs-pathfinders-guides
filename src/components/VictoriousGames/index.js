@@ -28,7 +28,6 @@ const VictoriousGames = () => {
     }
 
     const fetchMore = (direction, difficulty) => {
-        console.log(direction, difficulty)
         let variables, updatedPage
         switch (direction) {
         case 'switch':
