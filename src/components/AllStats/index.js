@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { useQuery } from '@apollo/client'
 import { HERO_STATS } from '../../graphql/queries'
-import { Icon, Loader } from 'semantic-ui-react'
-import Select from 'react-select'
+import { Loader } from 'semantic-ui-react'
 
-import Heroes, { heroNames } from '../../data/Heroes'
-import Shards from '../../data/Shards'
-import Abilities from '../../data/Abilities'
+import Heroes from '../../data/Heroes'
 import sortStats from '../../utils/sortStats'
+import StatsHeader from './StatsHeader'
+import HeroStatsHeader from './HeroStatsHeader'
+import HeroStatsTable from './HeroStatsTable'
+import ShardsStatsHeader from './ShardsStatsHeader'
+import ShardsStatsTable from './ShardsStatsTable'
 
 const AllStats = () => {
     const [visibleStats, setVisibleStats] = useState('shards')
@@ -18,15 +20,7 @@ const AllStats = () => {
     const results = useQuery(HERO_STATS)
     const [hoveredElement, setHoveredElement] = useState(null)
     const heroTotalGames = {}
-    // console.log(results)
-
-    function handleHover(event) {
-        if (event.target.id.length > 0) setHoveredElement(event.target.id)
-        else if (event.target.parentElement.id.length > 0) setHoveredElement(event.target.parentElement.id)
-        else if (event.target.parentElement.parentElement.id.length > 0) setHoveredElement(event.target.parentElement.parentElement.id)
-        else if (event.target?.parentElement?.parentElement?.parentElement.id.length > 0) setHoveredElement(event.target.parentElement.parentElement.parentElement.id)
-        else if (event.target?.parentElement?.parentElement?.parentElement?.parentElement.id.length > 0) setHoveredElement(event.target.parentElement.parentElement.parentElement.parentElement.id)
-    }
+    const handleHover = (event) => setHoveredElement(event.currentTarget.id)
     const heroIDs = Heroes.reduce((obj, item) => (obj[item.name] = { ...item }, obj), {})
 
     function filterShards(heroes) {
@@ -41,12 +35,19 @@ const AllStats = () => {
                 shardWinrates: [...results.data.allMatchData][index].shardWinrates.filter(shard => heroes.includes(shard.hero))
             }
         })
-        sortStats(filteredStats, results.data.allMatchData, setStats, setShardSorting, heroSorting, shardSorting, shardSorting[0], false, true)
+        sortStats({
+            stats: filteredStats,
+            rawData: results.data.allMatchData,
+            setStats: setStats,
+            setSorting: setShardSorting,
+            heroSorting: heroSorting,
+            shardSorting: shardSorting,
+            category: shardSorting[0],
+            filterSort: true
+        })
     }
 
     function sortFunc(setSortedData, category, heroes) {
-        console.log(heroes)
-        // stats, rawData, setStats, setSorting, heroSorting, shardSorting, category, heroes, filterSort
         sortStats({
             stats: stats,
             rawData: results.data.allMatchData,
@@ -93,82 +94,15 @@ const AllStats = () => {
                 <div className={`statTab ${visibleStats === 'shards' ? 'active' : ''}`} onClick={() => setVisibleStats('shards')}>Legendary Shards</div>
             </div>
             <div className='tabContent'>
-                <div className='statsHeader'>
-                    <div className='statsSelectors'>
-                        <div className={`statsDifficultyFilterParent ${visibleStats === 'shards' ? '' : 'headerMargin'}`}>
-                            <h4>Difficulty</h4>
-                            <Select
-                                name='heroFilter'
-                                options={[{ value: 0, label: 'Grand Magus' }, { value: 1, label: 'Apex Mage' }, { value: 2, label: 'Sorcerer' }]}
-                                defaultValue={{ value: 0, label: 'Grand Magus' }}
-                                onChange={(e) => setVisibleDifficulty(e.value)}
-                                classNamePrefix='statsDifficultyFilter'
-                                className='statsDifficultyFilter'
-                            />
-                        </div>
-                        <div className={`statsHeroFilterParent ${visibleStats === 'shards' ? '' : 'hidden'}`}>
-                            <h4>Heroes</h4>
-                            <Select
-                                isMulti
-                                name='heroFilter'
-                                options={Heroes.map(hero => { return { value: hero.id, label: hero.name } })}
-                                onChange={(e) => filterShards(e.map(value => value.value))}
-                                placeholder='Filter shards by hero'
-                                classNamePrefix='statsHeroFilter'
-                                className='statsHeroFilter'
-                            />
-                        </div>
-                    </div>
-                </div>
+                <StatsHeader visibleStats={visibleStats} setVisibleDifficulty={setVisibleDifficulty} filterShards={filterShards} />
                 <div className={visibleStats === 'hero' ? '' : 'hidden'}>
                     {stats.map((difficulty, key) => {
                         return (
                             <div key={key} className={Number(visibleDifficulty) === key ? '' : 'hidden'}>
                                 <table className='statTable shardStatsEl' >
                                     <tbody>
-                                        <tr>
-                                            <th className='leftAlignText leftSpacing'>Hero</th>
-                                            <th className='shardStatsEl'
-                                                onClick={() => sortFunc(setHeroSorting, 'VICS', 'heroes')}
-                                            >
-                                                Victories
-                                                <Icon name={heroSorting[0] !== 'VICS' ? 'sort' : heroSorting[1] === 'DESC' ? 'sort down' : 'sort up'} />
-                                            </th>
-                                            <th className='shardStatsEl'
-                                                onClick={() => sortFunc(setHeroSorting, 'WR', 'heroes')}
-                                            >
-                                                Win rate
-                                                <Icon name={heroSorting[0] !== 'WR' ? 'sort' : heroSorting[1] === 'DESC' ? 'sort down' : 'sort up'} />
-                                            </th>
-                                            <th className='shardStatsEl'
-                                                onClick={() => sortFunc(setHeroSorting, 'DEATH', 'heroes')}
-                                            >
-                                                Average deaths
-                                                <Icon name={heroSorting[0] !== 'DEATH' ? 'sort' : heroSorting[1] === 'DESC' ? 'sort down' : 'sort up'} />
-                                            </th>
-                                            <th className='shardStatsEl'
-                                                onClick={() => sortFunc(setHeroSorting, 'GAMES', 'heroes')}
-                                            >
-                                                Total games
-                                                <Icon name={heroSorting[0] !== 'GAMES' ? 'sort' : heroSorting[1] === 'DESC' ? 'sort down' : 'sort up'} />
-                                            </th>
-                                        </tr>
-                                        {[...difficulty.heroAsArray].map((x, ind) => {
-                                            return (
-                                                <tr key={ind}>
-                                                    <td className='shardStatsEl'>
-                                                        <div className='shardStatsShard'>
-                                                            <img className='heroStatsImage' src={heroIDs[x.hero].image} />
-                                                            <b className='shardStatsTitle leftAlignText'>{x.hero}</b>
-                                                        </div>
-                                                    </td>
-                                                    <td className='shardStatsEl'>{x.victories}</td>
-                                                    <td className='shardStatsEl'>{(x.victories / x.defeats * 100).toString().slice(0, 4) + '%'}</td>
-                                                    <td className='shardStatsEl'>{(x.deaths / x.totalGames).toString().slice(0, 4)}</td>
-                                                    <td className='shardStatsEl'>{x.totalGames}</td>
-                                                </tr>
-                                            )
-                                        })}
+                                        <HeroStatsHeader sortFunc={sortFunc} setHeroSorting={setHeroSorting} heroSorting={heroSorting} />
+                                        {[...difficulty.heroAsArray].map((x, ind) => <HeroStatsTable key={ind} hero={x} heroIDs={heroIDs} />)}
                                     </tbody>
                                 </table>
                             </div>
@@ -181,56 +115,16 @@ const AllStats = () => {
                             <div className={Number(visibleDifficulty) === key ? '' : 'hidden'} key={key}>
                                 <table className='statTable shardStatsEl' onMouseLeave={() => setHoveredElement(null)}>
                                     <tbody>
-                                        <tr>
-                                            <th className='leftAlignText leftSpacing' onClick={() => sortFunc(setShardSorting, 'SHARDS', 'heroes')} >
-                                                Shard
-                                                <Icon name={shardSorting[0] !== 'SHARDS' ? 'sort' : shardSorting[1] === 'DESC' ? 'sort down' : 'sort up'} />
-                                            </th>
-                                            <th className='shardStatsEl' onClick={() => sortFunc(setShardSorting, 'PICKS')}>
-                                                Pick rate
-                                                <Icon name={shardSorting[0] !== 'PICKS' ? 'sort' : shardSorting[1] === 'DESC' ? 'sort down' : 'sort up'} />
-                                            </th>
-                                            <th className='shardStatsEl' onClick={() => sortFunc(setShardSorting, 'WR')}>
-                                                Win rate
-                                                <Icon name={shardSorting[0] !== 'WR' ? 'sort' : shardSorting[1] === 'DESC' ? 'sort down' : 'sort up'} />
-                                            </th>
-                                            <th className='shardStatsEl' onClick={() => sortFunc(setShardSorting, 'VICS')}>
-                                                Victories
-                                                <Icon name={shardSorting[0] !== 'VICS' ? 'sort' : shardSorting[1] === 'DESC' ? 'sort down' : 'sort up'} />
-                                            </th>
-                                            <th className='shardStatsEl' onClick={() => sortFunc(setShardSorting, 'GAMES')}>
-                                                Total times picked
-                                                <Icon name={shardSorting[0] !== 'GAMES' ? 'sort' : shardSorting[1] === 'DESC' ? 'sort down' : 'sort up'} />
-                                            </th>
-                                        </tr>
-                                        {[...difficulty.shardWinrates]
-                                            .map((shard, ind) => {
-                                                const shardExists = Shards[shard.shard]
-                                                return (
-                                                    <tr key={ind}
-                                                        id={shard.shard}
-                                                        onMouseEnter={(e) => handleHover(e)}
-                                                        className=''
-                                                    >
-                                                        <td className='shardStatsShardParent'>{shardExists ?
-                                                            <div className='shardStatsShard'>
-                                                                <img className='shardStatsImage' src={shardExists ? Abilities[Shards[shard.shard].skill].link : ''} />
-                                                                <div className='shardStatsText'>
-                                                                    <b className='shardStatsTitle leftAlignText'>{Shards[shard.shard]?.name}</b>
-                                                                    <div className={`${hoveredElement === shard.shard ? '' : 'hidden'} leftAlignText`}>{Shards[shard.shard]?.description}</div>
-                                                                </div>
-                                                            </div> :
-                                                            shard.shard
-                                                        }
-                                                        </td>
-                                                        <td className='shardStatsEl'>{heroNames[shard.hero] && heroNames[shard.hero].name ?
-                                                            (shard.totalGames / heroTotalGames[shard.hero][key] * 100).toString().slice(0, 4) + '%' : shard.hero}</td>
-                                                        <td className='shardStatsEl'>{(shard.victories / shard.totalGames * 100).toString().slice(0, 4) + '%'}</td>
-                                                        <td className='shardStatsEl'>{shard.victories}</td>
-                                                        <td className='shardStatsEl'>{shard.totalGames}</td>
-                                                    </tr>
-                                                )
-                                            })}
+                                        <ShardsStatsHeader sortFunc={sortFunc} setShardSorting={setShardSorting} shardSorting={shardSorting} />
+                                        {difficulty.shardWinrates
+                                            .map((shard, ind) => <ShardsStatsTable
+                                                key={ind} ind={key}
+                                                shard={shard}
+                                                handleHover={handleHover}
+                                                hoveredElement={hoveredElement}
+                                                heroTotalGames={heroTotalGames}
+                                            />)
+                                        }
                                     </tbody>
                                 </table>
                             </div>
