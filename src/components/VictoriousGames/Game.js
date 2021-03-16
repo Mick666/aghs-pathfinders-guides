@@ -5,7 +5,7 @@ import Player from './Player'
 import RoomsTable from './Rooms'
 
 const Game = ({ match, setShard }) => {
-    // console.log(match)
+    console.log(match)
     const [expanded, setExpanded] = useState(false)
     return (
         <div className='flexRow game-parent'>

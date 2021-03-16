@@ -1,16 +1,25 @@
-import React from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import React, { useState } from 'react'
+import { Link, useLocation, useHistory } from 'react-router-dom'
+import ClickAwayListener from 'react-click-away-listener'
+
+import { FormikGameSearch } from './FormikPremades'
 
 const Header = () => {
     const { pathname } = useLocation()
+    const [dropdown, setDropdown] = useState(false)
+    const history = useHistory()
+
+    const submitGame = (difficulty, matchId) => {
+        console.log(difficulty, matchId)
+        history.push(`games/${difficulty}/${matchId}`)
+        setDropdown(false)
+    }
     return (
         <div className='header'>
-            <h1 className='headerTitle'>Aghanim&apos;s Pathfinders</h1>
+            <Link className='cleanLink' to='/'>
+                <h1 className='headerTitle'>Aghanim&apos;s Pathfinders</h1>
+            </Link>
             <div className='headerBar'>
-                <div className='headerLinkParent'>
-                    <Link className={`headerLinks cleanLink ${pathname === '/' ? 'active' : ''}`} to='/'>Home</Link>
-                    <span className={`headerCurrentPage ${pathname === '/' ? 'active' : ''}`} />
-                </div>
                 <div className='headerLinkParent'>
                     <Link className={`headerLinks cleanLink ${pathname.startsWith('/heroes') ? 'active' : ''}`} to='/heroes'>Heroes</Link>
                     <span className={`headerCurrentPage ${pathname.startsWith('/heroes') ? 'active' : ''}`} />
@@ -31,12 +40,15 @@ const Header = () => {
                     <Link className={`headerLinks cleanLink ${pathname === '/games' ? 'active' : ''}`} to='/games'>Victorious Games</Link>
                     <span className={`headerCurrentPage ${pathname === '/games' ? 'active' : ''}`} />
                 </div>
-                {/* {window.location.toString().startsWith('http://localhost:3000/') ?
+                <ClickAwayListener onClickAway={() => setDropdown(false)}>
                     <div className='headerLinkParent'>
-                        <Link className={`headerLinks cleanLink ${pathname === '/changelog' ? 'active' : ''}`} to='/changelog'>Changelog Input</Link>
-                        <span className={`headerCurrentPage ${pathname === '/changelog' ? 'active' : ''}`} />
-                    </div> : null
-                } */}
+                        <span className={`gamesearch-header-text cleanLink ${dropdown ? 'active' : ''}`} onClick={() => setDropdown(true)} >Find a game</span>
+                        <span className={`gamesearch-tab ${dropdown ? 'active' : ''}`} />
+                        <div className={`gamesearch-root flexRow ${dropdown ? 'active' : ''}`}>
+                            <FormikGameSearch onSubmitFunc={submitGame} />
+                        </div>
+                    </div>
+                </ClickAwayListener>
                 {/* <div className='headerLinkParent'>
                     <Link className={`headerLinks cleanLink ${pathname === '/videos' ? 'active' : ''}`} to='/'>Videos</Link>
                     <span className={`headerCurrentPage ${pathname === '/videos' ? 'active' : ''}`}/>

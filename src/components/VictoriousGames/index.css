@@ -14,10 +14,9 @@
 }
 
 .game-player-parent {
-    align-items: center;
     width: 480px;
     padding-left: 15px;
-    align-items: end;
+    align-items: flex-start;
     margin-left: 60px;
     margin-bottom: 10px;
 }
@@ -131,7 +130,6 @@
 .game-player-shards {
     width: 65px;
     height: 49px;
-    margin-left: 5px;
     border: 2px solid black;
 }
 
@@ -143,6 +141,7 @@
     justify-content: space-between;
     background: url(https://www.dotafire.com/css/img/bg-box-p.png) repeat scroll center top #0f0f0f;
     margin-top: -3px;
+    width: 214px;
 }
 
 .game-player-stats {

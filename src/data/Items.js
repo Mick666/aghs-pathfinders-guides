@@ -222,6 +222,7 @@ const Items = {
     item_bogduggs_lucky_femur: { link: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/7/77/Bogdugg%27s_Lucky_Femur_icon.png', name: 'Bogdugg\'s Lucky Femur', neutral: true },
     item_book_of_shadows: { link: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/5/54/Book_of_Shadows_icon.png', name: 'Book of Shadows', neutral: true },
     item_the_caustic_finale: { link: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/e/ec/The_Caustic_Finale_icon.png', name: 'The Caustic Finale', neutral: true },
+    item_gravel_foot: { link: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/3/31/Siltbreaker_Gravel_Foot_icon.png', name: 'Gravel Foot', neutral: true },
 }
 
 // 60x44

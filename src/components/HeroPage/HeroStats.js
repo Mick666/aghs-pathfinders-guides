@@ -10,7 +10,7 @@ const HeroStats = ({ currentView, stats, currentTab, setStats, statsQuery, hero 
     const difficulties = ['Grand Magus', 'Apex Mage', 'Sorcerer']
     const [shardSorting, setShardSorting] = useState(['WR', 'DESC'])
 
-    if (statsQuery.loading) return <Loader active inverted style={{ marginTop: '400px', marginLeft: '100px' }}>Loading</Loader>
+    if (statsQuery.loading) return <Loader active inverted style={{ marginTop: '400px', marginLeft: '100px' }} className={`${currentView === 'Stats' ? '' : 'hidden'}`} >Loading</Loader>
 
     function sortFunc(setSortedData, category, heroes, totalGames, heroId) {
         const heroTotalGames = {}

@@ -18,14 +18,13 @@ import CreateGuide from './components/CreateGuide/'
 import AllStats from './components/AllStats'
 import VictoriousGames from './components/VictoriousGames'
 import ChangeLogInput from './components/ChangelogInput'
+import IndividualGame from './components/IndividualGame'
 
 function App() {
 
     return (
         <Router>
-            <div className='headerDiv'>
-                <Header />
-            </div>
+            <Header />
             <div className='main'>
                 <div>
                     <Switch>
@@ -46,6 +45,9 @@ function App() {
                         </Route>
                         <Route path='/stats'>
                             <AllStats />
+                        </Route>
+                        <Route path='/games/:difficulty/:matchId'>
+                            <IndividualGame />
                         </Route>
                         <Route path='/games'>
                             <VictoriousGames />

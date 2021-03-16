@@ -124,6 +124,7 @@ query victoriousMatches($difficulty: Int!, $first: Int, $after: Int)  {
           items
           upgrades
         }
+        matchId
     }
     victoriousMatchesCount(difficulty: $difficulty)
   }
@@ -134,6 +135,31 @@ export const ALL_CHANGELOGS = gql`
         allChangelogs {
             title
             changes
+        }
+    }
+`
+
+export const INDIVIDUAL_GAME = gql`
+    query individualGame($difficulty: String!, $matchId: String!) {
+        individualGame(difficulty: $difficulty, matchId: $matchId) {
+            levelData {
+                rooms {
+                  lives_lost
+                  picked_name
+                  unpicked_name
+                  picked_elite
+                  unpicked_elite
+                }
+            }
+            players {
+                damage_dealt
+                damage_taken
+                deaths
+                depth
+                hero
+                items
+                upgrades
+            }
         }
     }
 `
