@@ -113,6 +113,7 @@ const ShardCombos = ({ shardCombos }) => {
 }
 
 const GuideSegment = ({ section }) => {
+    console.log(section)
     return (
         <div className='guideSection'>
             <div className='guideSectionTitle'>{section.groupName}</div>
@@ -120,10 +121,10 @@ const GuideSegment = ({ section }) => {
                 {section.items.map((x, key) => {
                     return (<div key={key} className='itemCell'>
                         <img
-                            src={Items[x].link}
+                            src={Items[x] ? Items[x].link : ''}
                             className='itemIcon'
                         />
-                        <div className='itemText'>{Items[x].name}</div>
+                        <div className='itemText'>{Items[x] ? Items[x].name : x}</div>
                     </div>
                     )
                 })}

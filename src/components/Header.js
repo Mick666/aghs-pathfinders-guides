@@ -44,9 +44,7 @@ const Header = () => {
                     <div className='headerLinkParent'>
                         <span className={`gamesearch-header-text cleanLink ${dropdown ? 'active' : ''}`} onClick={() => setDropdown(true)} >Find a game</span>
                         <span className={`gamesearch-tab ${dropdown ? 'active' : ''}`} />
-                        <div className={`gamesearch-root flexRow ${dropdown ? 'active' : ''}`}>
-                            <FormikGameSearch onSubmitFunc={submitGame} />
-                        </div>
+                        <FormikGameSearch onSubmitFunc={submitGame} classProp={`flexRow ${dropdown ? 'active' : ''}`}/>
                     </div>
                 </ClickAwayListener>
                 {/* <div className='headerLinkParent'>

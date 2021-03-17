@@ -10,12 +10,15 @@ import HeroStatsHeader from './HeroStatsHeader'
 import HeroStatsTable from './HeroStatsTable'
 import ShardsStatsHeader from './ShardsStatsHeader'
 import ShardsStatsTable from './ShardsStatsTable'
+import { HoverShard } from '../HoverElement'
 
 const AllStats = () => {
     const [visibleStats, setVisibleStats] = useState('shards')
     const [visibleDifficulty, setVisibleDifficulty] = useState(0)
     const [shardSorting, setShardSorting] = useState(['WR', 'DESC'])
     const [heroSorting, setHeroSorting] = useState(['WR', 'DESC'])
+    const [position, setPosition] = useState({ top: 0, left: 0 })
+    const [hoverShard, setShard] = useState(null)
     const [stats, setStats] = useState(null)
     const results = useQuery(HERO_STATS)
     const heroTotalGames = {}
@@ -61,14 +64,12 @@ const AllStats = () => {
 
     useEffect(() => {
         if (results.data) {
-            console.log('test')
             const rawStats = [...results.data.allMatchData].map(difficulty => {
                 return {
                     heroAsArray: [...difficulty.heroAsArray].sort((a, b) => (b.victories / b.defeats) - (a.victories / a.defeats)),
                     shardWinrates: [...difficulty.shardWinrates].sort((a, b) => (b.victories / b.defeats) - (a.victories / a.defeats))
                 }
             })
-            console.log(rawStats)
             setStats(rawStats)
         }
     }, [results])
@@ -85,9 +86,14 @@ const AllStats = () => {
             else heroTotalGames[hero.heroId] = [hero.totalGames]
         }))
     }
-    console.log(results)
+    const handleHover = (e) => {
+        console.log(e)
+        setPosition({ top: e.pageY - 100, left: e.pageX - 600 })
+    }
+    console.log(position, hoverShard)
     return (
-        <div className='statsParent'>
+        <div className='statsParent' onMouseMove={(e) => handleHover(e)}>
+            <HoverShard position={position} shard={hoverShard}/>
             <div className='statsTabs'>
                 <div className={`statTab ${visibleStats === 'hero' ? 'active' : ''}`} onClick={() => setVisibleStats('hero')}>Heroes</div>
                 <div className={`statTab ${visibleStats === 'shards' ? 'active' : ''}`} onClick={() => setVisibleStats('shards')}>Legendary Shards</div>
@@ -108,7 +114,7 @@ const AllStats = () => {
                         )
                     })}
                 </div>
-                <div className={visibleStats === 'shards' ? '' : 'hidden'}>
+                <div className={visibleStats === 'shards' ? '' : 'hidden'} >
                     {stats.map((difficulty, key) => {
                         return (
                             <div className={Number(visibleDifficulty) === key ? '' : 'hidden'} key={key}>
@@ -120,6 +126,8 @@ const AllStats = () => {
                                                 key={ind} ind={key}
                                                 shard={shard}
                                                 heroTotalGames={heroTotalGames}
+                                                hoverShard={hoverShard}
+                                                setShard={setShard}
                                             />)
                                         }
                                     </tbody>

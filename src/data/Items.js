@@ -156,11 +156,14 @@ const Items = {
     item_vitality_booster: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/1/1c/Vitality_Booster_icon.png'), name: 'Vitality Booster' },
     item_void_stone: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/6/6b/Void_Stone_icon.png'), name: 'Void Stone' },
     item_wind_lace: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/9/91/Wind_Lace_icon.png'), name: 'Wind Lace' },
+    item_voodoo_mask: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/6/60/Voodoo_Mask_icon.png'), name: 'Voodoo Mask' },
     item_echo_slam_potion: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/9/92/Echo_slam_Potion_icon.png'), name: 'Echo Slam Potion', consumable: true },
     item_arcanist_potion: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/3/38/Arcanist_Potion_icon.png'), name: 'Arcanist Potion', consumable: true },
     item_purification_potion: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/a/a2/Purification_Potion_icon.png'), name: 'Purification Potion', consumable: true },
     item_dragon_potion: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/5/5f/Dragon_Potion_icon.png'), name: 'Dragon Potion', consumable: true },
     item_ravage_potion: { link: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/4/47/Ravage_Potion_icon.png', name: 'Ravage Potion', consumable: true },
+    item_dust: { link: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/e/ed/Dust_of_Appearance_icon.png', name: 'Dust of Appearance', consumable: true },
+    item_elven_tunic: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/0/05/Elven_Tunic_icon.png'), name: 'Elven Tunic', neutral: true },
     item_woodland_striders: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/6/6d/Woodland_Striders_icon.png'), name: 'Woodland Striders', neutral: true },
     item_wand_of_the_brine: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/4/44/Wand_of_the_Brine_icon.png'), name: 'Wand of the Brine', neutral: true },
     item_carapace_of_qaldin: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/a/ae/Carapace_of_Qaldin_icon.png'), name: 'Carapace of Qaldin', neutral: true },
@@ -223,6 +226,11 @@ const Items = {
     item_book_of_shadows: { link: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/5/54/Book_of_Shadows_icon.png', name: 'Book of Shadows', neutral: true },
     item_the_caustic_finale: { link: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/e/ec/The_Caustic_Finale_icon.png', name: 'The Caustic Finale', neutral: true },
     item_gravel_foot: { link: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/3/31/Siltbreaker_Gravel_Foot_icon.png', name: 'Gravel Foot', neutral: true },
+    item_ambient_sorcery: { link: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/7/7a/Siltbreaker_Ambient_Sorcery_icon.png', name: 'Ambient Sorcery', neutral: true },
+    item_watchers_gaze: { link: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/6/69/Siltbreaker_Watcher%27s_Gaze_icon.png', name: 'Watcher\'s Gaze', neutral: true },
+    item_bear_cloak: { link: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/4/4b/Siltbreaker_Cloak_of_the_Bear_icon.png', name: 'Cloak of the Bear', neutral: true },
+    item_stormcrafter: { link: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/e/eb/Stormcrafter_icon.png', name: 'Stormcrafter', neutral: true },
+    item_quicksilver_amulet: { link: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/d/d8/Quicksilver_Amulet_icon.png', name: 'Quicksilver Amulet', neutral: true },
 }
 
 // 60x44

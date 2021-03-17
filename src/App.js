@@ -19,6 +19,7 @@ import AllStats from './components/AllStats'
 import VictoriousGames from './components/VictoriousGames'
 import ChangeLogInput from './components/ChangelogInput'
 import IndividualGame from './components/IndividualGame'
+import ScrollToTop from './components/ScrollToTop'
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
             <Header />
             <div className='main'>
                 <div>
+                    <ScrollToTop />
                     <Switch>
                         <Route path='/heroes/:hero/:guide'>
                             <HeroPage />

@@ -27,6 +27,7 @@ code {
   padding: 25px;
   min-height: 1000px;
   border: solid 1px rgb(136, 127, 111);
+  margin-top: 76px;
 }
 
 .bottomSpacing {
@@ -362,7 +363,8 @@ code {
 
 .shardStatsTitle {
   text-transform: uppercase;
-  color: rgb(117, 102, 255);
+  color: black;
+  margin-left: 5px;
 }
 
 .shardRankingParent {
@@ -439,7 +441,7 @@ code {
   overflow: auto;
   background-color: rgb(22, 34, 55);
   display: flex;
-  position: relative;
+  position: fixed;
   overflow: hidden;
   top: 0;
   z-index: 999;
@@ -459,45 +461,21 @@ code {
   margin-left: 20px;
 }
 
-.gamesearch-root, .gamesearch-tab {
+.gamesearch-formik, .gamesearch-tab {
   /* background: #dcdedf; */
   background: white;
-}
-
-
-.gamesearch-root {
-  width: 400px;
-  height: 0;
-  position: fixed;
-  z-index: 200;
-  right: 648px;
-  top: 63px;
-  flex-wrap: nowrap;
-  display: flex;
-  visibility: hidden;
-  transition: all 0.8s ease;
-  overflow: hidden;
-  border-radius: 5px;
-  align-items: center;
-  justify-content: center;
-}
-
-.gamesearch-root.active {
-  visibility: visible;
-  height: 100px;
-  transition: all 0.8s;
-  transition-delay: 0.36s;
 }
 
 .gamesearch-tab {
   height: 0;
   position: absolute;
-  width: 123px;
+  width: 131px;
   border-radius: 12px;
   top: 21px;
   visibility: hidden;
   transition: all 0.8s ease;
   transition-delay: 0.4s;
+  right: -6px;
 }
 
 .gamesearch-tab.active {
@@ -529,11 +507,35 @@ code {
 .gamesearch-formik {
   display: flex;
   flex-direction: row;
+  width: 100%;
+  justify-content: end;
+  padding-right: 25px;
+  width: 500px;
+  height: 0;
+  position: fixed;
+  z-index: 200;
+  right: 648px;
+  top: 63px;
+  flex-wrap: nowrap;
+  display: flex;
+  visibility: hidden;
+  transition: all 0.8s ease;
+  overflow: hidden;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+.gamesearch-formik.active {
+  visibility: visible;
+  height: 100px;
+  transition: all 0.8s;
+  transition-delay: 0.36s;
 }
 
 .gamesearch-formik input {
-  width: 100px;
-  height: 25px;
+  width: 200px;
+  height: 50px;
   background: #2b303b;
   border: none;
   font-size: 10pt;
@@ -546,11 +548,16 @@ code {
   border-radius: 5px;
 }
 
+.gamesearch-input-div {
+  display: flex;
+  flex-direction: row;
+}
+
 .gamesearch-formik button {
   display: flex;
   justify-content: center;
-  height: 25px;
-  width: 25px;
+  height: 52px;
+  width: 42px;
   align-items: center;
   -webkit-border-top-right-radius: 5px;
   -webkit-border-bottom-right-radius: 5px;
@@ -562,7 +569,35 @@ code {
   background: #232833;
   color: #4f5b66;
   font-size: 10pt;
-  margin-left: -10px;
+  margin-left: -14px;
+}
+
+.gamesearch-formik select {
+  /* background: #2b303b; */
+  background: url(https://cdn3.iconfinder.com/data/icons/user-interface-169/32/chevron-bottom-512.png) no-repeat right #2b303b;
+  background-size: 25px;
+  background-position: top 15px right 8px;
+  border: none;
+  font-size: 10pt;
+  float: left;
+  color: #fff;
+  padding-left: 15px;
+  margin-left: 30px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  width: 200px;
+  height: 50px;
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+}
+
+.gamesearch-formik span {
+  /* position: absolute; */
+  margin-left: 37px;
+  font-size: 14px;
+  margin-top: 5px;
 }
 
 .heroImages {
@@ -1210,6 +1245,7 @@ code {
 .statsParent {
   width: 100%;
   margin: 0 auto;
+  position: relative;
 }
 
 .statTable {
@@ -1223,6 +1259,7 @@ code {
   border: solid 1px grey;
   border-collapse: collapse;
   padding: 3px;
+  position: relative;
 }
 
 .shardStatsEl {
@@ -1237,7 +1274,8 @@ code {
 }
 
 .shardStatsText {
-  display: inline-grid;
+  display: flex;
+  align-items: center;
 }
 
 .heroStatsImage {
@@ -1333,7 +1371,7 @@ code {
 
 .hover-root {
   position: absolute;
-  z-index: 50;
+  z-index: 5000;
   /* background: url(https://www.dotafire.com/css/img/bg-box-p.png) repeat scroll center top #0f0f0f; */
   background-color: #05070a;
   padding: 10px;

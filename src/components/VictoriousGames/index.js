@@ -25,6 +25,7 @@ const VictoriousGames = () => {
     const switchDifficulty = (difficulty) => {
         setCurrentTab(difficulty)
         fetchMore('switch', difficulty)
+        window.scrollTo(0, 0)
     }
 
     const fetchMore = (direction, difficulty) => {
@@ -73,7 +74,8 @@ const VictoriousGames = () => {
                 </span>
             </div>
             <PaginationLarge onPageChange={fetchMore} currentPage={Math.floor(currentPage[currentTab] / 10 + 1)} totalPages={Math.floor(games.data.victoriousMatchesCount / 10) + 1} difficulty={currentTab}/>
-            {games.data.victoriousMatches.map((match, key) => <Game key={key} match={match} setShard={setShard}/>)}
+            {games.data.victoriousMatches.map((match, key) => <Game key={key} match={match} setShard={setShard} shard={shard} />)}
+            <PaginationLarge onPageChange={fetchMore} currentPage={Math.floor(currentPage[currentTab] / 10 + 1)} totalPages={Math.floor(games.data.victoriousMatchesCount / 10) + 1} difficulty={currentTab}/>
         </div>
     )
 }

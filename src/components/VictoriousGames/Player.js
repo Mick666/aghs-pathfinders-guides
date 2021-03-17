@@ -9,7 +9,7 @@ import sortItems from '../../utils/sortItems'
 
 const numberWithCommas = (x)  => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ', ')
 
-const Player = ({ player, expanded, setShard }) => {
+const Player = ({ player, expanded, setShard, currentShard }) => {
     const playerItems = sortItems(player.items)
 
     return (
@@ -18,7 +18,7 @@ const Player = ({ player, expanded, setShard }) => {
                 <img src={heroNames[player.hero] ? heroNames[player.hero].image : ''} className='game-hero-image' />
                 <div className='flexRow game-player-shards-parent' onMouseLeave={() => setShard(null)}>
                     {player.upgrades.map((shard, key) => {
-                        return <img key={key} className='game-player-shards' src={Shards[shard] ? Abilities[Shards[shard].skill].link : ''} onMouseEnter={() => setShard(shard)}/>
+                        return <img key={key} className='game-player-shards' src={Shards[shard] ? Abilities[Shards[shard].skill].link : ''} onMouseEnter={() => currentShard !== shard ? setShard(shard) : null }/>
                     })}
                 </div>
             </div>
