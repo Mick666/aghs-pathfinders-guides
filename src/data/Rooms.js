@@ -1,3 +1,4 @@
+import AghanimThumb from '../images/Aghanim-Thumb.jpg'
 export const Rooms = {
     encounter_starting_room: { name: 'Starting Room', rest: true },
     encounter_empty_cavern: { name: 'Cavern Crossroads', rest: true },
@@ -44,12 +45,12 @@ export const Rooms = {
     encounter_phoenix: { name: 'Battle Squawks' },
     encounter_broodmothers: { name: 'No Time To Brood' },
     encounter_fire_roshan: { name: 'Blazhan and Frozhan' },
-    encounter_pathfinder_frost_boss: { name: 'A Face Only A Mother Could Love', boss: true },
-    encounter_boss_timbersaw: { name: 'Rizzrick the Razorsaw', boss: true },
-    encounter_temple_guardians: { name: 'The Malorkian Hammers', boss: true },
-    encounter_storegga: { name: 'Storegga The Ample', boss: true },
-    encounter_boss_void_spirit: { name: 'The Purple Shadow', boss: true },
-    encounter_aghanim: { name: 'The Apex Mage', boss: true },
+    encounter_pathfinder_frost_boss: { name: 'A Face Only A Mother Could Love', boss: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/1/15/Night_Stalker_icon.png' },
+    encounter_boss_timbersaw: { name: 'Rizzrick the Razorsaw', boss: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/9/9a/Timbersaw_icon.png' },
+    encounter_temple_guardians: { name: 'The Malorkian Hammers', boss: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e2/Omniknight_icon.png' },
+    encounter_storegga: { name: 'Storegga The Ample', boss: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/5/55/Tiny_icon.png' },
+    encounter_boss_void_spirit: { name: 'The Purple Shadow', boss: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/9/99/Void_Spirit_icon.png' },
+    encounter_aghanim: { name: 'The Apex Mage', boss: AghanimThumb },
     encounter_jungle_fire_maze: { name: 'The Hallway of Pain', traps: true },
     encounter_cliff_pass: { name: 'The Cliffs of Sacrifice', traps: true },
     encounter_hellfire_canyon: { name: 'The Long And Winding Path', traps: true },

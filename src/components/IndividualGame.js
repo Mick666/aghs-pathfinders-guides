@@ -30,7 +30,7 @@ const IndividualGame = () => {
     return (
         <div className='games-root' onMouseMove={(e) => setPosition({ top: e.pageY, left: e.pageX })} >
             <HoverShard position={position} shard={shard}/>
-            <Game match={matchData.data.individualGame} setShard={setShard} />
+            <Game match={matchData.data.individualGame} setShard={setShard} individualGame/>
         </div>
     )
 }

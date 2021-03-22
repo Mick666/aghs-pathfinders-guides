@@ -55,7 +55,7 @@ export const FormikInput = ({ onSubmit, buttonText, uniqueValues, minimumLength 
 export const FormikGameSearch = ({ onSubmitFunc, classProp }) => {
     return (
         <Formik
-            initialValues={{ match: '' }}
+            initialValues={{ match: '', difficulty: '2' }}
             validate={values => {
                 const errors = {}
                 if (!values.match)
@@ -84,10 +84,11 @@ export const FormikGameSearch = ({ onSubmitFunc, classProp }) => {
                 <form onSubmit={handleSubmit} className={`gamesearch-formik ${errors.match || errors.difficulty ? 'error' : ''} ${classProp}`}>
                     <div className='flexColumn'>
                         <Field as="select" name="difficulty" placeholder='Difficulty'>
-                            <option value="">Select difficulty</option>
                             <option value="4">Apex Mage</option>
                             <option value="3">Grand Magus</option>
                             <option value="2">Sorcerer</option>
+                            <option value="1">Magician</option>
+                            <option value="0">Apprentice</option>
                         </Field>
                         <span className='errorMessage'>
                             {errors.difficulty}

@@ -51,6 +51,9 @@ function App() {
                         <Route path='/games/:difficulty/:matchId'>
                             <IndividualGame />
                         </Route>
+                        <Route path='/games/:difficulty'>
+                            <VictoriousGames />
+                        </Route>
                         <Route path='/games'>
                             <VictoriousGames />
                         </Route>

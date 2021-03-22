@@ -55,15 +55,33 @@ export const ALL_GUIDES = gql`
     }
 `
 
-export const RECENT_GUIDES = gql`
+export const HOMEPAGE_CONTENT = gql`
     query homePage {
-        allGuides(first: 3) {
-            title
-            createdAt
-            rating
-            id
-            hero
-        }
+        homePageData {
+            victoriousMatches {
+                matchId
+                players {
+                    items
+                    hero
+                    upgrades
+                }
+                levelData {
+                    rooms {
+                        picked_name
+                    }
+                }
+            }
+            guides {
+              title
+              createdAt
+              id
+              hero
+            }
+            changelogs {
+              title
+              changes
+            }
+          }
     }
 `
 

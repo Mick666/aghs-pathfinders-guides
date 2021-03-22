@@ -9,7 +9,7 @@ import sortItems from '../../utils/sortItems'
 
 const numberWithCommas = (x)  => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ', ')
 
-const Player = ({ player, expanded, setShard, currentShard }) => {
+const Player = ({ player, expanded, setShard, currentShard, individualGame }) => {
     const playerItems = sortItems(player.items)
 
     return (
@@ -43,7 +43,7 @@ const Player = ({ player, expanded, setShard, currentShard }) => {
                     }
                 </div>
             </div>
-            <div className={`flexRow game-player-stats-parent ${expanded ? 'active' : ''}`}>
+            <div className={`flexRow game-player-stats-parent ${expanded || individualGame ? 'active' : ''}`}>
                 <div className='flexColumn heroStats game-player-stats'>
                     <span className='heroStatNumbers centerText game-player-stats-number'>{numberWithCommas(Math.floor(player.damage_dealt))}</span>
                     <span className='heroStatTitle'>Damage dealt</span>

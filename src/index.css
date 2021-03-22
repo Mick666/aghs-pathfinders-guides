@@ -77,6 +77,15 @@ code {
   flex-wrap: wrap;
 }
 
+.flexrow-nowrap {
+  display:flex;
+  flex-direction: row;
+}
+
+.center-align {
+  align-items: center;
+}
+
 .cleanLink {
   color: white;
   text-decoration: none;
@@ -442,7 +451,7 @@ code {
   background-color: rgb(22, 34, 55);
   display: flex;
   position: fixed;
-  overflow: hidden;
+  overflow: unset;
   top: 0;
   z-index: 999;
   height: 75px;
@@ -508,16 +517,15 @@ code {
   display: flex;
   flex-direction: row;
   width: 100%;
-  justify-content: end;
+  justify-content: flex-end;
   padding-right: 25px;
   width: 500px;
   height: 0;
-  position: fixed;
+  position: absolute;
   z-index: 200;
-  right: 648px;
+  right: -6px;
   top: 63px;
   flex-wrap: nowrap;
-  display: flex;
   visibility: hidden;
   transition: all 0.8s ease;
   overflow: hidden;
@@ -785,7 +793,7 @@ code {
   padding-left: 2px;
 }
 
-.recentContentContainer {
+.recentcontent-container {
   width: 658px;
   height: 99%;
   background: url(https://www.dotafire.com/css/img/bg-box-p.png) repeat scroll center top #0f0f0f;
@@ -801,10 +809,19 @@ code {
   z-index: 10;
 }
 
+.recentGuidesContainer a:first-of-type img {
+  border-top: solid 1px rgb(132, 123, 108);
+}
+
+.recentGuidesContainer a:last-of-type img {
+  padding-top: 1px;
+}
+
 .recentGuideIndiv {
   display: flex;
   flex-direction: row;
   border-bottom: 1px solid rgb(131, 122, 107);
+  height: 45px;
 }
 
 .recentGuideIndiv div {
@@ -813,6 +830,8 @@ code {
 
 .recentGuideImage {
   border: solid 1px rgb(132, 123, 108);
+  border-bottom: none;
+  border-top: none;
   width: 60px;
   height: 45px;
 }
@@ -828,32 +847,107 @@ code {
   margin-top: 7px;
 }
 
-#recentGuidesNewest {
-  margin-left: 314px;
-}
-
-#recentGuidesTop {
-  margin-left: 5px;
-  margin-right: 10px;
-}
-
-#recentGuidesNewest, #recentGuidesTop {
-  background-color: rgb(11, 14, 14);
-  opacity: 0.7;
-  padding: 15px 15px 5px;
-  z-index: 0;
-}
-
-#recentGuidesTop.active, #recentGuidesNewest.active {
-  opacity: 1;
-  border-bottom: 3px solid rgb(132, 123, 108);
-}
-
-#recentGuidesTitle {
+#recentguides-tabs-title , #recentgames-tabs-title {
   line-height: 23px;
   color: rgb(177, 170, 158);
   padding: 11px 0 10px 10px;
   font-weight: 900;
+  margin-left: -25px;
+}
+
+#recentgames-tabs-title {
+  padding-bottom: 7px;
+}
+
+.recentgames-root, .recentguides-root {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 16px;
+}
+
+.recentgames-tabs-parent, .recentguides-tabs-parent {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  width: 150px;
+  justify-content: center;
+}
+
+.recentguides-tabs-parent {
+  align-items: center;
+}
+
+.recentgames-tab, .recentguides-tab {
+  background-color: rgb(11, 14, 14);
+  opacity: 0.7;
+  padding: 10px 15px 5px;
+  z-index: 0;
+  margin-right: 5px;
+  width: 33%;
+  text-align: center;
+}
+
+.recentgames-tab.active, .recentguides-tab.active {
+  opacity: 1;
+  border-bottom: 1px solid rgb(132, 123, 108);
+}
+
+.recentgames-games-difficulty {
+  display: none;
+  visibility: hidden;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 138px;
+  background-color: black;
+}
+
+.recentgames-games-difficulty.active {
+  visibility: visible;
+  display: flex;
+}
+
+.recentgames-game-parent {
+  display: flex;
+  flex-direction: row;
+  border-bottom: solid 1px rgb(132, 123, 108);
+  align-items: center;
+  justify-content: space-between;
+  width: 658px;
+}
+
+.recentgames-game-parent:nth-of-type(3), .recentGuideIndiv:nth-of-type(3) {
+  border-bottom: none;
+}
+
+.recentgames-game-parent div.flexrow-nowrap {
+  width: 327px;
+  align-items: center;
+  width: 368px;
+  height: 45px;
+}
+
+.recentgames-game-parent div span {
+  color: rgb(196, 183, 161);
+  font-weight: bold;
+  padding-left: 10px;
+  padding-right: 20px;
+  width: 45px;
+}
+
+.recentgames-bosses {
+  width: 290px !important;
+}
+
+.recentgames-game-player {
+  /* border: solid 1px rgb(132, 123, 108); */
+  border-bottom: none;
+  width: 58px;
+  height: 35px;
+  box-sizing: border-box;
+  padding-right: 3px;
 }
 
 #placeholderGames {
@@ -1424,4 +1518,36 @@ code {
   font-family: Verdana, Arial, Helvetica, sans-serif;
   color: #aaa;
   font-size: 15px;
+}
+
+.hover-player {
+  background: url(https://www.dotafire.com/css/img/bg-box-p.png) repeat scroll center top #0f0f0f;
+  width: 600px;
+  min-height: 150px;
+}
+
+.hover-player-title {
+  color: rgb(196, 183, 161);
+  font-weight: bold;
+  padding-left: 10px;
+  padding-right: 20px;
+}
+
+.hover-player-items {
+  align-items: center;
+  margin-bottom: 25px;
+  margin-top: 15px;
+}
+
+.hover-player-image {
+  width: 264px;
+  height: 168px;
+  border: 2px solid black;
+}
+
+.hover-shard-parent {
+  background-color: #0f0f0f;
+  border: solid 1px #3b3b3b;
+  padding: 8px;
+  margin-bottom: 5px;
 }

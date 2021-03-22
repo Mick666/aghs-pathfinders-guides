@@ -13,9 +13,9 @@ const getRoomImage = (room, elite) => {
     return 'https://static.wikia.nocookie.net/dota2_gamepedia/images/a/a5/Aghanim%27s_Labyrinth_Room_Combat.png'
 }
 
-const RoomsTable = ({ expanded, rooms }) => {
+const RoomsTable = ({ expanded, rooms, individualGame }) => {
     return (
-        <div className={`flexColumn game-rooms-root ${expanded ? 'active' : ''}`}>
+        <div className={`flexColumn game-rooms-root ${expanded || individualGame ? 'active' : ''}`}>
             <span className='game-room-table-title centerText'>Rooms</span>
             <table className='flexColumn game-rooms-parent'>
                 <tbody>

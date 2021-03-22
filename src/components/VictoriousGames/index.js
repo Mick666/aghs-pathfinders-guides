@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useQuery } from '@apollo/client'
 import { Loader } from 'semantic-ui-react'
+import { useParams } from 'react-router-dom'
 
 import { VIC_GAMES } from '../../graphql/queries'
 import Game from './Game'
@@ -9,12 +10,13 @@ import { PaginationLarge } from '../Pagination'
 import { HoverShard } from '../HoverElement'
 
 const VictoriousGames = () => {
-    const [currentTab, setCurrentTab] = useState('GrandMagus')
+    const difficultyParam = useParams().difficulty
+    const [currentTab, setCurrentTab] = useState( !difficultyParam || difficultyParam === '0' ? 'GrandMagus' : difficultyParam === '1' ? 'ApexMage' : 'Sorcerer')
     const [currentPage, setPage] = useState({ GrandMagus: 0, ApexMage: 0, Sorcerer: 0 })
     const [position, setPosition] = useState({ top: 0, left: 0 })
     const [shard, setShard] = useState(null)
     const difficultyToIndex = { GrandMagus: 0, ApexMage: 1, Sorcerer: 2 }
-    const games = useQuery(VIC_GAMES, { variables: { difficulty: 0, first: 10 } })
+    const games = useQuery(VIC_GAMES, { variables: { difficulty: difficultyParam ? Number(difficultyParam) : 0, first: 10 } })
 
     if (!games || games.loading || !games.data) return (
         <div>

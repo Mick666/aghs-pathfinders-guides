@@ -3,21 +3,18 @@ import { useQuery } from '@apollo/client'
 import { Loader } from 'semantic-ui-react'
 
 import ChangeLog from './ChangeLog'
-import { MainGuides, MainGames } from './RecentContent'
-import { ALL_CHANGELOGS } from '../graphql/queries'
+import RecentContent from './RecentContent'
+import { HOMEPAGE_CONTENT } from '../graphql/queries'
 
 const Main = () => {
-    const changelog = useQuery(ALL_CHANGELOGS)
-
+    const homePageContent = useQuery(HOMEPAGE_CONTENT)
+    console.log(homePageContent)
     return (
         <div className='mainPage'>
-            <div className='mainPageTopBar'>
-                <MainGuides />
-                <MainGames />
-            </div>
+            <RecentContent homePageContent={homePageContent?.data?.homePageData} />
             <h2 id='changelogTitle'>RECENT CHANGES</h2>
             <div className='mainPageNewsContainer'>
-                {changelog.data ? changelog.data.allChangelogs.map((log, key) => <ChangeLog changeLog={log} key={key} />) : <Loader active inverted>Loading</Loader>}
+                {homePageContent.data ? homePageContent.data.homePageData.changelogs.map((log, key) => <ChangeLog changeLog={log} key={key} />) : <Loader active inverted>Loading</Loader>}
             </div>
         </div>
     )
