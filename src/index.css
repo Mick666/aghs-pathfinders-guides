@@ -28,6 +28,7 @@ code {
   min-height: 1000px;
   border: solid 1px rgb(136, 127, 111);
   margin-top: 76px;
+  /* position: relative; */
 }
 
 .bottomSpacing {
@@ -803,6 +804,14 @@ code {
   flex-direction: column;
 }
 
+.recentcontent-container:first-of-type {
+  margin-left: -2px
+}
+
+.recentcontent-container:nth-of-type(2) {
+  width: 660px;
+}
+
 .recentGuidesContainer {
   background-color: black;
   margin-top: -2px;
@@ -822,6 +831,7 @@ code {
   flex-direction: row;
   border-bottom: 1px solid rgb(131, 122, 107);
   height: 45px;
+  align-items: center;
 }
 
 .recentGuideIndiv div {
@@ -829,11 +839,9 @@ code {
 }
 
 .recentGuideImage {
-  border: solid 1px rgb(132, 123, 108);
-  border-bottom: none;
-  border-top: none;
-  width: 60px;
-  height: 45px;
+  width: 58px;
+  height: 35px;
+  padding-left: 3px;
 }
 
 .recentGuideTitle {
@@ -890,9 +898,14 @@ code {
   text-align: center;
 }
 
+.recentguides-tab {
+  margin-top: 3px;
+}
+
 .recentgames-tab.active, .recentguides-tab.active {
   opacity: 1;
   border-bottom: 1px solid rgb(132, 123, 108);
+  margin-top: 0;
 }
 
 .recentgames-games-difficulty {
@@ -907,6 +920,10 @@ code {
 .recentgames-games-difficulty.active {
   visibility: visible;
   display: flex;
+}
+
+.recentcontent-loader {
+  margin-top: 30px !important;
 }
 
 .recentgames-game-parent {

@@ -4,13 +4,12 @@ import { Icon } from 'semantic-ui-react'
 import Player from './Player'
 import RoomsTable from './Rooms'
 
-const Game = ({ match, setShard, shard, individualGame }) => {
-    // console.log(match)
+const Game = ({ match, individualGame }) => {
     const [expanded, setExpanded] = useState(false)
     return (
         <div className='flexRow game-parent'>
             <div className='game-players flexRow'>
-                {match.players.map((player, key) => <Player key={key} player={player} expanded={expanded} setShard={setShard} shard={shard} individualGame={individualGame} />)}
+                {match.players.map((player, key) => <Player key={key} player={player} expanded={expanded} individualGame={individualGame} />)}
             </div>
             { !individualGame ?
                 <div className={`flexRow game-player-expand-parent ${expanded ? 'active' : ''}`} onClick={() => setExpanded(!expanded)}>

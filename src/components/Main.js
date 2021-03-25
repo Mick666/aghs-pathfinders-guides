@@ -8,7 +8,6 @@ import { HOMEPAGE_CONTENT } from '../graphql/queries'
 
 const Main = () => {
     const homePageContent = useQuery(HOMEPAGE_CONTENT)
-    console.log(homePageContent)
     return (
         <div className='mainPage'>
             <RecentContent homePageContent={homePageContent?.data?.homePageData} />

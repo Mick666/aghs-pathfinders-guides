@@ -1,9 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
 import './index.css'
 import './image-gallery.css'
 import './select-search.css'
+
 import App from './App'
+import hoverReducer from './redux/hoverReducer'
 
 import { ApolloClient, ApolloProvider, HttpLink, InMemoryCache } from '@apollo/client'
 
@@ -38,9 +42,13 @@ const client = new ApolloClient({
     })
 })
 
+const store = createStore(hoverReducer)
+
 ReactDOM.render(
     <ApolloProvider client={client}>
-        <App />
+        <Provider store={store}>
+            <App />
+        </Provider>
     </ApolloProvider>,
     document.getElementById('root')
 )

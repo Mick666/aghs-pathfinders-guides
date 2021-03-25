@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import { Loader } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
 
 import { heroNames } from '../data/Heroes'
 import { Rooms } from '../data/Rooms'
-import { HoverPlayer } from './HoverElement'
+import { removeHoverElement, setHoverElement } from '../redux/hoverReducer'
 
-export const MainGuides = ({ guides }) => {
+const MainGuides = ({ guides }) => {
     const [currentTab, setCurrentTab] = useState('Newest')
-    console.log(guides)
     return (
         <div className='recentcontent-container'>
             <div className='recentguides-root'>
@@ -27,10 +27,12 @@ export const MainGuides = ({ guides }) => {
                     })}
                 </div>
             </div>
-            <div className='recentgames-games-difficulty active'>
-                {!guides ?
-                    <Loader active inverted>Loading</Loader> :
-                    guides.map((guide, key) => {
+            {!guides ?
+                <div className='recentgames-games-difficulty active loading'>
+                    <Loader active inverted className='recentcontent-loader'>Loading</Loader>
+                </div> :
+                <div className='recentgames-games-difficulty active loading'>
+                    {guides.map((guide, key) => {
                         return (
                             <Link key={key} className='recentGuideIndiv cleanLink' to={`/heroes/${guide.hero}/${guide.id}`}>
                                 <img src={heroNames[guide.hero].image} className='recentGuideImage' />
@@ -41,7 +43,9 @@ export const MainGuides = ({ guides }) => {
                             </Link>
                         )
                     })}
-            </div>
+                </div>
+
+            }
             <div className='topGuidesContainer hidden'>
                 {!guides ? <Loader active inverted>Loading</Loader> : null}
             </div>
@@ -49,15 +53,13 @@ export const MainGuides = ({ guides }) => {
     )
 }
 
-export const MainGames = ({ victoriousGames }) => {
+const MainGames = ({ victoriousGames }) => {
     const [currentTab, setCurrentTab] = useState('III')
     const difficultyToTab = { 0: ['III', 2], 1: ['IV', 1], 2: ['V', 0] }
-    const [position, setPosition] = useState({ top: 0, left: 0 })
-    const [hoverPlayer, setPlayer] = useState(null)
+    const dispatch = useDispatch()
 
     return (
-        <div className='recentcontent-container' onMouseMove={(e) => setPosition({ top: e.pageY, left: e.pageX })}>
-            <HoverPlayer player={hoverPlayer} position={position} />
+        <div className='recentcontent-container'>
             <div className='recentgames-root'>
                 <div id='recentgames-tabs-title'>VICTORIOUS GAMES</div>
                 <div className='recentgames-tabs-parent'>
@@ -77,7 +79,9 @@ export const MainGames = ({ victoriousGames }) => {
                 </div>
             </div>
             {!victoriousGames ?
-                <Loader active inverted>Loading</Loader> :
+                <div className='recentgames-games-difficulty active loading'>
+                    <Loader active inverted className='recentcontent-loader'>Loading</Loader>
+                </div> :
                 [...victoriousGames].reverse().map((difficulty, key) => {
                     return (
                         <div key={key} className={`recentgames-games-difficulty ${currentTab === difficultyToTab[key][0] ? 'active' : ''}`}>
@@ -88,7 +92,11 @@ export const MainGames = ({ victoriousGames }) => {
                                             <span>{ind === 0 ? 'Heroes' : ''}</span>
                                             {game.players.map((player, i) => {
                                                 return (
-                                                    <img key={i} className='recentgames-game-player' onMouseEnter={() => setPlayer(player)} src={heroNames[player.hero].image} onMouseLeave={() => setPlayer(null)} />
+                                                    <img key={i} className='recentgames-game-player'
+                                                        src={heroNames[player.hero].image}
+                                                        onMouseEnter={(e) => dispatch(setHoverElement('player', e, player))}
+                                                        onMouseLeave={() => dispatch(removeHoverElement())}
+                                                    />
                                                 )
                                             })}
                                         </div>

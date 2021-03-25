@@ -1,14 +1,17 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
+
 import Shards from '../data/Shards'
 import Abilities from '../data/Abilities'
 import { heroNames } from '../data/Heroes'
 import Items from '../data/Items'
 import sortItems from '../utils/sortItems'
 
-export const HoverShard = ({ shard, position }) => {
+export const HoverShard = ({ shard }) => {
     if (!Shards[shard]) return null
+    const { position } = useSelector(state => state)
     return (
-        <div style={{ top: `${position?.top + 25}px`, left: `${position?.left + 25}px` }} className='hover-root hover-shard flexColumn'>
+        <div style={{ top: `${position?.position?.top+25}px`, left: `${position?.position?.left+25}px` }} className='hover-root hover-shard flexColumn'>
             <div className='hover-parent flexRow'>
                 <img src={Abilities[Shards[shard].skill].link} className='hover-shard-image' />
                 <div className='flexColumn hover-details'>
@@ -25,12 +28,12 @@ export const HoverShard = ({ shard, position }) => {
 
 // }
 
-export const HoverPlayer = ({ player, position }) => {
+export const HoverPlayer = ({ player }) => {
     if (!player) return null
     const playerItems = sortItems(player.items)
-    console.log('alive')
+    const { position } = useSelector(state => state)
     return (
-        <div className='hover-root hover-player flexColumn' style={{ top: `${position?.top - 50}px`, left: `${position?.left - 1250}px` }}>
+        <div className='hover-root hover-player flexColumn' style={{ top: `${position?.position?.top+25}px`, left: `${position?.position?.left+25}px` }}>
             <div className='flexRow center-align hover-player-items'>
                 <img src={heroNames[player.hero] ? heroNames[player.hero].image : ''} className='hover-player-image' />
                 <div className='flexColumn game-player-detailed'>
@@ -72,3 +75,19 @@ export const HoverPlayer = ({ player, position }) => {
         </div>
     )
 }
+
+const HoverElement = () => {
+
+    const { element } = useSelector(state => state)
+
+    switch (element?.type) {
+        case 'shard':
+            return <HoverShard shard={element.data} />
+        case 'player':
+            return <HoverPlayer player={element.data} />
+        default:
+            return null
+    }
+}
+
+export default HoverElement

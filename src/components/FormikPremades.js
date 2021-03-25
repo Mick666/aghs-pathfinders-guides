@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Formik, Field, Form } from 'formik'
 import { Icon } from 'semantic-ui-react'
-import Select from 'react-select'
 
 export const FormikInput = ({ onSubmit, buttonText, uniqueValues, minimumLength = 5 }) => {
     return (

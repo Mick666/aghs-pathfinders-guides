@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom'
 import '../node_modules/semantic-ui-css/components/icon.css'
 import '../node_modules/semantic-ui-css/components/loader.css'
+import { useDispatch } from 'react-redux'
 
 import Main from './components/Main'
 import HeroPage from './components/HeroPage'
@@ -20,51 +21,54 @@ import VictoriousGames from './components/VictoriousGames'
 import ChangeLogInput from './components/ChangelogInput'
 import IndividualGame from './components/IndividualGame'
 import ScrollToTop from './components/ScrollToTop'
+import HoverElement from './components/HoverElement'
+
+import { updateMousePosition } from './redux/hoverReducer'
 
 function App() {
+    const dispatch = useDispatch()
 
     return (
         <Router>
             <Header />
-            <div className='main'>
-                <div>
-                    <ScrollToTop />
-                    <Switch>
-                        <Route path='/heroes/:hero/:guide'>
-                            <HeroPage />
-                        </Route>
-                        <Route path='/heroes/:hero'>
-                            <HeroPage />
-                        </Route>
-                        <Route path='/heroes'>
-                            <HeroList heroes={Heroes} />
-                        </Route>
-                        <Route path='/guides/create'>
-                            <CreateGuide />
-                        </Route>
-                        <Route path='/guides'>
-                            <AllGuides />
-                        </Route>
-                        <Route path='/stats'>
-                            <AllStats />
-                        </Route>
-                        <Route path='/games/:difficulty/:matchId'>
-                            <IndividualGame />
-                        </Route>
-                        <Route path='/games/:difficulty'>
-                            <VictoriousGames />
-                        </Route>
-                        <Route path='/games'>
-                            <VictoriousGames />
-                        </Route>
-                        <Route path='/changelog'>
-                            <ChangeLogInput />
-                        </Route>
-                        <Route path='/'>
-                            <Main />
-                        </Route>
-                    </Switch>
-                </div>
+            <div className='main' onMouseMove={(e) => dispatch(updateMousePosition({ top: e.pageY, left: e.pageX }))}>
+                <HoverElement />
+                <ScrollToTop />
+                <Switch>
+                    <Route path='/heroes/:hero/:guide'>
+                        <HeroPage />
+                    </Route>
+                    <Route path='/heroes/:hero'>
+                        <HeroPage />
+                    </Route>
+                    <Route path='/heroes'>
+                        <HeroList heroes={Heroes} />
+                    </Route>
+                    <Route path='/guides/create'>
+                        <CreateGuide />
+                    </Route>
+                    <Route path='/guides'>
+                        <AllGuides />
+                    </Route>
+                    <Route path='/stats'>
+                        <AllStats />
+                    </Route>
+                    <Route path='/games/:difficulty/:matchId'>
+                        <IndividualGame />
+                    </Route>
+                    <Route path='/games/:difficulty'>
+                        <VictoriousGames />
+                    </Route>
+                    <Route path='/games'>
+                        <VictoriousGames />
+                    </Route>
+                    <Route path='/changelog'>
+                        <ChangeLogInput />
+                    </Route>
+                    <Route path='/'>
+                        <Main />
+                    </Route>
+                </Switch>
             </div>
             <div className='spacing'></div>
             <Footer />

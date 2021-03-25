@@ -1,24 +1,33 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
 
 import { heroNames } from '../../data/Heroes'
 import Items from '../../data/Items'
 import Shards from '../../data/Shards'
 import Abilities from '../../data/Abilities'
 import sortItems from '../../utils/sortItems'
+import { removeHoverElement, setHoverElement } from '../../redux/hoverReducer'
 
 
-const numberWithCommas = (x)  => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ', ')
+const numberWithCommas = (x) => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ', ')
 
-const Player = ({ player, expanded, setShard, currentShard, individualGame }) => {
+const Player = ({ player, expanded, individualGame }) => {
     const playerItems = sortItems(player.items)
+    const dispatch = useDispatch()
 
     return (
         <div className='flexRow game-player-parent'>
             <div className='flexColumn game-player-hero' >
                 <img src={heroNames[player.hero] ? heroNames[player.hero].image : ''} className='game-hero-image' />
-                <div className='flexRow game-player-shards-parent' onMouseLeave={() => setShard(null)}>
+                <div className='flexRow game-player-shards-parent'>
                     {player.upgrades.map((shard, key) => {
-                        return <img key={key} className='game-player-shards' src={Shards[shard] ? Abilities[Shards[shard].skill].link : ''} onMouseEnter={() => currentShard !== shard ? setShard(shard) : null }/>
+                        return <img
+                            key={key}
+                            className='game-player-shards'
+                            src={Shards[shard] ? Abilities[Shards[shard].skill].link : ''}
+                            onMouseEnter={(e) => dispatch(setHoverElement('shard', e, shard))}
+                            onMouseLeave={() => dispatch(removeHoverElement())}
+                        />
                     })}
                 </div>
             </div>

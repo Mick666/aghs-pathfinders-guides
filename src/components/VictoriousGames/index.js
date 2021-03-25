@@ -7,14 +7,11 @@ import { VIC_GAMES } from '../../graphql/queries'
 import Game from './Game'
 import './index.css'
 import { PaginationLarge } from '../Pagination'
-import { HoverShard } from '../HoverElement'
 
 const VictoriousGames = () => {
     const difficultyParam = useParams().difficulty
-    const [currentTab, setCurrentTab] = useState( !difficultyParam || difficultyParam === '0' ? 'GrandMagus' : difficultyParam === '1' ? 'ApexMage' : 'Sorcerer')
+    const [currentTab, setCurrentTab] = useState(!difficultyParam || difficultyParam === '0' ? 'GrandMagus' : difficultyParam === '1' ? 'ApexMage' : 'Sorcerer')
     const [currentPage, setPage] = useState({ GrandMagus: 0, ApexMage: 0, Sorcerer: 0 })
-    const [position, setPosition] = useState({ top: 0, left: 0 })
-    const [shard, setShard] = useState(null)
     const difficultyToIndex = { GrandMagus: 0, ApexMage: 1, Sorcerer: 2 }
     const games = useQuery(VIC_GAMES, { variables: { difficulty: difficultyParam ? Number(difficultyParam) : 0, first: 10 } })
 
@@ -33,37 +30,36 @@ const VictoriousGames = () => {
     const fetchMore = (direction, difficulty) => {
         let variables, updatedPage
         switch (direction) {
-        case 'switch':
-            variables = { first: 10, after: currentPage[difficulty], difficulty: difficultyToIndex[difficulty] }
-            updatedPage = currentPage
-            break
-        case 'start':
-            variables = { first: 10, after: 0, difficulty: difficultyToIndex[difficulty] }
-            updatedPage = { ...currentPage }
-            updatedPage[difficulty] = 0
-            break
-        case 'end':
-            variables = { first: 10, after: games.data.victoriousMatchesCount - (games.data.victoriousMatchesCount % 10), difficulty: difficultyToIndex[difficulty] }
-            updatedPage = { ...currentPage }
-            updatedPage[difficulty] = games.data.victoriousMatchesCount - (games.data.victoriousMatchesCount % 10)
-            break
-        case 'next':
-            variables = { first: 10, after: currentPage[difficulty] + 10, difficulty: difficultyToIndex[difficulty] }
-            updatedPage = { ...currentPage }
-            updatedPage[difficulty] = currentPage[difficulty] + 10
-            break
-        case 'previous':
-            variables = { first: 10, after: currentPage[difficulty] - 10, difficulty: difficultyToIndex[difficulty] }
-            updatedPage = { ...currentPage }
-            updatedPage[difficulty] = currentPage[difficulty] - 10
-            break
+            case 'switch':
+                variables = { first: 10, after: currentPage[difficulty], difficulty: difficultyToIndex[difficulty] }
+                updatedPage = currentPage
+                break
+            case 'start':
+                variables = { first: 10, after: 0, difficulty: difficultyToIndex[difficulty] }
+                updatedPage = { ...currentPage }
+                updatedPage[difficulty] = 0
+                break
+            case 'end':
+                variables = { first: 10, after: games.data.victoriousMatchesCount - (games.data.victoriousMatchesCount % 10), difficulty: difficultyToIndex[difficulty] }
+                updatedPage = { ...currentPage }
+                updatedPage[difficulty] = games.data.victoriousMatchesCount - (games.data.victoriousMatchesCount % 10)
+                break
+            case 'next':
+                variables = { first: 10, after: currentPage[difficulty] + 10, difficulty: difficultyToIndex[difficulty] }
+                updatedPage = { ...currentPage }
+                updatedPage[difficulty] = currentPage[difficulty] + 10
+                break
+            case 'previous':
+                variables = { first: 10, after: currentPage[difficulty] - 10, difficulty: difficultyToIndex[difficulty] }
+                updatedPage = { ...currentPage }
+                updatedPage[difficulty] = currentPage[difficulty] - 10
+                break
         }
         games.fetchMore({ variables: { ...variables } })
         setPage(updatedPage)
     }
     return (
-        <div className='games-root' onMouseMove={(e) => setPosition({ top: e.pageY, left: e.pageX })}>
-            <HoverShard position={position} shard={shard}/>
+        <div className='games-root'>
             <div className='games-difficulty-header flexRow'>
                 <span className={`guideTabLink ${currentTab === 'GrandMagus' ? 'active' : ''}`} onClick={() => switchDifficulty('GrandMagus')}>
                     Grand Magus
@@ -75,9 +71,9 @@ const VictoriousGames = () => {
                     Sorcerer
                 </span>
             </div>
-            <PaginationLarge onPageChange={fetchMore} currentPage={Math.floor(currentPage[currentTab] / 10 + 1)} totalPages={Math.floor(games.data.victoriousMatchesCount / 10) + 1} difficulty={currentTab}/>
-            {games.data.victoriousMatches.map((match, key) => <Game key={key} match={match} setShard={setShard} shard={shard} />)}
-            <PaginationLarge onPageChange={fetchMore} currentPage={Math.floor(currentPage[currentTab] / 10 + 1)} totalPages={Math.floor(games.data.victoriousMatchesCount / 10) + 1} difficulty={currentTab}/>
+            <PaginationLarge onPageChange={fetchMore} currentPage={Math.floor(currentPage[currentTab] / 10 + 1)} totalPages={Math.floor(games.data.victoriousMatchesCount / 10) + 1} difficulty={currentTab} />
+            {games.data.victoriousMatches.map((match, key) => <Game key={key} match={match}/>)}
+            <PaginationLarge onPageChange={fetchMore} currentPage={Math.floor(currentPage[currentTab] / 10 + 1)} totalPages={Math.floor(games.data.victoriousMatchesCount / 10) + 1} difficulty={currentTab} />
         </div>
     )
 }
