@@ -10,9 +10,9 @@ import { PaginationLarge } from '../Pagination'
 
 const VictoriousGames = () => {
     const difficultyParam = useParams().difficulty
-    const [currentTab, setCurrentTab] = useState(!difficultyParam || difficultyParam === '0' ? 'GrandMagus' : difficultyParam === '1' ? 'ApexMage' : 'Sorcerer')
-    const [currentPage, setPage] = useState({ GrandMagus: 0, ApexMage: 0, Sorcerer: 0 })
-    const difficultyToIndex = { GrandMagus: 0, ApexMage: 1, Sorcerer: 2 }
+    const [currentTab, setCurrentTab] = useState(!difficultyParam || difficultyParam === '0' ? 'ApexMage' : difficultyParam === '1' ? 'GrandMagus' : 'Sorcerer')
+    const [currentPage, setPage] = useState({ ApexMage: 0, GrandMagus: 0, Sorcerer: 0 })
+    const difficultyToIndex = { ApexMage: 0, GrandMagus: 1, Sorcerer: 2 }
     const games = useQuery(VIC_GAMES, { variables: { difficulty: difficultyParam ? Number(difficultyParam) : 0, first: 10 } })
 
     if (!games || games.loading || !games.data) return (
@@ -61,11 +61,11 @@ const VictoriousGames = () => {
     return (
         <div className='games-root'>
             <div className='games-difficulty-header flexRow'>
-                <span className={`guideTabLink ${currentTab === 'GrandMagus' ? 'active' : ''}`} onClick={() => switchDifficulty('GrandMagus')}>
-                    Grand Magus
-                </span>
                 <span className={`guideTabLink ${currentTab === 'ApexMage' ? 'active' : ''}`} onClick={() => switchDifficulty('ApexMage')}>
                     Apex Mage
+                </span>
+                <span className={`guideTabLink ${currentTab === 'GrandMagus' ? 'active' : ''}`} onClick={() => switchDifficulty('GrandMagus')}>
+                    Grand Magus
                 </span>
                 <span className={`guideTabLink ${currentTab === 'Sorcerer' ? 'active' : ''}`} onClick={() => switchDifficulty('Sorcerer')}>
                     Sorcerer

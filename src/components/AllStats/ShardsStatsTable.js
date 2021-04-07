@@ -1,16 +1,22 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+
 import Shards from '../../data/Shards'
 import Abilities from '../../data/Abilities'
 import { heroNames } from '../../data/Heroes'
+import { removeHoverElement, setHoverElement } from '../../redux/hoverReducer'
 
-const ShardsStatsTable = ({ shard, heroTotalGames, ind, setShard }) => {
+const ShardsStatsTable = ({ shard, heroTotalGames, ind }) => {
     if (!shard) return null
     const shardExists = Shards[shard.shard]
+    const dispatch = useDispatch()
     return (
-        <tr
-            id={shard.shard}
-        >
-            <td className='shardStatsShardParent' onMouseLeave={() => setShard(null)} onMouseEnter={() => setShard(shard.shard) }>
+        <tr>
+            <td
+                className='shardStatsShardParent'
+                onMouseEnter={(e) => dispatch(setHoverElement('shard', e, shard.shard))}
+                onMouseLeave={() => dispatch(removeHoverElement())}
+            >
                 {shardExists ?
                     <div className='shardStatsShard'>
                         <img className='shardStatsImage' src={shardExists ? Abilities[Shards[shard.shard].skill].link : ''} />

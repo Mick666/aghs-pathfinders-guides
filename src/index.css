@@ -1401,7 +1401,6 @@ code {
   height: 50px;
   margin-right: 10px;
   border-radius: 50px;
-  margin-top: 10px;
 }
 
 .statsTitle {
@@ -1482,7 +1481,7 @@ code {
 
 .hover-root {
   position: absolute;
-  z-index: 5000;
+  z-index: 100000;
   /* background: url(https://www.dotafire.com/css/img/bg-box-p.png) repeat scroll center top #0f0f0f; */
   background-color: #05070a;
   padding: 10px;

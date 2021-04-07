@@ -10,15 +10,12 @@ import HeroStatsHeader from './HeroStatsHeader'
 import HeroStatsTable from './HeroStatsTable'
 import ShardsStatsHeader from './ShardsStatsHeader'
 import ShardsStatsTable from './ShardsStatsTable'
-import { HoverShard } from '../HoverElement'
 
 const AllStats = () => {
     const [visibleStats, setVisibleStats] = useState('shards')
     const [visibleDifficulty, setVisibleDifficulty] = useState(0)
     const [shardSorting, setShardSorting] = useState(['WR', 'DESC'])
     const [heroSorting, setHeroSorting] = useState(['WR', 'DESC'])
-    const [position, setPosition] = useState({ top: 0, left: 0 })
-    const [hoverShard, setShard] = useState(null)
     const [stats, setStats] = useState(null)
     const results = useQuery(HERO_STATS)
     const heroTotalGames = {}
@@ -86,14 +83,8 @@ const AllStats = () => {
             else heroTotalGames[hero.heroId] = [hero.totalGames]
         }))
     }
-    const handleHover = (e) => {
-        console.log(e)
-        setPosition({ top: e.pageY - 100, left: e.pageX - 600 })
-    }
-    console.log(position, hoverShard)
     return (
-        <div className='statsParent' onMouseMove={(e) => handleHover(e)}>
-            <HoverShard position={position} shard={hoverShard}/>
+        <div className='statsParent'>
             <div className='statsTabs'>
                 <div className={`statTab ${visibleStats === 'hero' ? 'active' : ''}`} onClick={() => setVisibleStats('hero')}>Heroes</div>
                 <div className={`statTab ${visibleStats === 'shards' ? 'active' : ''}`} onClick={() => setVisibleStats('shards')}>Legendary Shards</div>
@@ -122,13 +113,13 @@ const AllStats = () => {
                                     <tbody>
                                         <ShardsStatsHeader sortFunc={sortFunc} setShardSorting={setShardSorting} shardSorting={shardSorting} />
                                         {difficulty.shardWinrates
-                                            .map((shard, ind) => <ShardsStatsTable
-                                                key={ind} ind={key}
-                                                shard={shard}
-                                                heroTotalGames={heroTotalGames}
-                                                hoverShard={hoverShard}
-                                                setShard={setShard}
-                                            />)
+                                            .map((shard, ind) =>
+                                                <ShardsStatsTable
+                                                    key={ind} ind={key}
+                                                    shard={shard}
+                                                    heroTotalGames={heroTotalGames}
+                                                />
+                                            )
                                         }
                                     </tbody>
                                 </table>
