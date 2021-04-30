@@ -235,6 +235,9 @@ const Items = {
     item_clarity: { link: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/7/77/Clarity_icon.png', name: 'Clarity', consumable: true },
     item_ward_observer: { link: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/f/f6/Observer_Ward_icon.png', name: 'Observer Ward', consumable: true },
     item_ward_dispenser: { link: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/1/13/Observer_and_Sentry_Wards_1_icon.png', name: 'Observer and Sentry Wards', consumable: true },
+    item_psychic_headband: { link: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/f/f3/Psychic_Headband_icon.png', name: 'Psychic Headband', neutral: true },
+    item_broom_handle: { link: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/3/3a/Broom_Handle_icon.png', name: 'Broom Handle', neutral: true },
+    item_pelt_of_the_old_wolf: { link: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/c/c9/Siltbreaker_Pelt_of_the_Old_Wolf_icon.png', name: 'Pelt of the Old Wolf', neutral: true },
 }
 
 // 60x44

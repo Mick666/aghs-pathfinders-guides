@@ -37,7 +37,7 @@ const Player = ({ player, expanded, individualGame }) => {
                     {playerItems[0].map((item, ind) => {
                         return (
                             // eslint-disable-next-line
-                            Items[item] ? <img src={Items[item].link} className='game-item-image' key={ind} /> : process.env.NODE_ENV === 'development' ? <span className='game-item-emptyslot' key={ind}>{item}</span> : null
+                            Items[item] ? <img src={Items[item].link} className='game-item-image' key={ind} /> : <span className='game-item-emptyslot' key={ind}>{process.env.NODE_ENV === 'development' ? item : ''}</span>
                         )
                     })}
                 </div>
@@ -45,7 +45,7 @@ const Player = ({ player, expanded, individualGame }) => {
                     {playerItems[1].map((item, ind) => {
                         return (
                             // eslint-disable-next-line
-                            Items[item] ? <img src={Items[item].link} className='game-item-image' key={ind} /> : process.env.NODE_ENV === 'development' ? <span className='game-item-emptyslot' key={ind}>{item}</span> : null
+                            Items[item] ? <img src={Items[item].link} className='game-item-image' key={ind} /> : <span className='game-item-emptyslot' key={ind}>{process.env.NODE_ENV === 'development' ? item : ''}</span> 
                         )
                     })}
                 </div>
