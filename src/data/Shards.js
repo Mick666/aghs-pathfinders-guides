@@ -327,5 +327,11 @@ const Shards = {
     pathfinder_dk_dragon_blood_active: { name: 'Pyroclastic Conflagration', skill: 'dragonBlood', description: 'Dragon Blood can be activated to grant Dragon Knight 3 seconds of magic immunity. When activated, it creates a fiery blast that knocks back enemies within a 500 radius. Affected units are stunned for 1.25 seconds and dealt damage equals to 200% of Dragon Knight\'s total health regeneration' },
     pathfinder_dk_elder_dragon_form_attack: { name: 'Fang of Galakrond', skill: 'elderDragonForm', description: 'After every 3 attacks in human form, Dragon Knight\'s next attack is empowered by the current level of Elder Dragon Form. While transformed, Dragon Knight\'s attack projectile bounce to an additional nearby target, dealing full damage and applies the attack\'s debuff' },
     pathfinder_dk_dragon_tail_chain: { name: 'Soul Feast', skill: 'dragonTail', description: 'Dragon Tail tethers Dragon Knight to the primary target. While linked, Dragon Knight can never be killed by the target, and 50% of the damage he takes is reflected back unto the tethered opponent. The tether lasts 4 seconds, and has a maximum length of 750' },
+    dawnbreaker_celestial_hammer_lua_illusion: { name: 'TBD', skill: 'celestialHammer', description: 'TBD' },
+    dawnbreaker_luminosity_lua_stacking: { name: 'TBD', skill: 'luminosity', description: 'TBD' },
+    dawnbreaker_starbreaker_lua_solar_pulse: { name: 'TBD', skill: 'starbreaker', description: 'TBD' },
+    dawnbreaker_starbreaker_lua_max_luminosity: { name: 'TBD', skill: 'starbreaker', description: 'TBD' },
+    dawnbreaker_starbreaker_lua_smash_sleep: { name: 'TBD', skill: 'starbreaker', description: 'TBD' },
+    dawnbreaker_luminosity_lua_charge: { name: 'TBD', skill: 'luminosity', description: 'TBD' },
 }
 export default Shards

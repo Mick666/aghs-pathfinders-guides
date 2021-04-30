@@ -8,7 +8,7 @@ const Heroes = [
         talents: [
             ['+100 Battle Hunger DPS', '25', '+800 Berserker\'s Call'],
             ['+20 Health Regen', '20', '+180 Culling Blade Kill Threshold'],
-            ['+Attacking Proc Counter Helix', '15', '+5 Mana Regen'],
+            ['Attacking Proc Counter Helix', '15', '+5 Mana Regen'],
             ['+20 Movement Speed', '10', '+25 Attack Speed'],
         ],
         abilities: ['beserkersCall', 'battleHunger', 'counterHelix', 'cullingBlade', 'talentTree'],
@@ -25,6 +25,27 @@ const Heroes = [
             'pathfinder_axe_special_berseker_call_blink',
             'pathfinder_axe_special_culling_blade_delay',
             'pathfinder_axe_special_culling_blade_leap']
+    },
+    {
+        id: 'Dawnbreaker',
+        name: 'Dawnbreaker',
+        image: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/d/d6/Dawnbreaker_icon.png',
+        banner: 'https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/dawnbreaker/wallpapers/dota_db_wallpaper.png',
+        talents: [
+            ['+40% Magic Resistance', '25', '2500 Celestial Hammer Range'],
+            ['-40% Solar Guardian Cooldown', '20', '+40% Luminosity Critical Damage'],
+            ['+10s Celestial Hammer Return Delay', '15', '+20 Damage'],
+            ['+20 Damage', '10', '+8 Strength'],
+        ],
+        abilities: ['starbreaker', 'celestialHammer', 'converge', 'luminosity', 'solarGuardian'],
+        shards: [
+            'dawnbreaker_celestial_hammer_lua_illusion',
+            'dawnbreaker_luminosity_lua_stacking',
+            'dawnbreaker_starbreaker_lua_solar_pulse',
+            'dawnbreaker_starbreaker_lua_max_luminosity',
+            'dawnbreaker_starbreaker_lua_smash_sleep',
+            'dawnbreaker_luminosity_lua_charge'
+        ]
     },
     {
         id: 'DragonKnight',
@@ -50,7 +71,8 @@ const Heroes = [
             'pathfinder_dk_elder_dragon_form_fear',
             'pathfinder_dk_dragon_blood_active',
             'pathfinder_dk_elder_dragon_form_attack',
-            'pathfinder_dk_dragon_tail_chain']
+            'pathfinder_dk_dragon_tail_chain'
+        ]
 
     },
     {

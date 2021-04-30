@@ -231,6 +231,10 @@ const Items = {
     item_bear_cloak: { link: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/4/4b/Siltbreaker_Cloak_of_the_Bear_icon.png', name: 'Cloak of the Bear', neutral: true },
     item_stormcrafter: { link: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/e/eb/Stormcrafter_icon.png', name: 'Stormcrafter', neutral: true },
     item_quicksilver_amulet: { link: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/d/d8/Quicksilver_Amulet_icon.png', name: 'Quicksilver Amulet', neutral: true },
+    item_tpscroll: { link: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/4/46/Town_Portal_Scroll_icon.png', name: 'Town Portal Scroll', neutral: true },
+    item_clarity: { link: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/7/77/Clarity_icon.png', name: 'Clarity', consumable: true },
+    item_ward_observer: { link: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/f/f6/Observer_Ward_icon.png', name: 'Observer Ward', consumable: true },
+    item_ward_dispenser: { link: 'https://static.wikia.nocookie.net/dota2_gamepedia/images/1/13/Observer_and_Sentry_Wards_1_icon.png', name: 'Observer and Sentry Wards', consumable: true },
 }
 
 // 60x44

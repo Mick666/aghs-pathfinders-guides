@@ -113,6 +113,11 @@ const Abilities = {
     dragonTail: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/6/6f/Dragon_Tail_icon.png'), name: 'Dragon Tail' },
     dragonBlood: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e6/Dragon_Blood_icon.png'), name: 'Dragon Blood' },
     elderDragonForm: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/3/33/Elder_Dragon_Form_icon.png'), name: 'Elder Dragon Form' },
+    starbreaker: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/1/14/Starbreaker_icon.png'), name: 'Starbreaker' },
+    celestialHammer: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/1/14/Celestial_Hammer_icon.png'), name: 'Celestial Hammer' },
+    converge: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/0/06/Converge_icon.png'), name: 'Converge' },
+    luminosity: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/0/07/Luminosity_icon.png'), name: 'Luminosity' },
+    solarGuardian: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/3/32/Solar_Guardian_icon.png'), name: 'Solar Guardian' },
 }
 
 export default Abilities
