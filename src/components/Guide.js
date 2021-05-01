@@ -113,7 +113,6 @@ const ShardCombos = ({ shardCombos }) => {
 }
 
 const GuideSegment = ({ section }) => {
-    console.log(section)
     return (
         <div className='guideSection'>
             <div className='guideSectionTitle'>{section.groupName}</div>

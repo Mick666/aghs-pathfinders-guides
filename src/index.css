@@ -764,17 +764,22 @@ code {
   color: rgb(207, 207, 207);
 }
 
-.heroStatNumbers {
+.hero-stats-overall {
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
+.hero-stats-overall div span {
   font-family: "Trebuchet MS", sans-serif;
   font-size: 20px;
   letter-spacing: -2px;
   text-transform: uppercase;
   color: rgb(207, 207, 207);
+  text-align: center;
 }
 
-.heroStatsOverall {
-  margin-bottom: 25px;
-}
 
 .mainPage {
   position: relative;
@@ -1386,7 +1391,7 @@ code {
 
 .shardStatsText {
   display: flex;
-  align-items: center;
+  align-items: top;
 }
 
 .heroStatsImage {
@@ -1394,6 +1399,22 @@ code {
   height: 60px;
   margin-right: 10px;
   border-radius: 7px;
+}
+
+.hero-stats-title {
+  text-transform: uppercase;
+  color: white;
+  margin-left: 5px;
+  font-size: 14px;
+  width: 125px;
+  margin-right: 20px;
+  text-align: left;
+}
+
+.hero-stats-description {
+  font-size: 13px;
+  width: 500px;
+  text-align: left;
 }
 
 .shardStatsImage {
