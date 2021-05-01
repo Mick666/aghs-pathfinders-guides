@@ -44,7 +44,13 @@ const Heroes = [
             'dawnbreaker_starbreaker_lua_solar_pulse',
             'dawnbreaker_starbreaker_lua_max_luminosity',
             'dawnbreaker_starbreaker_lua_smash_sleep',
-            'dawnbreaker_luminosity_lua_charge'
+            'dawnbreaker_luminosity_lua_charge',
+            'dawnbreaker_celestial_hammer_lua_skewer',
+            'dawnbreaker_celestial_hammer_lua_trail_heal',
+            'dawnbreaker_luminosity_lua_explosion',
+            'dawnbreaker_solar_guardian_lua_charges',
+            'dawnbreaker_solar_guardian_lua_permanent',
+            'dawnbreaker_solar_guardian_lua_capture',
         ]
     },
     {
