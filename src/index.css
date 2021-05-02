@@ -717,6 +717,7 @@ code {
 .heroListDiv {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .heroListTitle, .heroText, .allGuides {
