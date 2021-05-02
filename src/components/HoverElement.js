@@ -11,7 +11,7 @@ export const HoverShard = ({ shard }) => {
     if (!Shards[shard]) return null
     const { position } = useSelector(state => state)
     return (
-        <div style={{ top: `${position?.position?.top+25}px`, left: `${position?.position?.left+25}px` }} className='hover-root hover-shard flexColumn'>
+        <div style={{ top: `${position?.position?.top + 25}px`, left: `${position?.position?.left + 25}px` }} className='hover-root hover-shard flexColumn'>
             <div className='hover-parent flexRow'>
                 <img src={Abilities[Shards[shard].skill].link} className='hover-shard-image' />
                 <div className='flexColumn hover-details'>
@@ -33,21 +33,23 @@ export const HoverPlayer = ({ player }) => {
     const playerItems = sortItems(player.items)
     const { position } = useSelector(state => state)
     return (
-        <div className='hover-root hover-player flexColumn' style={{ top: `${position?.position?.top+25}px`, left: `${position?.position?.left+25}px` }}>
+        <div className='hover-root hover-player flexColumn' style={{ top: `${position?.position?.top + 25}px`, left: `${position?.position?.left + 25}px` }}>
             <div className='flexRow center-align hover-player-items'>
                 <img src={heroNames[player.hero] ? heroNames[player.hero].image : ''} className='hover-player-image' />
                 <div className='flexColumn game-player-detailed'>
                     <div className='flexRow game-player-items'>
                         {playerItems[0].map((item, ind) => {
                             return (
-                                Items[item] ? <img src={Items[item].link} className='game-item-image' key={ind} /> : <span className='game-item-emptyslot' key={ind}>{item}</span>
+                                // eslint-disable-next-line
+                                Items[item] ? <img src={Items[item].link} className='game-item-image' key={ind} /> : <span className='game-item-emptyslot' key={ind}>{process.env.NODE_ENV === 'development' ? item : ''}</span>
                             )
                         })}
                     </div>
                     <div className='flexRow game-player-backpack'>
                         {playerItems[1].map((item, ind) => {
                             return (
-                                Items[item] ? <img src={Items[item].link} className='game-item-image' key={ind} /> : <span className='game-item-emptyslot' key={ind}>{item}</span>
+                                // eslint-disable-next-line
+                                Items[item] ? <img src={Items[item].link} className='game-item-image' key={ind} /> : <span className='game-item-emptyslot' key={ind}>{process.env.NODE_ENV === 'development' ? item : ''}</span>
                             )
                         })}
                     </div>

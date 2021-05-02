@@ -614,7 +614,9 @@ code {
   font-weight: bold;
   font-size: 18px;
   color: grey;
-  padding: 10px;
+  padding: 5px;
+  background-color: #202020;
+  margin: 5px;
 }
 
 .headerLinks {
