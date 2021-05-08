@@ -49,7 +49,7 @@ const Heroes = [
             'dawnbreaker_celestial_hammer_lua_trail_heal',
             'dawnbreaker_luminosity_lua_explosion',
             'dawnbreaker_solar_guardian_lua_charges',
-            'dawnbreaker_solar_guardian_lua_permanent',
+            'dawnbreaker_solar_guardian_lua_permanent_dummy',
             'dawnbreaker_solar_guardian_lua_capture',
         ]
     },
@@ -707,15 +707,19 @@ const Heroes = [
             ['+1s Shackleshot Stun Duration', '10', '+2.5 Mana Regen'],
         ],
         abilities: ['shackleshot', 'powershot', 'windrun', 'focusFire', 'talentTree'],
-        shards: ['pathfinder_special_windranger_shackleshot_aoe',
+        shards: ['pathfinder_special_windranger_shackleshot_armor',
             'pathfinder_special_windranger_windrun_cyclone',
-            'pathfinder_special_windranger_shackleshot_armor',
+            'pathfinder_special_windranger_shackleshot_aoe',
             'pathfinder_special_windranger_shackleshot_sleep',
             'pathfinder_special_windranger_powershot_multishot',
             'pathfinder_special_windranger_powershot_repeating',
             'pathfinder_special_windranger_windrun_aoe',
             'pathfinder_special_windranger_focusfire_trueshot',
-            'pathfinder_special_windranger_focusfire_global']
+            'pathfinder_special_windranger_focusfire_global',
+            'pathfinder_special_windranger_windrun_invis',
+            'pathfinder_special_windranger_powershot_ricochet',
+            'pathfinder_special_windranger_focusfire_lifesteal',
+            'pathfinder_special_windranger_powershot_attacks']
     },
     {
         id: 'WinterWyvern',

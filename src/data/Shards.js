@@ -1339,25 +1339,25 @@ const Shards = {
         |   Windranger   |
         ==================
     */
-    pathfinder_special_windranger_shackleshot_aoe: {
+    pathfinder_special_windranger_shackleshot_armor: {
         name: 'Fair-weather Friends',
         skill: 'shackleshot',
-        description: 'Shackleshot can now affect up to 8 enemy units.'
+        description: 'All attacks by Windranger now also multi-shot unto all enemy units currently stunned by Shackleshot'
     },
     pathfinder_special_windranger_windrun_cyclone: {
         name: 'Windward Haze',
         skill: 'shackleshot',
         description: 'While under the effect of Windrun, Windranger automatically launches the current level of Shackleshot toward the closest nearby enemy unit every 2 seconds.'
     },
-    pathfinder_special_windranger_shackleshot_armor: {
-        name: 'Kentucky Windage',
+    pathfinder_special_windranger_shackleshot_aoe: {
+        name: 'Aeolian Forecast',
         skill: 'shackleshot',
-        description: 'Any enemy unit stunned by Shackleshot also has their armor reduced by 10.'
+        description: 'If Shackleshot is successful, a free Powershot will instantly be casted in the target\'s direction'
     },
     pathfinder_special_windranger_shackleshot_sleep: {
         name: 'Autumn Chill',
         skill: 'shackleshot',
-        description: 'Enemy units stunned by Shackleshot are put to sleep for up to 5 seconds once the effect wears off.'
+        description: 'If Shackleshot is successful, enemy units stunned by Shackleshot will be put to sleep for up to %duration% seconds once the effect wears off'
     },
     pathfinder_special_windranger_powershot_multishot: {
         name: 'Sweeping Gale',
@@ -1367,7 +1367,7 @@ const Shards = {
     pathfinder_special_windranger_powershot_repeating: {
         name: 'Semiautomatic Assault Archery',
         skill: 'powershot',
-        description: 'Powershot now fires 17 non-piercing shots, each dealing 35% damage at an interval of one shot every .25 seconds.'
+        description: 'If Powershot is casted while auto-cast is toggled on, its fires 9 non-piercing shots, each dealing 40% damage'
     },
     pathfinder_special_windranger_windrun_aoe: {
         name: 'Picnic In The Park',
@@ -1377,12 +1377,33 @@ const Shards = {
     pathfinder_special_windranger_focusfire_trueshot: {
         name: 'Feel The Breeze',
         skill: 'focusFire',
-        description: 'While under the effect of Focus Fire, each of Windranger\'s attack flash-freezes the targeted enemy unit.'
+        description: 'While under the effect of Focus Fire, each of Windranger\'s attack mini-stun the targeted enemy unit. All of the target\'s passives are disabled for the duration of the ability'
     },
     pathfinder_special_windranger_focusfire_global: {
         name: 'Arrow Rain',
         skill: 'focusFire',
         description: 'While under the effect of Focus Fire, Windranger gains global attack range against the targeted enemy unit. The cast range of Focus Fire remains the same.'
+    },
+    pathfinder_special_windranger_windrun_invis: {
+        name: 'Wind Chimes of Zaru\'Kina',
+        skill: 'windrun',
+        description: 'Windrun now grants Windranger invisibility and create a decoy illusion at her location. The illusion deals and receives %illusion_dmg_mult%%% less damage. If Windranger performs an attack, her invisibility will\
+        instantly be dispelled"'
+    },
+    pathfinder_special_windranger_powershot_ricochet: {
+        name: 'Unhealthy Fixation',
+        skill: 'powershot',
+        description: 'Upon hitting an enemy unit, Powershot ricochets toward the furthest enemy within a 700 radius. This effect can occur up to 1 times'
+    },
+    pathfinder_special_windranger_focusfire_lifesteal: {
+        name: 'Smiles and Murders',
+        skill: 'focusFire',
+        description: 'Focus Fire now grants the %lifesteal%%% lifesteal against the target. While Focus Fire is active, Windranger will continuously benefit from the current level of Windrun'
+    },
+    pathfinder_special_windranger_powershot_attacks: {
+        name: 'Razor Squalls',
+        skill: 'powershot',
+        description: 'Any enemy unit that comes within a %radius% radius of the Powershot projectile will be hit with an attack from Windranger. These attacks can fully proc any on-hit effect from items and abilities'
     },
     /*
         =====================
