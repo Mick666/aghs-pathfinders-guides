@@ -118,6 +118,10 @@ const Abilities = {
     converge: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/0/06/Converge_icon.png'), name: 'Converge' },
     luminosity: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/0/07/Luminosity_icon.png'), name: 'Luminosity' },
     solarGuardian: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/3/32/Solar_Guardian_icon.png'), name: 'Solar Guardian' },
+    poisonTouch: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/0/09/Poison_Touch_icon.png'), name: 'Poison Touch' },
+    shallowGrave: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/6/69/Shallow_Grave_icon.png'), name: 'Shallow Grave' },
+    shadowWave: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/1/12/Shadow_Wave_icon.png'), name: 'Shadow Wave' },
+    badJuju: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/4/4d/Bad_Juju_icon.png'), name: 'Bad Juju' },
 }
 
 export default Abilities

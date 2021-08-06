@@ -12,7 +12,6 @@ import { removeHoverElement, setHoverElement } from '../../redux/hoverReducer'
 const numberWithCommas = (x) => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ', ')
 
 const Player = ({ player, expanded, individualGame }) => {
-    console.log(player)
     const playerItems = sortItems(player.items)
     const dispatch = useDispatch()
 

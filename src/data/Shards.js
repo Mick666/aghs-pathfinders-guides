@@ -1870,5 +1870,74 @@ const Shards = {
         skill: 'solarGuardian',
         description: 'Solar Guardian now captures all nearby enemies, taking them unto the sky with Dawnbreaker. Upon landing, Dawnbreaker gains complete immunity against physical and magical damage for 6 seconds. All enemies within the capture radius are stunned while Solar Guardian is channeling'
     },
+    /*
+        ==============
+        |   Dazzle   |
+        ==============
+    */
+    pf_poison_touch_spread: {
+        name: 'Infection Mandate',
+        skill: 'poisonTouch',
+        description: 'Poison Touch projectiles now mini-stun on impact. If a unit debuffed by Poison Touch is attacked by Dazzle, it will spread the debuff to 4 nearby units'
+    },
+    pf_poison_touch_ward: {
+        name: 'Prince Bongo',
+        skill: 'poisonTouch',
+        description: 'Enemies dying while debuffed by Poison Touch has a 50% chance to spawn a ward that pulse 2 times with the current level of Shadow Wave'
+    },
+    pf_poison_touch_chain: {
+        name: 'Communal Discharge',
+        skill: 'poisonTouch',
+        description: 'Poison Touch launches a single bouncing projectile, dealing physical impact damage equals to 50% of Dazzle\'s total intelligence while splashing for 15% in a small radius.\
+        The number of bounces is equal to the ability\'s max targets, and the impact applies twice as many Poison Touch stacks'
+    },
+    pf_shallow_grave_invis: {
+        name: 'Weaversong Lullaby',
+        skill: 'shallowGrave',
+        description: 'Shallow Grave causes the affected units to become invisible while granting them 250 bonus movement speed and 60 bonus health regeneration'
+    },
+    pf_shallow_grave_aoe: {
+        name: 'Mass Burial',
+        skill: 'shallowGrave',
+        description: 'Shallow Graves applies to all friendly heroes within a 420 radius of the target. Any enemy caught within this radius is hexed for 50% of Shallow Grave\'s duration'
+    },
+    pf_shallow_grave_ground: {
+        name: 'Hallowed Ground',
+        skill: 'shallowGrave',
+        description: 'Shallow Grave can be ground targeted to create a shadow pool. Any friendly unit standing within the radius receives %heal_amp%%% healing amplification. If a friendly hero takes lethal damage within the area, they will be instantly blessed with Shallow Grave.\
+         The pool lasts indefinitely until its effect is proc\'d or Dazzle casts Shallow Grave again'
+    },
+    pf_shadow_wave_enemy: {
+        name: 'Chapel of Woe',
+        skill: 'shadowWave',
+        description: 'Shadow Wave can now be cast on enemies, causing it to bounce between enemy units, dealing damage while healing nearby friendly heroes for 50% of the amount. When used this way there are 2 times as many bounces'
+    },
+    pf_shadow_wave_proc: {
+        name: 'Heal of a Deal',
+        skill: 'shadowWave',
+        description: 'While attacking an enemy afflicted with Poison Touch, Dazzle has a 20% chance to cause a Shadow Wave of the current level to bounce to a nearby valid target. This can proc Bad Juju'
+    },
+    pf_shadow_wave_dispel: {
+        name: 'Disco Sermon',
+        skill: 'shadowWave',
+        description: 'The first bounce of Shadow Wave has global range. Any friendly hero healed by Shadow Wave also receives a strong dispel that cleanses stuns and most debuffs'
+    },
+    pf_bad_juju_attacks: {
+        name: 'Sacred Founding',
+        skill: 'badJuju',
+        description: 'Any time Dazzle casts a spell, he automatically launches 5 attacks toward nearby enemies within the effect radius of Bad Juju'
+    },
+    pf_bad_juju_heal: {
+        name: 'Purple Rain',
+        skill: 'badJuju',
+        description: 'Each time Dazzle casts a spell, all allies within the Bad Juju effect radius is blessed with a purple mist that restore 2% of their max health and mana every second. The duration is the same as Bad\
+         Juju\'s debuff duration, and is refreshed when reapplied'
+    },
+    pf_bad_juju_raze: {
+        name: 'Never More Blessed',
+        skill: 'badJuju',
+        description: 'Bad Juju gains a stack each time Dazzle successfully casts a spell. At 3 stacks, the counter is reset, and a shadow raze is summoned under every single enemy unit within Bad Juju\'s radius, dealin\
+         100% of Dazzle\'s intelligence as physical damage'
+    },
 }
 export default Shards
