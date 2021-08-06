@@ -1309,6 +1309,17 @@ const Shards = {
         skill: 'ignite',
         description: 'After hitting their target, Ignite\'s projectiles will additionally bounce to a nearby friendly hero, healing them and increasing their movement speed for the value of the ability.'
     },
+    pathfinder_special_ignite_multismash: {
+        name: 'Multi-Smash',
+        skill: 'multicast',
+        description: 'Attacks against Ignited enemies now have a chance to proc Multicast, causing the target to be hit multiple times in quick succession. These extra attacks can fully proc any on-hit effect from abilities and items'
+    },
+    pathfinder_special_om_shield_bloodlust: {
+        name: 'Ogres Has Layers',
+        skill: 'bloodlust',
+        description: 'Bloodlust now grant the targeted ally a fire shield with 3 layers, each preventing a single instance of damage. Whenever the bloodlusted unit is damaged, the shield will immediately release the ranged version of Ogre Magi\'\
+        s attacks toward 5 nearby enemies. These attacks can proc any on-hit effect from abilities and items'
+    },
     pathfinder_special_stunned_ignite: {
         name: 'Too Hot to Handle',
         skill: 'ignite',

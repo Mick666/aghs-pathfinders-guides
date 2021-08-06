@@ -62,6 +62,7 @@ export const HoverPlayer = ({ player }) => {
             </div>
             <div className='flexColumn'>
                 {player.upgrades.map((shard, key) => {
+                    // console.log(shard)
                     return (
                         <div className='flexRow hover-shard-parent' key={key}>
                             <img src={Abilities[Shards[shard].skill].link} className='hover-shard-image' />
