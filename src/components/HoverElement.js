@@ -65,11 +65,11 @@ export const HoverPlayer = ({ player }) => {
                     // console.log(shard)
                     return (
                         <div className='flexRow hover-shard-parent' key={key}>
-                            <img src={Abilities[Shards[shard].skill].link} className='hover-shard-image' />
+                            <img src={Abilities[Shards[shard]?.skill]?.link} className='hover-shard-image' />
                             <div className='flexColumn hover-details'>
-                                <span className='hover-shard-name'>{Shards[shard].name}</span>
-                                <span className='hover-shard-ability'>Upgrades: {Abilities[Shards[shard].skill].name}</span>
-                                <span className='hover-shard-description'>{Shards[shard].description}</span>
+                                <span className='hover-shard-name'>{Shards[shard]?.name ? Shards[shard]?.name : shard}</span>
+                                <span className='hover-shard-ability'>Upgrades: {Abilities[Shards[shard]?.skill]?.name}</span>
+                                <span className='hover-shard-description'>{Shards[shard]?.description}</span>
                             </div>
                         </div>
                     )

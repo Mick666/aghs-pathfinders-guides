@@ -122,6 +122,10 @@ const Abilities = {
     shallowGrave: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/6/69/Shallow_Grave_icon.png'), name: 'Shallow Grave' },
     shadowWave: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/1/12/Shadow_Wave_icon.png'), name: 'Shadow Wave' },
     badJuju: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/4/4d/Bad_Juju_icon.png'), name: 'Bad Juju' },
+    arcLightning: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/e/ef/Arc_Lightning_icon.png'), name: 'Arc Lightning' },
+    lightningBolt: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/3/34/Lightning_Bolt_icon.png'), name: 'Lightning Bolt' },
+    staticField: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/a/ae/Static_Field_icon.png'), name: 'Static Field' },
+    thundergodsWrath: { link: ('https://static.wikia.nocookie.net/dota2_gamepedia/images/1/1c/Thundergod%27s_Wrath_icon.png'), name: 'Thundergod\'s Wrath' },
 }
 
 export default Abilities

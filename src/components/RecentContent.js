@@ -91,9 +91,10 @@ const MainGames = ({ victoriousGames }) => {
                                         <div className='flexrow-nowrap' >
                                             <span>{ind === 0 ? 'Heroes' : ''}</span>
                                             {game.players.map((player, i) => {
+                                                // console.log(player)
                                                 return (
                                                     <img key={i} className='recentgames-game-player'
-                                                        src={heroNames[player.hero].image}
+                                                        src={heroNames[player.hero]?.image}
                                                         onMouseEnter={(e) => dispatch(setHoverElement('player', e, player))}
                                                         onMouseLeave={() => dispatch(removeHoverElement())}
                                                     />
