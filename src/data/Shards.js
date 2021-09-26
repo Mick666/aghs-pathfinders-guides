@@ -1950,5 +1950,77 @@ const Shards = {
         description: 'Bad Juju gains a stack each time Dazzle successfully casts a spell. At 3 stacks, the counter is reset, and a shadow raze is summoned under every single enemy unit within Bad Juju\'s radius, dealin\
          100% of Dazzle\'s intelligence as physical damage'
     },
+    /*
+        ==============
+        |   Zeus     |
+        ==============
+    */
+    pathfinder_zuus_arc_lightning_multi_enemy_bounce: {
+        name: 'Leyden Jar',
+        skill: 'arcLightning',
+        description: 'Arc Lightning can now bounce to enemies already hit by this cast, and has a 15% chance to apply Lightning Bolt on the target on every bounce.'
+    },
+    pathfinder_zuus_arc_lightning_ally_bounce_buff: {
+        name: 'Electromania',
+        skill: 'arcLightning',
+        description: 'Arc Lightning can now bounce onto Zeus and his allies, granting them a 50% chance to cast Arc Lightning at a random target whenever they cast a spell for 6 seconds. \
+        Allied Arc Lightnings cannot bounce onto allies.'
+    },
+    pathfinder_zuus_arc_lightning_projectile: {
+        name: 'Disco Rave',
+        skill: 'arcLightning',
+        description: 'Arc Lightning now launches a linear projectile that travels 1500 units and casts Arc Lightning every second to enemies within 300 radius of it.\
+        Enemies struck by this projectile will also be struck by Arc Lightning.'
+    },
+    pathfinder_zuus_lightning_bolt_kill_recast: {
+        name: 'Hell\'s Bells',
+        skill: 'lightningBolt',
+        description: 'If Lightning Bolt successfully kills a unit, it will be recasted upon a nearby unit with the lowest health. This process can repeat itself.'
+    },
+    pathfinder_zuus_lightning_bolt_self_cast: {
+        name: 'Lightning in a Bottle',
+        skill: 'lightningBolt',
+        description: 'Lightning Bolt can now be self-casted, healing Zeus for 30% of his maximum health, knocking back enemies within 500 radius of him, and stunning them for 1.2 seconds.'
+    },
+    pathfinder_zuus_lightning_bolt_linear_cast: {
+        name: 'Highway to Heaven',
+        skill: 'lightningBolt',
+        description: 'Lightning Bolt is now a directional ability that casts Lightning Bolts in a linear direction, starting from Zeus\' position. Lightning Bolts strike forward 375 units every 0.3\
+        seconds, up to a maximum distance based on 2x of Zeus\' usual cast range with Lightning Bolt.'
+    },
+    pathfinder_zuus_cloud: {
+        name: 'Skyfall',
+        skill: 'thundergodsWrath',
+        description: 'Grants an active ability which lets Zeus summon a storm cloud that duplicates his spell casts upon enemies within the radius.'
+    },
+    pathfinder_zuus_static_field_attack_arc_lightning: {
+        name: 'Dirty Deeds Done Dirt Cheap',
+        skill: 'staticField',
+        description: 'Zeus\' basic attacks deal 40% of Static Field\'s bonus damage. If Zeus attacks the same target 3 times, he will immediately cast Arc Lightning at that target for free.'
+    },
+    pathfinder_zuus_heavenly_jump: {
+        name: 'Zeus From Above',
+        skill: 'staticField',
+        description: 'Grants an active ability which lets Zeus perform a Heavenly Jump, leaping up to 850 units in any direction! After landing, Zeus strikes the closest 2 enemies within a \
+        X radius with a Lightning Bolt.'
+    },
+    pathfinder_zuus_thundergods_wrath_autosmite: {
+        name: 'You\'ve Been Thunderstruck!',
+        skill: 'thundergodsWrath',
+        description: 'Thundergod\'s Wrath can now be auto-casted, giving Zeus a 10% chance every second to smite a random visible enemy for 50% of Thundergod\'s Wrath\'s damage. Each smite costs \
+        3% of Zeus\' maximum mana.'
+    },
+    pathfinder_zuus_thundergods_wrath_multistrike: {
+        name: 'Celestial Tantrum',
+        skill: 'thundergodsWrath',
+        description: 'Thundergod\'s Wrath always strikes at least 10 times. If Thundergod\'s Wrath strikes less than 10 targets, Thundergod\'s Wrath will keep smiting until it has reached its minimum \
+        or all of the targets are dead. Each round of strikes will deal 90% of the damage of the previous round.'
+    },
+    pathfinder_zuus_thundergods_wrath_ground_target: {
+        name: 'Electric Rainfall',
+        skill: 'thundergodsWrath',
+        description: 'Thundergod\'s Wrath is now a ground-targeted ability with 700 base cast range. If Thundergod\'s Wrath strikes at least 5 units, another Thundergod\'s Wrath is recasted \
+        0.6 seconds later with 50% the radius of the previous. This can repeat itself.'
+    },
 }
 export default Shards
